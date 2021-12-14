@@ -16,14 +16,15 @@ To get started and do the needed setup, follow the instructions in the rest of t
 You will first need to get a Github account at https://github.com.  Go there now and do so using the "SignUp" button.  Use your BYU email as your email.  When it asks how many people are in your group choose "Just Me".  Select "Student" when asked.  Choose the free version of the account unless you want to jump right to "Pro".  You will use these Github credentials for the rest of your studies so remember your username and password.
 
 ## Setting Up Your Github Repository
-1. To join the classroom for our Symbiflow testing, you should select one of two links, depending on which class you are in.  220 students should click: [https://classroom.github.com/a/r942_jUm](https://classroom.github.com/a/r942_jUm) while 323 students should click: [https://classroom.github.com/a/TTKmLwUg](https://classroom.github.com/a/TTKmLwUg).
-2. On the page that opens click "Accept this assignment".
-3. On the page that takes you to, refresh a time or two and eventually it will tell you "You're Ready to Go!".  The link it gives below that is the link for your Github repository you will use for all of your testing activities.  An example is: https://github.com/BYU-Symbiflow-Classrooms/323-nelsobe. So, save this name somewhere.
-4. Now, go to that page (click on that name on the screen currently showing or type it into your browser address bar).
-5. Near the bottom of the screen will be an "Import Code" button.  Click it.   
-6. Now, enter this address of the repository you want as the starting point for your repository: https://github.com/byuccl/symbiflow-class-testing.  Hit, the tab key and then click "Begin Import".  NOTE: you have just imported the contents of THIS web page you are currently reading as the initial contents of your repository.  That way, your repository will have the usage instructions and everything else in it that you need to use the tools.
-7. When the import is done it will give you a link to your new repository - click it - this is your personal repository.  Ultimately, your results will be placed here.
-8. The next step is to clone that repository into a Linux machine so go on to the next section.
+1. To join the classroom for our Symbiflow testing, you should select one of the two links below, depending on which class you are in.  However, you should right-click the link and select "Open Link in New Window" so that these instructions are still visible after you click it.  
+2. 220 students should click: [https://classroom.github.com/a/r942_jUm](https://classroom.github.com/a/r942_jUm) while 323 students should click: [https://classroom.github.com/a/TTKmLwUg](https://classroom.github.com/a/TTKmLwUg). 
+3. On the page that opens click "Accept this assignment".
+4. On the page that takes you to, refresh a time or two and eventually it will tell you "You're Ready to Go!".  The link it gives below that is the link for your Github repository you will use for all of your testing activities.  An example is: https://github.com/BYU-Symbiflow-Classrooms/323-nelsobe. So, save this name somewhere.
+5. Now, go to that page (click on that name on the screen currently showing or type it into your browser address bar).
+6. Near the bottom of the screen will be an "Import Code" button.  Click it.   
+7. Now, enter this address of the repository you want as the starting point for your repository: https://github.com/byuccl/symbiflow-class-testing.  Hit, the tab key and then click "Begin Import".  NOTE: you have just imported the contents of THIS web page you are currently reading as the initial contents of your repository.  That way, your repository will have the usage instructions and everything else in it that you need to use the tools.
+8. When the import is done it will give you a link to your new repository - click it - this is your personal repository.  Ultimately, your results will be placed here.
+9. The next step is to clone that repository into a Linux machine so go on to the next section.
 
 ## Making a Local Copy of Your Repository By Cloning It Onto A Lab Linux Machine
 1. In your repository on the right is a green "Code" button.  Click it.
