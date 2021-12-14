@@ -1,4 +1,4 @@
-It is suggested you print this page of instructions or take a screenshot of them before you start.
+You should print this page of instructions or take a screenshot of it before you start so you have them to refer you to.
 
 # Big Picture
 This semester as you test your designs using the Symbiflow tools you are going to be doing that in a `git` repository on your Linux machine.  However, that local repository will be tied to one at https://github.com.  Setting up the Github repository followed by cloning it onto a BYU Linux machine is the first set of tasks you have to do.  The instructions for doing so make up the rest of this document.   Doing this will take about 15 minutes.
@@ -20,10 +20,10 @@ You will first need to get a Github account at https://github.com.  Go there now
 2. On the page that opens click "Accept this assignment".
 3. On the page that takes you to, refresh a time or two and eventually it will tell you "You're Ready to Go!".  The link it gives below that is the link for your Github repository you will use for all of your testing activities.  An example is: https://github.com/BYU-Symbiflow-Classrooms/323-nelsobe. So, save this name somewhere.
 4. Now, go to that page (click on that name on the screen currently showing or type it into your browser address bar).
-5. Near the bottom of the screen will be an "Import Code" button.  Click it.
-6. Now, enter this address of the repository you want as the starting point for your repository: https://github.com/byuccl/symbiflow-class-testing.  Hit, the tab key and then click "Begin Import".
-7. When the import is done it will give you a link to your new repository - click it.
-8. At this point you will have your repository all set up at Github.  The next step is to clone that repository into a Linux machine.
+5. Near the bottom of the screen will be an "Import Code" button.  Click it.   
+6. Now, enter this address of the repository you want as the starting point for your repository: https://github.com/byuccl/symbiflow-class-testing.  Hit, the tab key and then click "Begin Import".  NOTE: you have just imported the contents of THIS web page you are currently reading as the initial contents of your repository.  That way, your repository will have the usage instructions and everything else in it that you need to use the tools.
+7. When the import is done it will give you a link to your new repository - click it - this is your personal repository.  Ultimately, your results will be placed here.
+8. The next step is to clone that repository into a Linux machine so go on to the next section.
 
 ## Making a Local Copy of Your Repository By Cloning It Onto A Lab Linux Machine
 1. In your repository on the right is a green "Code" button.  Click it.
