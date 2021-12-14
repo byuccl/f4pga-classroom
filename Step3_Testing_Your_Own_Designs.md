@@ -1,4 +1,6 @@
-## Testing Your Own Designs
+# Testing Your Own Designs
+
+## Preparing A Specific Lab
 When you get ready to create your own design, do the following:
 1. Go inside your repo by typing at the command prompt one of the following: `cd 220_yourName` or `cd 323_yourName`.
 2. Create a lab-specific project directory in there to hold your lab files like this: `mkdir Lab3`.  
@@ -21,9 +23,26 @@ SOURCES := $(wildcard ${current_dir}/*.v ${current_dir}/*.sv)
 # This actually does the compilation
 include ${HOME}/symbiflow-examples/common/common.mk
 ```
-5. Now you can compile your design by executing `make` inside your project directory.  
 
-As above, as the tool runs it should be clear if there were errors in compilation by watching the text output.  If the tool runs successfully, there should be a .bit file in `build/basys3/top.bit` which you can download to the board using the download mechanism you use in class.  For example, if you are using Vivado to download you can just start it up, open the hardware manager, and then download the .bit file after navigating to it.  NOTE: you will not have a Vivado project or anything else from 220 when you do this - you are simply using Vivado as the board programming tool.
+## Running Symbiflow On A Specific Lab
+In the lab project directory, execute the following commands:
+
+```
+export SYMBIFLOW_EXAMPLES_ROOT=$HOME
+export INSTALL_DIR=$SYMBIFLOW_EXAMPLES_ROOT/opt/symbiflow
+FPGA_FAM="xc7"
+export PATH="$INSTALL_DIR/$FPGA_FAM/install/bin:$PATH";
+source "$INSTALL_DIR/$FPGA_FAM/conda/etc/profile.d/conda.sh"
+conda activate $FPGA_FAM
+```
+
+This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment has been run).
+
+Now you can compile your design by executing `make` inside your project directory.  
+
+If you have any problems at all, please contact one of the Symbiflow TA's for help.  This is not difficult but there are enough steps that it is easy to get one wrong.
+
+As with the testing above, as the tool runs it should be clear if there were errors in compilation by watching the text output.  If the tool runs successfully, there should be a .bit file in `build/basys3/top.bit` which you can download to the board using the download mechanism you use in class.  For example, if you are using Vivado to download you can just start it up, open the hardware manager, and then download the .bit file after navigating to it.  NOTE: you will not have a Vivado project or anything else from 220 when you do this - you are simply using Vivado as the board programming tool.
 
 On the other hand, if the tool did not run successfully we are very interested in learning why.  If you get errors and a new .bit file is not created please get with one of the Symbiflow TA's to review the outcome.  It may be simply that you didn't create your Makefile correct or some other setup problem of yours.  We would like have the TA's help you figure this out so we don't report problems that really aren't the fault of Symbiflow.  If the TA can help you fix things so you get a working .bit file, great.  If not, that is OK.
 
