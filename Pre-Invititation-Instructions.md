@@ -1,7 +1,7 @@
 It is suggested you print this page of instructions or take a screenshot of them before you start.
 
 # Getting A Github Account
-You will first need to get a Github account at https://github.com.  Go there now and do so using the "SignUp" button.  Use your BYU email as your email.  When it asks how many people are in your group choose "Just Me".  Select "Student" when asked.  Choose the free version of the account unless you want to jump right to "Pro".  You will these Github credentials for the rest of your studies so remember your username and password.
+You will first need to get a Github account at https://github.com.  Go there now and do so using the "SignUp" button.  Use your BYU email as your email.  When it asks how many people are in your group choose "Just Me".  Select "Student" when asked.  Choose the free version of the account unless you want to jump right to "Pro".  You will use these Github credentials for the rest of your studies so remember your username and password.
 
 # Setting Up Your Github Repository
 1. To join the classroom for our Symbiflow testing, you should select one of two links, depending on which class you are in.  220 students should click: [https://classroom.github.com/a/r942_jUm](https://classroom.github.com/a/r942_jUm) while 323 students should click: [https://classroom.github.com/a/TTKmLwUg](https://classroom.github.com/a/TTKmLwUg).
