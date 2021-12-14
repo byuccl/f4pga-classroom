@@ -1,16 +1,17 @@
 It is suggested you print this page of instructions or take a screenshot of them before you start.
 
 # Getting A Github Account
-You will first need to get a Github account at https://github.com.  Go there now and do so using the "SignUp" button.  
+You will first need to get a Github account at https://github.com.  Go there now and do so using the "SignUp" button.  Use your BYU email as your email.  When it asks how many people are in your group choose "Just Me".  Select "Student" when asked.  Choose the free version of the account unless you want to jump right to "Pro".  You will these Github credentials for the rest of your studies so remember your username and password.
 
-# Receiving a Classroom Invitation and Setting Up Your Github Repository
-1. You will receive an invitation to your email for a Github Classroom assignment called 220 or 323 (depending on which class you are currently in).  Accept the  assignment invitation.
-2. On the page it takes you to, refresh a time or two and eventually it will tell you "You're Ready to Go!".  The link it gives below that is the link for your Github repository you will use for all of your testing activities.  An example is: https://github.com/So, save the name somewhere.
-3. Now, click on the name of your assignment repository.
-4. Near the bottom of the screen will be an "Import" button.  Click it.
-5. Now, enter this address of the repository you want as the starting point for your repository: https://github.com/byuccl/symbiflow-class-testing.  Hit, the tab key and then click "Begin Import".
-6. When the import is done it will give you a link to your new repository - click it.
-7. At this point you will have your repository all set up at Github.  The next step is to clone that repository into a Linux machine.
+# Setting Up Your Github Repository
+1. To join the classroom for our Symbiflow testing, you should select one of two links, depending on which class you are in.  220 students should click: [https://classroom.github.com/a/r942_jUm](https://classroom.github.com/a/r942_jUm) while 323 students should click: [https://classroom.github.com/a/TTKmLwUg](https://classroom.github.com/a/TTKmLwUg).
+2. On the page that opens click "Accept this assignment".
+3. On the page that takes you to, refresh a time or two and eventually it will tell you "You're Ready to Go!".  The link it gives below that is the link for your Github repository you will use for all of your testing activities.  An example is: https://github.com/BYU-Symbiflow-Classrooms/323-nelsobe. So, save this name somewhere.
+4. Now, go to that page (click on that name on the screen currently showing or type it into your browser address bar).
+5. Near the bottom of the screen will be an "Import Code" button.  Click it.
+6. Now, enter this address of the repository you want as the starting point for your repository: https://github.com/byuccl/symbiflow-class-testing.  Hit, the tab key and then click "Begin Import".
+7. When the import is done it will give you a link to your new repository - click it.
+8. At this point you will have your repository all set up at Github.  The next step is to clone that repository into a Linux machine.
 
 # Cloning Your Repository Into Linux
 1. In your repository on the right is a green "Code" button.  Click it.
