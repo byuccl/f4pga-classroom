@@ -1,9 +1,10 @@
-## Running Your Own Designs
-When you get ready to create your own design, you do the following:
-1. Create a directory to hold your designs as in: `mkdir $HOME/220Sym`.  You do this just once to hold all your 220 designs you are going to try.
-2. Create a specific directory hold one lab as in `mkdir $HOME/220Sym/Lab5`.
-3. Create a new Makefile for your design as in: `touch $HOME/220Sym/Lab5/Makefile`.  This will create an empty file called Makefile.
-4. Edit the file to contain these contents:
+## Testing Your Own Designs
+When you get ready to create your own design, do the following:
+1. Go inside your repo as in `cd 220_yourName` or cd `323_yourName`.
+2. Inside there, create directory to hold your lab files as in: `mkdir Lab3`.  
+3. Go into that directory using `cd Lab3`.
+4. Copy SystemVerilog files and your XDC file into this directory.  There cannot be any subdirectories inside here - they all must just be together here.
+5. Now, create a file called `Makefile` here with these contents:
 ```
 current_dir := ${CURDIR}
 TARGET := basys3
@@ -20,12 +21,8 @@ SOURCES := $(wildcard ${current_dir}/*.v ${current_dir}/*.sv)
 # Edit this next line if you did not install everything in $HOME as discussed above.
 include ${HOME}/symbiflow-examples/common/common.mk
 ```
-5. Now you can compile your design by executing the following:
-```
-cd $HOME/220Sym/Lab5
-make 
-```
+5. Now you can compile your design by executing `make` inside your project directory.
 
-As above, it should be clear if there were errors in compilation by watching the text output.  And, there should be a .git file in `Lab5/build/basys3/top.bit` which you can download to the board.
+As above, it should be clear if there were errors in compilation by watching the text output.  And, there should be a .git file in `build/basys3/top.bit` which you can download to the board using the download mechanism you use in class.  For example, if you are using Vivado to download you can just start it up, open the hardware manager, and then download the .bit file after navigating to it.  NOTE: you will not have a Vivado project or anything else from 220 when you do this - you are simply using Vivado as the board programming tool.
 
-And, every time you modify either one of your source files or your .xdc file and type `make` it will recompile everything and generate a new bitfile.
+Finally, every time you modify either one of your source files or your .xdc file you can type `make` and it will recompile everything and generate a new bitfile.
