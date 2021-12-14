@@ -17,8 +17,8 @@ You will first need to get a Github account at https://github.com.  Go there now
 1. In your repository on the right is a green "Code" button.  Click it.
 2. Make sure the SSH selection has been highlighted.
 3. Copy the address showing below that and which starts with `git@github.com:BYU-Symbiflow-Classroom...`.  The easiest way to do that is to click the double-box icon to the right of the address.  That will copy it.
-4. On one of the digital lab machines type `git clone ` and then paste in the address copied above.  Then hit return.  This will make a copy of your Github repository into your directory on the Linux machine.
+4. On one of the digital lab machines type `git clone ` and then paste in the address copied above and then hit return.  This will make a copy of your Github repository into your directory on the Linux machine.
 5. Once you are done you can `cd 220-yourName` and you will be in your repository on the Linux machine.  This directory is where you will do all your work this semester as you test your designs using Symbiflow.
 6. The last step is to make a link from your repository back to the original repository where the initial contents of your repository came from.  You do this in Linux by typing: `git remote add starterDirectory https://github.com/byuccl/symbiflow-class-testing`.  You may or may not need this but it is good to have done it when you set up the repo.
 
-At this point are done and 
+At this point are done and can now read further instruction on the main page of your repository at Github.
