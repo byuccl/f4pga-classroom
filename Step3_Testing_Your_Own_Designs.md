@@ -38,7 +38,7 @@ conda activate $FPGA_FAM
 
 This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment has been run).
 
-Now you can compile your design by executing `make` inside your project directory.  
+Now you can compile your design by typing `make` inside your project directory.  
 
 If you have any problems at all, please contact one of the Symbiflow TA's for help.  This is not difficult but there are enough steps that it is easy to get one wrong.
 
