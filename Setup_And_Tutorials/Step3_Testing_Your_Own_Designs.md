@@ -2,7 +2,7 @@
 
 ## Preparing A Specific Lab
 When you get ready to create your own design, do the following:
-1. Go inside your repo by typing at the command prompt one of the following: `cd 220_yourName` or `cd 323_yourName`.
+1. Go inside the `Labs` directory in your repo by typing at the command prompt one of the following: `cd 220_yourName/Labs` or `cd 323_yourName/Labs`.
 2. Create a lab-specific project directory in there to hold your lab files like this: `mkdir Lab3`.  
 3. Go into that project directory using `cd Lab3`.
 4. Copy your SystemVerilog files and your XDC file into this directory.  NOTE: there cannot be any subdirectories inside here - your files all just live in this directory.
