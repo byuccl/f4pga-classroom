@@ -9,7 +9,8 @@ Copy and paste the following commands into a bash terminal on one of the digital
 ```
 export SYMBIFLOW_EXAMPLES_ROOT=$HOME
 cd $SYMBIFLOW_EXAMPLES_ROOT
-git clone https://github.com/SymbiFlow/symbiflow-examples.git
+# Note we are cloning BYUCCL's fork as of 12/15/2021
+git clone https://github.com/byuccl/symbiflow-examples.git
 cd symbiflow-examples
 
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O conda_installer.sh
