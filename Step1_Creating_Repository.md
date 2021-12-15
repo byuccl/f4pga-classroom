@@ -1,6 +1,6 @@
 You should print this page of instructions or take a screenshot of it before you start so you have them to refer you to.
 
-# Big Picture
+# Overview
 This semester as you test your designs using the Symbiflow tools you are going to be doing that in a `git` repository on your Linux machine.  However, that local repository will be tied to one at https://github.com.   This is shown in this figure:
 
 <img src="/media/Overview.png" width="600"/>
