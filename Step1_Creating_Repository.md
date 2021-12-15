@@ -1,7 +1,11 @@
 You should print this page of instructions or take a screenshot of it before you start so you have them to refer you to.
 
 # Big Picture
-This semester as you test your designs using the Symbiflow tools you are going to be doing that in a `git` repository on your Linux machine.  However, that local repository will be tied to one at https://github.com.  Setting up the Github repository followed by cloning it onto a BYU Linux machine is the first set of tasks you have to do.  The instructions for doing so make up the rest of this document.   Doing this will take about 15 minutes.
+This semester as you test your designs using the Symbiflow tools you are going to be doing that in a `git` repository on your Linux machine.  However, that local repository will be tied to one at https://github.com.   This is shown in this figure:
+
+![Overview](../media/Overview.png)
+
+Setting up the Github repository followed by cloning it onto a BYU Linux machine is the first set of tasks you have to do.  The instructions for doing so make up the rest of this document.   Doing this will take about 15 minutes.
 
 However, you will also need to actually download and install the Symbiflow tools in your Linux account.  Doing that is the second set of tasks you will have to do.  Completing it will take about 30 minutes.
 
