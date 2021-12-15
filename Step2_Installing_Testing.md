@@ -9,7 +9,7 @@ Copy and paste the following commands into a bash terminal on one of the digital
 ```
 export SYMBIFLOW_EXAMPLES_ROOT=$HOME
 cd $SYMBIFLOW_EXAMPLES_ROOT
-# Note we are cloning BYUCCL's fork as of 12/15/2021
+# Note we are cloning BYUCCL's fork
 git clone https://github.com/byuccl/symbiflow-examples.git
 cd symbiflow-examples
 
