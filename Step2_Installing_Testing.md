@@ -60,6 +60,6 @@ Writing bitstream ...
 make: Leaving directory '/home/nelson/symbiflow-examples/xc7/counter_test'
 ```
 
-In addition, you should have a .bit file in directory: `$HOME/symbiflow-examples/xc7/counter_test/build/basys3/top.bit` which you can use to program your board. It is a simple counter which blinks lights.  TODO: fill in what it does so people can test it on their board
+In addition, you should have a .bit file in directory: `$HOME/symbiflow-examples/xc7/counter_test/build/basys3/top.bit` which you can use to program your board. It is a simple counter which blinks the right 4 LEDS's (LED[3] will blink at about 1Hz, the 3 to the right of it will be correspondingly faster).
 
 Congratulations!  You have Symbiflow up and working on your machine.  
