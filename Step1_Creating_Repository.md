@@ -3,12 +3,11 @@ You should print this page of instructions or take a screenshot of it before you
 # Big Picture
 This semester as you test your designs using the Symbiflow tools you are going to be doing that in a `git` repository on your Linux machine.  However, that local repository will be tied to one at https://github.com.   This is shown in this figure:
 
-<img src="/media'Overview.png" width="600"/>
-![Overview](/media/Overview.png)
+<img src="/media/Overview.png" width="600"/>
 
-Setting up the Github repository followed by cloning it onto a BYU Linux machine is the first set of tasks you have to do.  The instructions for doing so make up the rest of this document.   Doing this will take about 15 minutes.
+The top box is the Github Repository you will create in the first couple of steps below.  After that, you will *clone* it onto a BYU Linux machine.  The instructions for doing these steps so make up the rest of this document.   Doing this will take about 15 minutes.   This is the first of 3 steps you needs to complete.
 
-However, you will also need to actually download and install the Symbiflow tools in your Linux account.  Doing that is the second set of tasks you will have to do.  Completing it will take about 30 minutes.
+Once you have your repository on the lab Linux machines, you will need to download and install the Symbiflow tools in Linux.  Completing it will take about 30 minutes.
 
 Once these two steps are done you can test your first design using Symbiflow. The way you will do this is you will copy your design files from your passed-off lab (meaning it all worked in Vivado) into a directory in your local repository.  You will then re-compile and test it using the Symbiflow tools in that repository.  You will then write up a short (1-2 paragraph) summary of how well it worked and copy that summary and your design files back up to your Github repository and the TA's will then collect that information as a part of our research study.
 
