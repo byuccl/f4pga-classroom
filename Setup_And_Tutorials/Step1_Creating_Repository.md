@@ -3,7 +3,7 @@ You should print this page of instructions or take a screenshot of it before you
 # Overview
 This semester as you test your designs using the Symbiflow tools you are going to be doing that in a `git` repository on your Linux machine.  However, that local repository will be tied to one at https://github.com.   This is shown in this figure:
 
-<img src="../media/Overview.png" width="600"/>
+<img src="media/Overview.png" width="600"/>
 
 The top box is the Github Repository you will create in the first couple of steps below.  After that, you will *clone* it onto a BYU Linux machine.  The instructions for doing these steps so make up the rest of this document.   Doing this will take about 15 minutes.   This is the first of 3 steps you needs to complete.
 
