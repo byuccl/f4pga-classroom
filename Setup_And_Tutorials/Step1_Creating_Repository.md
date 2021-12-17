@@ -43,4 +43,4 @@ Before moving on, go and create an SSH key in Github using the instructions foun
 
 Note that the repository on the Linux machine that you have created above is in your CAEDM home directory.  This means this directory will available to you on any of the department Linux lab machines.  As a result you can work on any machine in the lab for this work.
 
-At this point are done and can now read further instruction on the main page of your repository at Github to learn how to install the Symbiflow tools and start testing your first design with it.
+At this point are done and can now read further instruction on the main page of your new repository at Github (https://github.com/BYU-Symbiflow-Classrooms/220-yourName or https://github.com/BYU-Symbiflow-Classrooms/323-yourName) to learn how to install the Symbiflow tools and start testing your first design with it.
