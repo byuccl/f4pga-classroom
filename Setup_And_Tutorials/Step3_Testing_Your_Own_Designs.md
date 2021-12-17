@@ -52,7 +52,7 @@ At any rate, in the future any time you want to activate your environment you ca
 ### Compile Your Design
 Now you can compile your design by typing `make` inside your project directory.  
 
-If you have any problems at all, please contact one of the Symbiflow TA's for help.  This is not difficult but there are enough steps that it is easy to get one wrong.  Also, note that we are maintaining a [work-arounds page](../WorkArounds.md) which may contain things you need to do to get the tools to run.
+If you have any problems at all, please contact one of the Symbiflow TA's for help.  This is not difficult but there are enough steps that it is easy to get one wrong.  Also, note that we are maintaining a [work-arounds page](../WorkArounds.md) which may contain things you need to do to get the tools to run. 
 
 As with the testing above, as the tool runs it should be clear if there were errors in compilation by watching the text output.  If the tool runs successfully, there should be a .bit file in `build/basys3/top.bit` which you can download to the board using the download mechanism you use in class.  For example, if you are using Vivado to download you can just start it up, open the hardware manager, and then download the .bit file after navigating to it.  NOTE: you will not have a Vivado project or anything else from 220 when you do this - you are simply using Vivado as the board programming tool.
 
