@@ -5,7 +5,10 @@ When you get ready to create your own design, do the following:
 1. Go inside the `Labs` directory in your repo by typing at the command prompt one of the following: `cd 220_yourName/Labs` or `cd 323_yourName/Labs`.
 2. Create a lab-specific project directory in there to hold your lab files like this: `mkdir Lab3`.  
 3. Go into that project directory using `cd Lab3`.
-4. Copy your SystemVerilog files and your XDC file into this directory.  NOTE: there cannot be any subdirectories inside here - your files all just live in this directory.
+4. Copy your SystemVerilog files and your XDC file into this directory.  NOTE: there cannot be any subdirectories inside here - your files all just live in this directory.  
+    - Your first time finding your files in your Vivado project may take some looking.  In your Vivado project directory you should see a directory called something like `Lab3.srcs` - where `Lab3` is the name of the current lab.  Your SystemVerilog files are likely at: `Lab3.srcs/sources_1/new` and your .xdc file will be buried in a directory under `Lab3.srcs/constrs_1`.  
+    - An easy way to find files in a directory hierarchy would be to type: `find Lab3.srcs -name \*.sv` - this will print out the locations of all the .sv files.  You can use a similar command to find your .xdc file.
+    - Find and copy those files to the project directory you created in the previous step.   Remember, you copy files using the `cp` command.  A Symbiflow TA can help you with this the first time. 
 5. Now, create a file called `Makefile` here with these contents and save it.
 ```
 current_dir := ${CURDIR}
@@ -24,8 +27,13 @@ SOURCES := $(wildcard ${current_dir}/*.v ${current_dir}/*.sv)
 include ${HOME}/symbiflow-examples/common/common.mk
 ```
 
-## Running Symbiflow On A Specific Lab
-In the lab project directory, execute the following commands:
+Note that there is a variable called TOP which defines the name of your top-level module in your design.  Change that line to match your design.
+
+Also note that there is a variable called XDC which defines the name of your .xdc file - change that as well if needed to match your file name.
+## Running Symbiflow On Your Lab Files
+
+## Activate Your Environment
+Execute the following commands:
 
 ```
 export SYMBIFLOW_EXAMPLES_ROOT=$HOME
@@ -36,8 +44,12 @@ source "$INSTALL_DIR/$FPGA_FAM/conda/etc/profile.d/conda.sh"
 conda activate $FPGA_FAM
 ```
 
-This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment has been run).
+This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment) has been run.
 
+Also, you are going to do this each time you want to work with the Symbiflow tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) put them into a file by typing:  `cat > setup`, pasting the contents into the terminal window, and then hitting Control-D.  That will create a new file called `setup` in your home directory with those contents.  Alternatively, you can always just fire up a text editor and paste the contents there and save it.  
+
+At any rate, in the future any time you want to activate your environment you can then type `source setup` and it will do so.  And, if for some reason you want to de-activate the environment you can do so by typing: `conda deactivate`.  
+### Compile Your Design
 Now you can compile your design by typing `make` inside your project directory.  
 
 If you have any problems at all, please contact one of the Symbiflow TA's for help.  This is not difficult but there are enough steps that it is easy to get one wrong.  Also, note that we are maintaining a [work-arounds page](../WorkArounds.md) which may contain things you need to do to get the tools to run.
