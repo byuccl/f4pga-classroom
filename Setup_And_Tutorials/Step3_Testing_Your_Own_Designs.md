@@ -1,5 +1,5 @@
 # Testing Your Own Designs
-
+This document will tell you how to test your own designs.  For reference, a simple 4-bit counter demo design has been provided for you in the directory `Labs/cnt4Demo` in your repo.  You can use that as a starting point or to refer to when you have problems.  Or, you can simply try to build it and test it using the instructions below.
 ## Preparing A Specific Lab
 When you get ready to create your own design, do the following:
 1. Go inside the `Labs` directory in your repo by typing at the command prompt one of the following: `cd 220_yourName/Labs` or `cd 323_yourName/Labs`.
