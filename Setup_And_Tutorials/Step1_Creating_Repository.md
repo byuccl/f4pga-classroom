@@ -14,7 +14,7 @@ Once these two steps are done you can test your first design using Symbiflow. Th
 All along the way there will be TA's helping you.  These are not the normal course TA's but rather are TA's hired specifically for this research study using Symbiflow.  They will be able to help you set everything up, test it to make sure it is working, and then test your designs using the Symbiflow tools.  So, don't be nervous - there will be multiple people ready and available when you have questions.
 
 # Getting Started
-To get started and do the needed setup, follow the instructions in the rest of this document:
+To get started and do the needed setup, follow the instructions in the rest of this document.  But, before you start, please open a file on your computer somewhere and, in it, record any problems you have as you work through all this this semester.  Those notes will be helpful to us later to understand what is lacking in documentation or needs better explanation.
 
 ## Getting A Github Account
 You will first need to get a Github account at https://github.com.  Go there now and do so using the "SignUp" button.  Use your BYU email as your email.  When it asks how many people are in your group choose "Just Me".  Select "Student" when asked.  Choose the free version of the account unless you want to jump right to "Pro".  You will use these Github credentials for the rest of your studies so remember your username and password.
