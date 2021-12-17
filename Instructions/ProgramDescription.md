@@ -30,7 +30,7 @@ To receive credit there will be a due date attached to each lab (typically a wee
 Finally, note that you need not complete all the labs to receive compensation.  If you complete the installation and report on 4 of the labs you would receive $125, for example.
 
 # To Get Started
-To get started, you merely need to go to [this page](../Setup_And_Tutorial.md) and follow the instructions there.  Once you have created your repository you will show up in our collection of research participants and we will know you are involved.
+To get started, you merely need to go to [this page](../Setup_And_Tutorials/Step1_Creating_Repository.md) and follow the instructions there.  Once you have created your repository you will show up in our collection of research participants and we will know you are involved.
 
 # Getting Help
 A set of research students have been hired to help with this.  We are calling them the "Symbiflow TA's" for this semester.
