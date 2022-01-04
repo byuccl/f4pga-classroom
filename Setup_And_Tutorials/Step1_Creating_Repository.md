@@ -28,7 +28,7 @@ Before moving on, go and create an SSH key in Github using the instructions foun
 4. On the page that takes you to, refresh a time or two and eventually it will tell you "You're Ready to Go!".  The link it gives below that is the link for your Github repository you will use for all of your testing activities.  An example is: https://github.com/BYU-Symbiflow-Classrooms/323-nelsobe. So, save this name somewhere.
 5. Now, go to that page (click on that name on the screen currently showing or type it into your browser address bar).
 6. Near the bottom of the screen will be an "Import Code" button.  Click it.   
-7. Now, enter this address of the repository you want as the starting point for your repository: https://github.com/byuccl/symbiflow-class-testing.  Hit, the tab key and then click "Begin Import".  NOTE: you have just imported the contents of THIS web page you are currently reading as the initial contents of your repository.  That way, your repository will have the usage instructions and everything else in it that you need to use the tools.
+7. Now, enter this address: https://github.com/byuccl/symbiflow-class-testing (this is the repository you want as the starting point for your repository).  Hit the tab key and then click "Begin Import".  NOTE: you have just imported the contents of THIS web page you are currently reading as the initial contents of your repository.  That way, your repository will have the usage instructions and everything else in it that you need to use the tools.
 8. When the import is done it will give you a link to your new repository - click it - this is your personal repository.  Ultimately, your results will be placed here.
 9. The next step is to clone that repository into a Linux machine so go on to the next section.
 
