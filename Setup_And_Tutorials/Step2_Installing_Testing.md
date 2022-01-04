@@ -4,7 +4,7 @@ To use the Symbiflow tools you will need to install the toolchain in your own di
 - The installation will require about 3GB of space in your user space.
 
 ## Installation script
-Copy and paste the following commands into a bash terminal on one of the digital lab Linux machines.  Note that you can do all of this while either (a) being in the lab physically on one of the digital lab computers or (b) while being remotely logged in over the network:
+Copy and paste the following commands into the terminal on one of the digital lab Linux machines.  Note that you can do all of this while either (a) being in the lab physically on one of the digital lab computers or (b) while being remotely logged in over the network:
 
 ```
 export SYMBIFLOW_EXAMPLES_ROOT=$HOME
