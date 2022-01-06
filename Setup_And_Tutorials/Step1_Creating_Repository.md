@@ -16,7 +16,9 @@ All along the way there will be TA's helping you.  These are not the normal cour
 # Getting Started
 To get started and do the needed setup, follow the instructions in the rest of this document.  But, before you start, please open a file on your computer somewhere and, in it, record any problems you have as you work through all this this semester.  Those notes will be helpful to us later to understand what is lacking in documentation or needs better explanation.
 
-At the current time, the lab machines do not have a lot of virtual memory (swap space) allocated and sometimes they will run out, killing your running programs.  Until this is fixed, the recommendation is to physically power cycle the machine you sit down to to avoid this happening.  So, do that before you do the following steps.
+At the current time, the lab machines do not have a lot of virtual memory (swap space) allocated and sometimes they will run out, killing your running programs.  Until this is fixed, the recommendation is to physically power the machine off and back on when you start workng at a machine.  This will kill other zombie logins to the machine and free up memory.
+
+Or, you can check for other users by typing either the `users` command or the `w` command at the Linux command line prompt.  If other users besides you show up then power cycle the machine to get rid of them.  So, do that now before you do the following steps.
 
 ## Getting A Github Account
 You will first need to get a Github account at https://github.com.  Go there now and do so using the "SignUp" button.  Use your BYU email as your email.  When it asks how many people are in your group choose "Just Me".  Select "Student" when asked.  Choose the free version of the account unless you want to jump right to "Pro".  You will use these Github credentials for the rest of your studies so remember your username and password.
