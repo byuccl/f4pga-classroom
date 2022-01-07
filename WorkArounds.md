@@ -25,4 +25,4 @@ Alternatively, they may have left their files in an incomplete state or there ot
 ```
 ERROR: set_property IO_LOC_PAIRS: Incorrect number of arguments.
 ```
-Double-checking and fixing the .xdc file contents always fixes this.
+Double-checking and fixing the .xdc file contents usually fixes this.
