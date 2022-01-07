@@ -1,15 +1,15 @@
 # Testing Your Own Designs
-This document will tell you how to test your own designs.  For reference, a simple 4-bit counter demo design has been provided for you in the directory `Labs/cnt4Demo` in your repo.  You can use that as a starting point or to refer to when you have problems.  Or, you can simply try to build it and test it using the instructions below.
+Before you test your own designs you need to place the contents of [this program](collectFiles) into your home directory.  Do that now.  Make sure that it is executable.  You can change the permissions on it with a command like `chmod o+x ~/collectFiles` (do you remember that ~ refers to your home directory?).
 ## Preparing A Specific Lab
-When you get ready to create your own design, do the following:
-1. Go inside the `Labs` directory in your repo by typing at the command prompt one of the following: `cd 220_yourName/Labs` or `cd 323_yourName/Labs`.
-2. Create a lab-specific project directory in there to hold your lab files like this: `mkdir Lab3`.  
-3. Go into that project directory using `cd Lab3`.
-4. Copy your SystemVerilog files and your XDC file into this directory.  NOTE: there cannot be any subdirectories inside here - your files all just live in this directory.  
-    - Your first time finding your files in your Vivado project may take some looking.  In your Vivado project directory you should see a directory called something like `Lab3.srcs` - where `Lab3` is the name of the current lab.  Your SystemVerilog files are likely at: `Lab3.srcs/sources_1/new` and your .xdc file will be buried in a directory under `Lab3.srcs/constrs_1`.  
-    - An easy way to find files in a directory hierarchy would be to type: `find Lab3.srcs -name \*.sv` - this will print out the locations of all the .sv files.  You can use a similar command to find your .xdc file.
-    - Find and copy those files to the project directory you created in the previous step.   Remember, you copy files using the `cp` command.  A Symbiflow TA can help you with this the first time. 
-5. Now, create a file called `Makefile` here with these contents and save it.
+When you get ready to process one of your own designs, do the following:
+1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `/home/myusername/EE220/Lab5` (and inside that directory there would be a `Lab5.xpr` file).  Make note of the entire path to that file as in: `/home/myusername/EE220/Lab5/Lab5.xpr`.  
+2. Execute the `collectFiles` program like this: 
+```
+~/collectFiles /home/myusername/EE220/Lab5/Lab5.xpr /home/myusername/220-myusername/Labs/Lab5
+```
+Note that the first argument is the `.xpr` file you identified above.  And, the second argument is the directory name in your 220-myusername Labs directory you want created and where you want the files copied to. 
+The script will create that directory if it doesn't exist.  It will then collect your design and XDC files as specified in the `.xpr` file and copy them into the directory it just created.
+3. Now, create a file called `Makefile` in that directory (`/home/myusername/220-myusername/Labs/Lab5` for example).  Then, populate it with these contents and save it:
 ```
 current_dir := ${CURDIR}
 TARGET := basys3
@@ -27,11 +27,13 @@ SOURCES := $(wildcard ${current_dir}/*.v ${current_dir}/*.sv)
 include ${HOME}/symbiflow-examples/common/common.mk
 ```
 
-Note that there is a variable called TOP which defines the name of your top-level module in your design.  Change that line to match your design.
+Important: note that there is a variable called TOP in the Makefile which defines the name of your top-level module in your design.  Change that line to match your design before saving.
 
-Also note that there is a variable called XDC which defines the name of your .xdc file - change that as well if needed to match your file name.
+Also note that there is a variable called XDC which defines the name of your .xdc file - change that to match your file name.
+
+Finally - there should be no testbench files in this directory.  All you should have are design .sv, .v, and .xdc files.  If any testbench .sv files were copied by the `collectFiles` program into this directory, delete them now.
 ## Running Symbiflow On Your Lab Files
-
+Now you are ready to actually run Symbiflow on your lab files.
 ## Activate Your Environment
 Execute the following commands:
 
@@ -46,15 +48,27 @@ conda activate $FPGA_FAM
 
 This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment) has been run.
 
-Also, you are going to do this each time you want to work with the Symbiflow tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) put them into a file by typing:  `cat > setup`, pasting the contents into the terminal window, and then hitting Control-D.  That will create a new file called `setup` in your home directory with those contents.  Alternatively, you can always just fire up a text editor and paste the contents there and save it.  
+Also, you are going to do this each time you want to work with the Symbiflow tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) open a text editor and paste them into it, (3) save the with a name such as `sym.sh`.  
 
-At any rate, in the future any time you want to activate your environment you can then type `source setup` and it will do so.  And, if for some reason you want to de-activate the environment you can do so by typing: `conda deactivate`.  
+In the future any time you want to activate your environment you can then type `source sym.sh` and it will activate the environment and otherwise set things up to run Symbiflow.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`.  
 ### Compile Your Design
-Now you can compile your design by typing `make` inside your project directory.  
+Now you can compile your design by typing `make` inside the directory where your design files and your `Makefile` is.
 
-If you have any problems at all, please contact one of the Symbiflow TA's for help.  This is not difficult but there are enough steps that it is easy to get one wrong.  Also, note that we are maintaining a [work-arounds page](../WorkArounds.md) which may contain things you need to do to get the tools to run. 
+If you have any problems at all, please capture all of the compilation output so we can debug it.  This is not difficult but there are enough steps that it is easy to get one wrong.  Also, note that we are maintaining a [work-arounds and answers page](../WorkArounds.md) which may contain things you need to do to get the tools to run.   
 
-As with the testing above, as the tool runs it should be clear if there were errors in compilation by watching the text output.  If the tool runs successfully, there should be a .bit file in `build/basys3/top.bit` which you can download to the board using the download mechanism you use in class.  For example, if you are using Vivado to download you can just start it up, open the hardware manager, and then download the .bit file after navigating to it.  NOTE: you will not have a Vivado project or anything else from 220 when you do this - you are simply using Vivado as the board programming tool.
+Go read the work-arounds page mentioned above right now.  If your design uses a clock, chances are that your `.xdc` file needs to be modified before Symbiflow will like it.
+
+As with the testing above, as the tool runs it should be clear if there were errors in compilation by watching the text output.  If the tool runs successfully, here is what you will see for the last few lines of output:
+```
+...
+Writing Implementation FASM: top.fasm
+The entire flow of VPR took 14.593 seconds.
+FASM extra: top_fasm_extra.fasm
+writing final fasm
+cd /auto/fsa/nelson/220-nelsobe/Labs/Lab5/build/basys3 && symbiflow_write_bitstream -d artix7 -f top.fasm -p xc7a35tcpg236-1 -b top.bit
+Writing bitstream ...
+```
+If it doesn't end this way then there was an error and you need to look through the output for it.  Otherwise, there should be a .bit file in `build/basys3` which is the result of the run.You can download this to the board using the download mechanism you used in class.  For example, if you are using Vivado to download you can just start it up, open the hardware manager, and then download the .bit file after navigating to it.  NOTE: you will not have a Vivado project or anything else from 220 when you do this - you are simply using Vivado as the board programming tool.
 
 On the other hand, if the tool did not run successfully we are very interested in learning why.  If you get errors and a new .bit file is not created please get with one of the Symbiflow TA's to review the outcome.  It may be simply that you didn't create your Makefile correct or some other setup problem of yours.  We would like have the TA's help you figure this out so we don't report problems that really aren't the fault of Symbiflow.  If the TA can help you fix things so you get a working .bit file, great.  If not, that is OK.
 
@@ -76,3 +90,68 @@ At this point this lab and its results are up at your Github page.  To be sure, 
 As you look around, if you find that something is not right, you can always repeat the steps above (re-run, edit your README.md file, re-commit, re-tag, re-push).  When you do so and refresh your browser you should see the new contents.
 
 That is it!  You have successfully completed one lab.  Hopefully future ones will go more quickly and you will be able to complete all of them.
+
+# An Alternate Way To Program Your Board
+Using Vivado's hardware manager works (and is familiar) and you are free to use it to program the board.  However, a program called `openocd` is installed on the lab Linux machines which is easier to run (and does NOT require you to open the Vivado GUI).  You should seriously consider using it instead.
+
+Let's assume that I have just generated a file called mydesign.bit using Symbiflow.  To program the board with it I would do the following:
+
+1. Copy these contents into a file called `7series.cfg` and save it:
+```
+interface ftdi
+ftdi_device_desc "Digilent USB Device"
+ftdi_vid_pid 0x0403 0x6010
+# channel 1 does not have any functionality
+ftdi_channel 0
+# just TCK TDI TDO TMS, no reset
+ftdi_layout_init 0x0088 0x008b
+reset_config none
+adapter_khz 10000
+
+source [find cpld/xilinx-xc7.cfg]
+source [find cpld/jtagspi.cfg]
+init
+
+puts [irscan xc7.tap 0x09]
+
+set xc7a35t "0362D093"
+set xc7a100t "13631093"
+set code [drscan xc7.tap 32 0]  
+puts $code
+
+if { $code == $xc7a35t} {
+    puts "The board has an xc7a35t"
+}
+
+if { $code == $xc7a100t} {
+    puts "The board has an xc7a100t"
+}
+
+puts "Programming..."
+pld load 0 top.bit
+exit
+```
+
+2. Edit the next-to-last line to reflect the actual name of the .bit file you want to program to the board.
+
+3. Execute the following from the command line in Linux:
+```
+openocd -f 7series.cfg
+```
+
+This will program the board with the .bit file mentioned on the next-to-last line.  If it works, you will see something like this on your terminal screen:
+```
+Open On-Chip Debugger 0.10.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+none separate
+adapter speed: 10000 kHz
+Info : auto-selecting first available session transport "jtag". To override use 'transport select <transport>'.
+Info : ftdi: if you experience problems at higher adapter clocks, try the command "ftdi_tdo_sample_edge falling"
+Info : clock speed 10000 kHz
+Info : JTAG tap: xc7.tap tap/device found: 0x0362d093 (mfg: 0x049 (Xilinx), part: 0x362d, ver: 0x0)
+```
+You will then see output stating that it programmed the board successfully.
+
+That's it - it is that simple (way easier than firing up Vivado and you can do it all with the command line).

@@ -1,0 +1,73 @@
+#!/usr/bin/python3
+import xml.etree.ElementTree as ET
+import os
+import shutil
+import argparse
+from pathlib import Path
+from os import path
+
+
+def fixPath(s, xmlfile):
+    xmlfile = Path(xmlfile)
+    prjdir = xmlfile.parents[0]
+    srcdir = xmlfile.with_suffix(".srcs")
+    return s.replace("$PPRDIR", str(prjdir)).replace("$PSRCDIR", str(srcdir))
+
+
+def parseXML(xmlfile):
+    srcs = []
+
+    tree = ET.parse(xmlfile)
+
+    root = tree.getroot()
+    for fileSets in root.iter("FileSets"):
+        for fileSet in fileSets.iter("FileSet"):
+            typ = fileSet.attrib["Type"]
+            if typ == "DesignSrcs" or typ == "Constrs":
+                for file in fileSet.iter("File"):
+                    srcs.append(fixPath(file.attrib["Path"], xmlfile))
+    return srcs
+
+
+def fixFileName(s):
+    return s.replace(" ", "_")
+
+
+def collectFiles(srcs, dest):
+    dest.mkdir(parents=True, exist_ok=True)
+    files = dest.glob("*")
+    for f in files:
+        f.unlink()
+
+    print(f"\nCopying {len(srcs)} files to directory: {dest}...")
+    for fil in srcs:
+        fixed = fixFileName(Path(fil).name)
+        print(f"  Copying file '{fil}' to '{fixed}'")
+        shutil.copy(fil, dest / fixed)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("xprFile", help=".xpr file name to open")
+    parser.add_argument(
+        "destinationDirectory",
+        help="Full path of directory to hold files (as in /home/220-nelson/Labs/Lab7)",
+    )
+    parser.add_argument(
+        "--verbose", action="store_true", help="Operate in verbose mode"
+    )
+
+    args = parser.parse_args()
+
+    srcs = parseXML(args.xprFile)
+    if args.verbose:
+        print(f"\nFiles to copy: {srcs}")
+
+    dir = Path(args.destinationDirectory)
+
+    collectFiles(srcs, dir)
+    print("All done...\n")
+
+
+if __name__ == "__main__":
+    main()
