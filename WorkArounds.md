@@ -21,7 +21,7 @@ create_clock -period 10.0 [get_ports {clk}]
 ## 2. Bogus .xdc File Contents
 Some students re-used the same .xdc file for all their labs.  This means what is left in their directories is only valid for the last lab.  
 
-Alternatively, they may have left their files in an incomplete state.  When the .xdc file doesn't map the top level pin names correctly, a common error you will get is this:
+Alternatively, they may have left their files in an incomplete state or there other problems in their .xdc files.  When the .xdc file doesn't map the top level pin names correctly, a common error you will get is this:
 ```
 ERROR: set_property IO_LOC_PAIRS: Incorrect number of arguments.
 ```
