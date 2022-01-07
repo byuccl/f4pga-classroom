@@ -9,6 +9,9 @@ When you get ready to process one of your own designs, do the following:
 ```
 Note that the first argument is the `.xpr` file you identified above.  And, the second argument is the directory name in your 220-myusername Labs directory you want created and where you want the files copied to. 
 The script will create that directory if it doesn't exist.  It will then collect your design and XDC files as specified in the `.xpr` file and copy them into the directory it just created.
+
+Take a minute to check to convince yourself that all the files got copied correctly over.
+
 3. Now, create a file called `Makefile` in that directory (`/home/myusername/220-myusername/Labs/Lab5` for example).  Then, populate it with these contents and save it:
 ```
 current_dir := ${CURDIR}
