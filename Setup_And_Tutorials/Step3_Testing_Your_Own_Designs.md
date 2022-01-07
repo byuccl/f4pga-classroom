@@ -54,7 +54,7 @@ In the future any time you want to activate your environment you can then type `
 ### Compile Your Design
 Now you can compile your design by typing `make` inside the directory where your design files and your `Makefile` is.
 
-If you have any problems at all, please capture all of the compilation output so we can debug it.  This is not difficult but there are enough steps that it is easy to get one wrong.  Also, note that we are maintaining a [work-arounds and answers page](../WorkArounds.md) which may contain things you need to do to get the tools to run.   
+If you have any problems at all, please capture all of the compilation output so we can debug it.  This whole process (compiling with Symbiflow) is not difficult but there are enough steps that it is easy to get one wrong.  Also, note that we are maintaining a [work-arounds and answers page](../WorkArounds.md) which may contain things you need to do to get the tools to run.   
 
 Go read the work-arounds page mentioned above right now.  If your design uses a clock, chances are that your `.xdc` file needs to be modified before Symbiflow will like it.
 
