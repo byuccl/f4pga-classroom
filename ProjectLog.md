@@ -29,5 +29,6 @@ create_clock -period 10.00 [get_ports {clk}]
 ## Error Message on Bad .xdc File
 - The error message w.r.t. .xdc file problems is not very clear.  It is:
 ```
+ERROR: set_property IO_LOC_PAIRS: Incorrect number of arguments.
 ```
 But, recognizing this does point to the source of the problem (the .xdc file).
