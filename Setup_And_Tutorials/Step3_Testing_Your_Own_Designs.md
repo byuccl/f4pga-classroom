@@ -1,5 +1,5 @@
 # Testing Your Own Designs
-Before you test your own designs you need to place the contents of [this script which is called collectFiles](collectFiles) into your home directory.  Do that now.  Make sure that it is executable.  You can change the permissions on it with a command like `chmod o+x ~/collectFiles` (do you remember that ~ refers to your home directory?).
+Before you test your own designs you need to place the contents of [this script](collectFiles) into your home directory.  Put those contents into a file called `collectFiles`.  Do that now.  Make sure that it is executable.  You can change the permissions on it with a command like `chmod o+x ~/collectFiles` (do you remember that ~ refers to your home directory?).
 
 ## Preparing A Specific Lab
 When you get ready to process one of your own designs, do the following:
