@@ -28,6 +28,8 @@ XDC := ${current_dir}/basys3.xdc
 SOURCES := $(wildcard ${current_dir}/*.v ${current_dir}/*.sv)
 
 # This actually does the compilation
+TOP := $(strip ${TOP})
+TARGET := $(strip ${TARGET})
 include ${HOME}/symbiflow-examples/common/common.mk
 ```
 
