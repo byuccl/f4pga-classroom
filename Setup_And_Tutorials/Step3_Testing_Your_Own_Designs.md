@@ -159,3 +159,7 @@ Info : JTAG tap: xc7.tap tap/device found: 0x0362d093 (mfg: 0x049 (Xilinx), part
 You will then see output stating that it programmed the board successfully.
 
 That's it - it is that simple (way easier than firing up Vivado and you can do it all with the command line).
+
+# Updating Your Repo With the Original Contents You Started With
+Remember that when you created your own repo you initialized it the contents of the repo with all this documentation in it.  Then, remember that we had you do the following: `git remote add starterDirectory https://github.com/byuccl/symbiflow-class-testing`?  That command was to set things up so that you can update your repo in Linux with new contents if these instructions are updated.  To do an update when instructed to, it is as simple as:`git pull starterDirectory main`.  When you do this you will get any changes we made to the starting repo documentation in case it gets changed later...
+
