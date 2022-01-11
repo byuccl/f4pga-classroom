@@ -85,7 +85,7 @@ On the other hand, if the tool did not run successfully we are very interested i
 
 ## Pushing Your Results Back Up to Github
 1. Now, you need to tell git that you have a new directory of files that should be a part of the repository.  So, type: `git add .`.  This will tell git that you want this directory's contents to be a part of the repository.
-2. Next, formally commit those files to git by typing: `git commit -am "Put a message here telling what you did for this commit".  Now, your project files are a part of git.
+2. Next, formally commit those files to git by typing: `git commit -am "Put a message here telling what you did for this commit"`.  Now, your project files are a part of git.
 3. Next, add a tag to this version of the files by typing: `git tag -a Lab3` (or whatever this lab is called).  This will tell the TA that this is your final submission.
 4. Finally, push these new files up to Github by typing: `git push`.
 
