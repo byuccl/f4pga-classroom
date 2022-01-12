@@ -168,6 +168,6 @@ There may be times when changes are made to either the repo you initialized your
 ## Updating Your Own Repo
 Remember that when you created your own repo you initialized it with the contents of the `https://github.com/byuccl/symbiflow-class-testing`?  That repo contains all this documentation and a number of other files in it.  Then, remember up above that we had you do the following: `git remote add starterDirectory https://github.com/byuccl/symbiflow-class-testing`?  That command was to set things up so that you can update your repo in Linux with new contents if these instructions are updated.  To do an update when instructed to do so, it is as simple as:`git pull starterDirectory main`.  When you do this you will get any changes we made to the starting repo documentation in case it gets changed later...
 
-## Update Your Copy of symbiflow-examples
+## Updating Your Copy of symbiflow-examples
 There may be times when you are instructed to update your copy of `symbiflow-examples`.  If you recall you installed that into your home directory.  To update that you would `cd ~/symbiflow-examples` and then `git pull`.  
 
