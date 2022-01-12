@@ -38,4 +38,4 @@ If there are trailing spaces in the Makefile's lines that start with `TARGET := 
 
 Have modified the sample Makefile code provided to include a fix for this.
 
-Have posted an issue with symbiflow-examples (#241) to see if the issue should go into `common/common.mk`.
+Have posted an issue with symbiflow-examples (#241) to see if the fix should go into `common/common.mk`.
