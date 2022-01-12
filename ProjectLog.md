@@ -36,6 +36,6 @@ But, recognizing this does point to the source of the problem (the .xdc file).
 ### 7. Trailing Spaces in Makefile
 If there are trailing spaces in the Makefile's lines that start with `TARGET := basys3` and `TOP := top` then the toolchain will fail.  
 
-Have modified the instructions that provide the Makefile contents to use to include a fix for this.
+Have modified the sample Makefile code provided to include a fix for this.
 
 Have posted an issue with symbiflow-examples (#241) to see if the issue should go into `common/common.mk`.
