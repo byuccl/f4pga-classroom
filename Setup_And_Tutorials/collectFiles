@@ -48,7 +48,7 @@ def collectFiles(srcs, dest):
     print(f"\nCopying {len(srcs)} files to directory: {dest}...")
     for fil in srcs:
         fixed = fixFileName(Path(fil).name)
-        print(f"  Copying file '{fil}' to '{fixed}'")
+        print(f"  Copying file '{fil}' to '{dest / fixed}'")
         shutil.copy(fil, dest / fixed)
 
 
