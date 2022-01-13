@@ -20,7 +20,7 @@ TARGET := basys3
 
 # IMPORTANT: edit this next line if the name of your top level module is not 'top'
 # You are not specifying a file name (there is no .sv).
-# You specifying the name of MODULE that is the top level of your hierarchy.  
+# You specifying the name of the SystemVerilog that is the top level of your hierarchy.  
 # Example: If your file is named myfile.sv but
 #   inside that file you have `module myTopLevel(input logic clk, clr, ...`
 # then you would specify `TOP := myTopLevel` on the next line.
