@@ -9,41 +9,21 @@ When you get ready to process one of your own designs, do the following:
 ~/collectFiles /home/myusername/EE220/Lab5/Lab5.xpr /home/myusername/220-myusername/Labs/Lab5
 ```
 Note that the first argument is the `.xpr` file you identified above.  And, the second argument is the directory name in your 220-myusername Labs directory you want created and where you want the files copied to. 
-The script will create that directory if it doesn't exist.  It will then collect your design and XDC files as specified in the `.xpr` file and copy them into the directory it just created.
+The script will then collect your design and XDC files as specified in the `.xpr` file and copy them into the directory it just created.
+It will also create a `Makefile` there for you.
 
-Take a minute to check to convince yourself that all the files got copied correctly over.
+Once it is done, take a minute to check to convince yourself that all the files got copied correctly over.
 
-3. Now, create a file called `Makefile` in that directory (`/home/myusername/220-myusername/Labs/Lab5` for example).  Then, populate it with these contents and save it:
-```
-current_dir := ${CURDIR}
-TARGET := basys3
+3. Now, go to where the files were copied and open up the file called `Makefile` to edit it.
+Note that there is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design before saving.
 
-# IMPORTANT: edit this next line if the name of your top level module is not 'top'
-# You are not specifying a file name (there is no .sv).
-# You specifying the name of the SystemVerilog that is the top level of your hierarchy.  
-# Example: If your file is named myfile.sv but
-#   inside that file you have `module myTopLevel(input logic clk, clr, ...`
-# then you would specify `TOP := myTopLevel` on the next line.
-TOP := top
-
-# IMPORTANT: edit this next line to specify the name of your .xdc file if different
-# This IS a file name
-XDC := ${current_dir}/basys3.xdc
-
-# This next line will include all .v and .sv files in the current directory for compilation.
-SOURCES := $(wildcard ${current_dir}/*.v ${current_dir}/*.sv)
-
-# This actually does the compilation
-include ${HOME}/symbiflow-examples/common/common.mk
-```
-
-Important: note that there is a variable called TOP in the Makefile which defines the name of your top-level module in your design.  Change that line to match your design before saving.
-
-Also note that there is a variable called XDC which defines the name of your .xdc file - change that to match your file name.
+Also note that there is a variable called XDC which defines the name of your .xdc **file** - change that to match your file name.
 
 Finally - there should be no testbench files in this directory.  All you should have are design .sv, .v, and .xdc files.  If any testbench .sv files were copied by the `collectFiles` program into this directory, delete them now.
+
 ## Running Symbiflow On Your Lab Files
 Now you are ready to actually run Symbiflow on your lab files.
+
 ## Activate Your Environment
 Execute the following commands:
 
