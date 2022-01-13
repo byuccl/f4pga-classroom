@@ -72,9 +72,9 @@ def main():
     dir = Path(args.destinationDirectory)
 
     collectFiles(srcs, dir)
-    print("All done...\n")
-    print(f"Now, go into {dir} and remove any testbench SystemVerilog files that might be there...")
-    print(f"Once that is done, you are ready to edit the Makefile and then build your design using 'make'")
+    print("\nAll done...")
+    print(f"  Now, go into {dir} and remove any testbench SystemVerilog files that might be there...")
+    print(f"  Once that is done, you are ready to edit the Makefile and then build your design using 'make'")
     print("")
 
 
