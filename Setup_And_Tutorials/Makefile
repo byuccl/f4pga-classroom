@@ -18,6 +18,4 @@ SOURCES := $(wildcard ${current_dir}/*.v ${current_dir}/*.sv)
 
 # This actually does the compilation
 include ${HOME}/symbiflow-examples/common/common.mk
-
-
-  
+ 
