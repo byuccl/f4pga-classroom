@@ -5,6 +5,7 @@ import shutil
 import argparse
 from pathlib import Path
 from os import path
+import sys
 
 
 def fixPath(s, xmlfile):
@@ -34,10 +35,15 @@ def fixFileName(s):
 
 
 def collectFiles(srcs, dest):
-    dest.mkdir(parents=True, exist_ok=True)
-    files = dest.glob("*")
-    for f in files:
-        f.unlink()
+    if dest.exists():
+        print(f"\n###############################\nERROR: directory {dest} exists.  Remove it and try again.")
+        print(f"  If you really want to start over with this directory, you can remove it by typing: 'rm -rf {dest}'")
+        print(f"    BE CAREFUL THAT THIS IS WHAT YOU WANT TO DO!!!!")
+        print(f"      You will delete everything in it as well as all the subdirectories under it....")
+        print(f"        Talk to a TA if in doubt...\n############################\n")
+        sys.exit(1)
+
+    dest.mkdir(parents=True, exist_ok=False)
 
     print(f"\nCopying {len(srcs)} files to directory: {dest}...")
     for fil in srcs:
