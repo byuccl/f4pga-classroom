@@ -26,6 +26,8 @@ conda env create -f $FPGA_FAM/environment.yml
 mkdir -p $INSTALL_DIR/xc7/install
 wget -qO- https://storage.googleapis.com/symbiflow-arch-defs/artifacts/prod/foss-fpga-tools/symbiflow-arch-defs/continuous/install/459/20211116-000105/symbiflow-arch-defs-install-ef6fff3c.tar.xz | tar -xJC $INSTALL_DIR/xc7/install
 wget -qO- https://storage.googleapis.com/symbiflow-arch-defs/artifacts/prod/foss-fpga-tools/symbiflow-arch-defs/continuous/install/459/20211116-000105/symbiflow-arch-defs-xc7a50t_test-ef6fff3c.tar.xz | tar -xJC $INSTALL_DIR/xc7/install
+echo "Installation complete..."
+
 ```
 
 This will have created two directories in your home directory.  The first is called `opt` and the second is called `symbiflow-examples`.  You need not necessarily do anything with them but you need to leave them there - they are the Symbiflow tools installation.
