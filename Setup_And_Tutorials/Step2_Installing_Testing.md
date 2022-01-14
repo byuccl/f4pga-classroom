@@ -3,6 +3,8 @@ To use the Symbiflow tools you will need to install the toolchain in your own di
 - It will install into your personal CAEDM space and so will be accessible from any of the 220 Lab computers.
 - The installation will require about 3GB of space in your user space.
 
+
+Again, if you have any problems at all in the steps below, contact one of the Symbiflow TA's for help.
 ## Installation script
 Copy and paste the following commands into the terminal on one of the digital lab Linux machines.  Note that you can do all of this while either (a) being in the lab physically on one of the digital lab computers or (b) while being remotely logged in over the network:
 
@@ -65,3 +67,5 @@ make: Leaving directory '/home/nelson/symbiflow-examples/xc7/counter_test'
 In addition, you should have a .bit file in directory: `$HOME/symbiflow-examples/xc7/counter_test/build/basys3/top.bit` which you can use to program your board. It is a simple counter which blinks the right 4 LEDS's (LED[3] will blink at about 1Hz, the 3 to the right of it will be correspondingly faster).
 
 Congratulations!  You have Symbiflow up and working on your machine.  
+
+If the above did not work, contact a Symbiflow TA for help.  They can get you on the right path immediately.

@@ -1,25 +1,38 @@
 # Testing Your Own Designs
-Before you test your own designs you need to place the contents of [this script](collectFiles) into your home directory.  Put those contents into a file called `collectFiles`.  Do that now.  Make sure that it is executable.  That is, You can change the permissions on it with a command like `chmod u+x ~/collectFiles` (do you remember that ~ refers to your home directory?).
+As you test your own designs you are going to need to run a program called `collectFiles` which is in your Linux repo (in the directory `~/220-myusername/Setup_And_Tutorials/bin`).  It will be easiest to use this program if you can run it without having to specify the whole path every time you run it.  To add it to your Linux search path (so you can run it without typing its name), edit the file `~/.bashrc` and add this line to the bottom:
+```
+export PATH=~/220-myusername/Setup_And_Tutorials/bin:$PATH
+```
+You may also need to go into that directory and make sure the file is executable by doing this: `chmod u+x collectFiles`.  
+
+Now, kill your command line and restart a new one.  You can tell if this worked when, if you type: `collectFiles` you get a usage message in return, telling you want command line arguments to provide:
+```
+usage: collectFiles [-h] [--verbose] xprFile destinationDirectory
+collectFiles: error: the following arguments are required: xprFile, destinationDirectory
+```
+
+If you don't get this, check with a Symbiflow TA for help.
 
 ## Preparing A Specific Lab
 When you get ready to process one of your own designs, do the following:
 1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `/home/myusername/EE220/Lab5` (and inside that directory there would be a `Lab5.xpr` file).  Make note of the entire path to that file as in: `/home/myusername/EE220/Lab5/Lab5.xpr`.  
 2. Execute the `collectFiles` program like this: 
 ```
-~/collectFiles /home/myusername/EE220/Lab5/Lab5.xpr /home/myusername/220-myusername/Labs/Lab5
+collectFiles /home/myusername/EE220/Lab5/Lab5.xpr /home/myusername/220-myusername/Labs/Lab5
 ```
-Note that the first argument is the `.xpr` file you identified above.  And, the second argument is the directory name in your 220-myusername Labs directory you want created and where you want the files copied to. 
+Note that you can substitute `~` for `/home/myusername` in any of these commands to save typing.
+
+The first argument when you run the program is the `.xpr` file you identified above.  The second argument is the directory name in your 220-myusername Labs directory where
+you want the files copied to.   This will be the directory where you eventually compile and test your designs.
+
 The script will then collect your design and XDC files as specified in the `.xpr` file and copy them into the directory it just created.
-It will also create a `Makefile` there for you.
+It will also create a `Makefile` there for you.  Note: if the destination directory exists it will fail and tell you to delete the destination directory and try again.
 
-Once it is done, take a minute to check to convince yourself that all the files got copied correctly over.
-
-3. Now, go to where the files were copied and open up the file called `Makefile` to edit it.
-Note that there is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design before saving.
-
-Also note that there is a variable called XDC which defines the name of your .xdc **file** - change that to match your file name.
-
-Finally - there should be no testbench files in this directory.  All you should have are design .sv, .v, and .xdc files.  If any testbench .sv files were copied by the `collectFiles` program into this directory, delete them now.
+3. Now, go to that destination directory (`cd ~/220-myusername/Labs/Lab5`).  Take a minute to check to convince yourself that all the files got copied correctly over.  Also, look to see if any testbench files (the ones provided by the professor to help test your circuit) got copied overl  If they did, delete them now using `rm`.
+4. Now open up the file there called `Makefile` and edit it.
+There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.
+5. Also note that there is a variable called XDC which defines the name of your .xdc **file** - change that to match your file name.
+6. Finally - as mentioned above, there should be no testbench files in this directory.  All you should have are your design files (.sv and .v files) and your constraint file (.xdc file).  If any testbench .sv files were copied by the `collectFiles` program into this directory, delete them now.
 
 ## Running Symbiflow On Your Lab Files
 Now you are ready to actually run Symbiflow on your lab files.
@@ -34,6 +47,8 @@ FPGA_FAM="xc7"
 export PATH="$INSTALL_DIR/$FPGA_FAM/install/bin:$PATH";
 source "$INSTALL_DIR/$FPGA_FAM/conda/etc/profile.d/conda.sh"
 conda activate $FPGA_FAM
+echo "Environment activated"
+
 ```
 
 This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment) has been run.
@@ -44,7 +59,9 @@ In the future any time you want to activate your environment you can then type `
 ### Compile Your Design
 Now you can compile your design by typing `make` inside the directory where your design files and your `Makefile` is.
 
-If you have any problems at all, please capture all of the compilation output so we can debug it.  This whole process (compiling with Symbiflow) is not terribly difficult but there are enough steps that it is easy to get one wrong.  Also, note that we are maintaining a [work-arounds and answers page](../WorkArounds.md) which may contain things you need to do to get the tools to run.   
+Regardless of whether you have any problems at all, please capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
+
+This whole process (compiling with Symbiflow) is not terribly difficult but there are enough steps that it is easy to get one wrong.  Also, note that we are maintaining a [work-arounds and answers page](../WorkArounds.md) which may contain things you need to do to get the tools to run.   
 
 Go read the work-arounds page mentioned above right now.  If your design uses a clock, chances are that your `.xdc` file needs to be modified before Symbiflow will like it.
 
@@ -60,17 +77,19 @@ Writing bitstream ...
 ```
 If it doesn't end this way then there was an error and you need to look through the output for it.  Otherwise, there should be a .bit file in `build/basys3` which is the result of the run.  You can download this to the board using the download mechanism you used in class.  For example, if you are using Vivado to download you can just start it up, open the hardware manager, and then download the .bit file after navigating to it.  NOTE: you will not have a Vivado project or anything else from 220 when you do this - you are simply using Vivado as the board programming tool.
 
-On the other hand, if the tool did not run successfully we are very interested in learning why.  If you get errors and a new .bit file is not created please get with one of the Symbiflow TA's to review the outcome.  It may be simply that you didn't create your Makefile correct or some other setup problem of yours.  We would like have the TA's help you figure this out so we don't report problems that really aren't the fault of Symbiflow.  If the TA can help you fix things so you get a working .bit file, great.  If not, that is OK.
+On the other hand, if the tool did not run successfully we are very interested in learning why.  If you get errors and a new .bit file is not created please get with one of the Symbiflow TA's to review the outcome.  It may be simply that you didn't create your Makefile correct or some other setup problem of yours.  We would like have the TA's help you figure this out so we don't report problems that really aren't the fault of Symbiflow.  If the TA can help you fix things so you get a working .bit file, great.  If not, that is OK but let's be sure.
 
 ### A Micro-Tutorial on `make`
-The `Makefile` you edited above is part of a build system that knows about the dependencies between your source files and the final .bit file.  Every time you change one of them and type `make` it realizes that the "recipe" for your .bit file needs to be re-run because one of the ingredients has changed.  So, what happens if you run `make` and it succeeds in making a .bit file and then you want to run it from scratch again (to capture the output to a log file, for example)?   If you type `make` again it will says that everything is up to date and the recipe doesn't need to be re-run.  But you can remove the build results and therefore force a re-run by typing `make clean` and this will remove the compilation results.  Then, a subsequent `make` will do a full re-run.
+The `Makefile` you edited above is part of a build system that knows about the dependencies between your source files and the final .bit file.  Every time you change one of your source files and type `make` it realizes that the "recipe" for your .bit file needs to be re-run because one of the ingredients has changed.  So, what happens if you run `make` and it succeeds in making a .bit file and then you want to run it from scratch again (to capture the output to a log file, for example)?   If you type `make` again it will says that everything is up to date and the recipe doesn't need to be re-run.  
+
+To remove the previous build results so you can force a re-run you can type `make clean` and this will remove the compilation results.  Then, a subsequent `make` will do a full re-run from scratch.
 
 ## Documenting the Results of Your Tests
-1. Regardless of whether the compilation gave errors, we want you to capture the output of the compilation using `make >& compile.log`.  Do this in the project directory.  You may have to modify one of your source files slightly (as described above in the micro-tutorial on `make`) to get `make` to re-run so you can redirect the output to a log file.
+1. Regardless of whether the compilation gave errors, we want you to capture the output of the compilation using `make >& compile.log`.  Do this in the project directory.  You should do a `make clean` first to remove the previous results so when you re-run using `make >& compile.log` it will do the full compile process.
 2. Next, create a file in your project directory called `README.md`.  
 3. If the bitstream worked on the board, your README.md file contents can be simple - just say that it compiled without errors and that the bitstream worked.
-4. If the compilation gave an error, say so.  Then, pull the compilation error messages out of the compile.log file you just created and included them in the README.md file.  You can put verbatim text (like what you copy from the log) into the README.md file by placing three backquote characters on a line (the backquote is the on the same key as the tilde).  Then paste what you copied from log file into the README.md.  Then, put three backquote characters on a line.  That is a "code verbatim" block in markdown. 
-5. Finally, save the README.md.
+4. If the compilation gave an error, say so.  Then, pull the compilation error messages out of the compile.log file you just created and included them in the README.md file.  You can put verbatim text (like what you copy from the log) into the README.md file by placing three backquote characters on a line (the backquote is the on the same key as the tilde).  Then paste what you copied from log file into the README.md.  Then, put three backquote characters on a line.  That is a "code verbatim" block in markdown. (It is how all the code sample sections have been created in these instructions).
+5. Finally, save the README.md. 
 
 ## Pushing Your Results Back Up to Github
 1. Now, you need to tell git that you have a new directory of files that should be a part of the repository.  So, type: `git add .`.  This will tell git that you want this directory's contents to be a part of the repository.
@@ -78,7 +97,7 @@ The `Makefile` you edited above is part of a build system that knows about the d
 3. Next, add a tag to this version of the files by typing: `git tag Lab3` (or whatever this lab is called).  This will tell the TA that this is your final submission.
 4. Finally, push these new files up to Github by typing: `git push`.
 
-At this point this lab and its results are up at your Github page.  To be sure, go there in a web browser.  Click around and look at things.  If you click a directory such as `Lab3`, your README.md file contents will be the documentation that shows in the web browser.  Pretty slick.
+At this point this lab and its results are now up on the web at your Github page.  To be sure, go there in a web browser (you need to go clear back to where you created your repo to get the address).  Click around and look at things.  If you click a directory such as `Lab3`, your README.md file contents will be the documentation that shows in the web browser.  Pretty slick.
 
 As you look around, if you find that something is not right, you can always repeat the steps above (re-run, edit your README.md file, re-commit, re-tag, re-push).  When you do so and refresh your browser you should see the new contents.
 
