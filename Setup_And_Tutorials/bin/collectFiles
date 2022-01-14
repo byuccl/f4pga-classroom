@@ -50,6 +50,10 @@ def collectFiles(srcs, dest):
         fixed = fixFileName(Path(fil).name)
         print(f"  Copying file '{fil}' to '{dest / fixed}'")
         shutil.copy(fil, dest / fixed)
+    
+    makefilesrc = Path(dest).parents[1] / "Setup_And_Tutorials" / "Makefile"
+    print(f"Copying {makefilesrc} to {dest}")
+    shutil.copy(makefilesrc, dest)
 
 
 def main():
