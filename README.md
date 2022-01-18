@@ -2,7 +2,7 @@
 
 If you got here and are reading this, it means you have successfully created your own repo.  Congrats!!  
 
-Before moving on tell us who you are by adding your information ot the 3 lines below.
+Before continuing on, tell us who you are by adding your information ot the 3 lines below.
 
 - My full name is: 
 - My email address is: 
