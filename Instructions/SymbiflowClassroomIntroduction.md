@@ -45,10 +45,9 @@ You will do all your work on the digital lab machines, working out of your own C
 
 Either way, once you have created your Github repository you will show up in our collection of research participants and we will know you are involved.
 
-# Getting Help
+# Getting Help and Staying in Touch - Please Join Slack Workspace NOW!
 The Symbiflow TAs will be available in person and via zoom to answer questions and/or meet with you in the lab to help.  But, the best way to get help with them is to use the Slack Workspace we have set up for this.  To join the slack workspace click this link: https://join.slack.com/t/symbiflow-classroom/shared_invite/zt-11tul5h0m-eMf62qHBJyqZLkyjursWPQ.   Once you are in, then join either the 323 channel or the 220 channel, whichever class you are in.
 
-# Staying In Touch
 We anticipate some amount of communicaton with you as the semester progresses.  Therefore, you MUST closely follow the Slack channel during the semester so we can feed you needed information as the semester progresses.  Otherwise, you may waste a lot of time making the same mistakes we have documented on the Slack channel.
 
 One way to more easily monitor the Slack channel is to install an app for Slack which you always leave open.  Then, when messages are posted you will get a visual as well as audible notification that there is something for you to read.  This is in contrast to visiting Slack through a web browser (which still will work).
