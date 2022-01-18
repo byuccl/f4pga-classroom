@@ -1,4 +1,9 @@
 # Symbiflow-class-testing
+
+- My full name is: "replace with your name"
+- My email address is: "replace with your email"
+- My BYU netid is: "replace with your BYU netid"
+
 If you got here and are reading this, it means you have successfully created your own repo.  Congrats!!  
 
 What you just completed is documented below in the first step (*Step1_Creating_Repository*).
