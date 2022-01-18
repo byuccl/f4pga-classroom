@@ -1,7 +1,11 @@
 # Symbiflow-class-testing
-We are glad you are joining our research project by testing your FPGA designs using the Symbiflow tools.  This page contains needed instructions for the project.
+If you got here and are reading this, it means you have successfully created your own repo.  Congrats!!  
 
-The plan is for you to first test and verify the correct operation of your FPGA design using Vivado (which is what you will be doing as required for class).  Once that is done, you will copy your source files into a new location and compile them using the Symbiflow tools.  You will document the results of that so we can collect data on any problems the tools had with your design.  Finally you will push your files and results back to Github so the TA's can gather the results together.
+What you just completed is documented below in the first step (*Step1_Creating_Repository*).
+
+So now, move on to the second step (*Step2_Installing_Testing*) to install the tools and do an initial test with them.
+
+Once that is done you can move on to the third step and start testing your class designs.
 
 1. Your first step to get set up is to create a Github account and repository.  You can find instructions for doing so here: [Step1_Creating_Repository](Setup_And_Tutorials/Step1_Creating_Repository.md).
 
