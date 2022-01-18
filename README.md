@@ -1,14 +1,14 @@
 # Symbiflow-class-testing
 
-- My full name is: "replace with your name"
-- My email address is: "replace with your email"
-- My BYU netid is: "replace with your BYU netid"
-
 If you got here and are reading this, it means you have successfully created your own repo.  Congrats!!  
 
-What you just completed is documented below in the first step (*Step1_Creating_Repository*).
+Before moving on tell us who you are by adding your information ot the 3 lines below.
 
-So now, move on to the second step (*Step2_Installing_Testing*) to install the tools and do an initial test with them.
+- My full name is: 
+- My email address is: 
+- My BYU netid is: 
+
+Then, move on to the second step (*Step2_Installing_Testing*) below to install the tools and do an initial test.
 
 Once that is done you can move on to the third step and start testing your class designs.
 
