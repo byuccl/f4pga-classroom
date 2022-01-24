@@ -1,10 +1,10 @@
-# Preparation to Start Setting Up
+# 1. Preparation to Start Setting Up
 Before getting started, please do these 2 things:
 
 1. You should print this page of instructions or bookmark it so you have a reference to it as you work through the setup process.
 2. You should go join Slack as directed near the bottom of the [Program Introduction page](../Instructions/SymbiflowClassroomIntroduction.md).
 
-# Overview
+# 2. Overview
 This semester as you test your designs using the Symbiflow tools you are going to be doing that in a `git` repository on your Linux machine.  Thus, you will be learning about git during the semester.  However, that local repository will be tied to one at https://github.com.   This is shown in this figure:
 
 <img src="media/Overview.png" width="600"/>
@@ -19,20 +19,20 @@ The top box is the Github Repository you will create in the first couple of step
 
 All along the way the Symbiflow TAs will be helping you.  They will be able to help you set everything up, test it to make sure it is working, and then help you as needed as you test your designs using the Symbiflow tools.  So, don't be nervous - there are many people ready and available when you have questions.
 
-## A Note About Your Repository Name
+## 2.1 A Note About Your Repository Name
 Some of you are in 220 and some are in 323.  To keep things simple this document will be using the name `220-myusername` for the name of your repository.  If you are in 323 the name of your repository will, of course, be of the form `323-myusername`.  So, note that.
 
-# Setting Up Your Repositories
+# 3. Setting Up Your Repositories
 Before you start, please open a file on your computer somewhere and, in it, record any problems you have as you work through all this this semester.  Those notes will be helpful as you discuss any issues you have had with the Symbiflow TAs.  They will also be helpful to us later to understand what is lacking in documentation or needs better explanation.
 
-## Getting A Github Account
+## 3.1 Getting A Github Account
 You will first need to get a Github account at https://github.com.  Go there now and do so using the "SignUp" button.  Use your BYU email as your email.  When it asks how many people are in your group choose "Just Me".  Select "Student" when asked.  Choose the free version of the account unless you want to jump right to "Pro".  You will use these Github credentials for the rest of your studies so remember your username and password.
 
 Before moving on, go and create an SSH key in Github using the instructions found [here](ssh.md).  When done, return to this page and continue.
 
 If you have any problems with any of these steps, contact a Symbiflow TA for help.
 
-## Setting Up Your Github Repository
+## 3.2 Setting Up Your Github Repository
 1. To join the classroom for our Symbiflow testing, you should select one of the two links below, depending on which class you are in.  However, you should right-click the link and select "Open Link in New Window" so that these instructions are still visible after you click it.  
 2. 220 students should click: [https://classroom.github.com/a/r942_jUm](https://classroom.github.com/a/r942_jUm) while 323 students should click: [https://classroom.github.com/a/TTKmLwUg](https://classroom.github.com/a/TTKmLwUg). 
 3. On the page that opens click "Accept this assignment".
@@ -45,7 +45,7 @@ If you have any problems with any of these steps, contact a Symbiflow TA for hel
 
 At this point your repo is now done at Github.  The next step is to clone that repository into a Linux machine so go on to the next section.
 
-## Making a Local Copy of Your Repository By Cloning It Onto A Lab Linux Machine
+## 3.3 Making a Local Copy of Your Repository By Cloning It Onto A Lab Linux Machine
 1. In your web browser connect to your repository (https://github.com/BYU-Symbiflow-Classrooms/220-myusername).  
 2. In your repository on the right is a green "Code" button.  Click it.
 
