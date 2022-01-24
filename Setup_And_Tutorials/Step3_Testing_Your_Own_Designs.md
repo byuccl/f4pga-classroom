@@ -111,7 +111,7 @@ As you look around, if you find that something is not right, you can always repe
 That is it!  You have successfully completed one lab.  Hopefully future ones will go more quickly and you will be able to complete all of them in short order.
 
 # 2. An Alternate Way To Program Your Board
-Using Vivado's hardware manager works (and is familiar) and you are free to use it to program the board.  However, a program called `openocd` is installed on the lab Linux machines which is MUCH easier to run (and does NOT require you to open the Vivado GUI).  You should seriously consider using it instead.
+Using Vivado's hardware manager works (and is familiar) and you are free to use it to program the board.  However, a program called `openocd` is installed on the lab Linux machines which is  easier to run (and does not require you to open the Vivado GUI).  You should seriously consider using it instead.
 
 Let's assume that I have just generated a bitstream file called `mydesign.bit` using Symbiflow and that I have put the `mydesign.bit` file into a directory.  To program the board with it I would do the following:
 
