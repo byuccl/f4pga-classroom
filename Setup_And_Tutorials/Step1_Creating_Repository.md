@@ -65,7 +65,8 @@ At this point your repo is now done at Github.  The next step is to clone that r
 
 Note that the repository on the Linux machine that you have created above is in your CAEDM home directory. THis is a good thing - it means this directory will be available to you on any of the department Linux lab machines.  As a result you can work on any machine in the lab for this Symbiflow project work.
 
-# 4. Continuing On
 That is it - you are doing setting up your repo.  
+
+# 4. Continuing On
 
 The next step is to install the Symbiflow tools.  To do so, go to the main page of your new repository at Github (https://github.com/BYU-Symbiflow-Classrooms/220-myusername) and read the instructions there under the link: *Step2_Installing_Testing*
