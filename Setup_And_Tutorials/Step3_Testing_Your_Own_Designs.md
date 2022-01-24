@@ -96,10 +96,9 @@ To remove the previous build results so you can force a re-run you can type `mak
 
 ## 1.4 Documenting the Results of Your Tests
 1. Regardless of whether the compilation gave errors, we want you to capture the output of the compilation using `make >& compile.log`.  You should do a `make clean` first to remove the previous results so when you re-run using `make >& compile.log` it will do the full compile process.  Otherwise, you will simply get a message that everything was up to date - not very useful.
-2. After you have captured a `compile.log` file, next create a file in your project directory called `README.md`.  This is where you will report your design's success or failure.
-3. If the bitstream worked on the board, your README.md file contents can be simple - just say that it compiled without errors and that the bitstream worked.
-4. If the compilation gave an error, say so.  Then, pull the compilation error messages out of the `compile.log` file you just created and include them in the `README.md` file.  By the way, you can put verbatim text (like what you copy from the log) into the `README.md` file by placing three backquote characters on a line (the backquote is the on the same key as the tilde).  Then paste what you copied from log file into the `README.md`.  Then, put three backquote characters on a line to close the block.  That is a "code verbatim" block in markdown. (It is how all the code sample sections have been created in these instructions).  In fact, if you want to learn how to add sectioning or numbered lists or whatever, just open up any `.md` file in your repo and learn by example...
-5. Finally, save the `README.md`. 
+2. After you have captured a `compile.log` file, next create a file in your project directory called `README.md`.  This is where you will report your design's success or failure.  To do so, copy the contents of the file `TemplateREADME.md` file in your own repo and use them as the starting point for this `README.md` file.  
+3. Fill out this file as your 'report'.
+4. Finally, save the `README.md`. 
 
 ## 1.5 Pushing Your Results Back Up to Github
 1. Now, you need to tell git that you have a new directory of files that should be a part of the repository.  So, type: `git add ~/220-myusername/Labs/Lab4`, filling in the real directory name.  This will tell git that you want this directory's contents to be a part of the repository.
