@@ -184,5 +184,5 @@ Remember back when you created your own repo you initialized it with the content
 To do an update when instructed to do so, it is as simple as:`git pull starterDirectory main`.  When you do this you will get any changes we made to the starting repo documentation or other files in case they get changed later...
 
 ## 3.2 Updating Your Copy of symbiflow-examples
-There may be times when you are instructed to update your copy of `symbiflow-examples`.  If you recall, you installed that into your home directory back in []().  To update that you would `cd ~/symbiflow-examples` and then `git pull`.  
+There may be times when you are instructed to update your copy of `symbiflow-examples`.  If you recall, you installed that into your home directory back in [Step3_Testing_Your_Own_Designs.md](Step3_Testing_Your_Own_Designs.md).  To update that you would do `cd ~/symbiflow-examples` and then `git pull`.  Your `symbiflow-examples` code will be updated.
 
