@@ -61,7 +61,7 @@ def main():
     parser.add_argument("xprFile", help=".xpr file name to open")
     parser.add_argument(
         "destinationDirectory",
-        help="Full path of directory to hold files (as in /home/220-nelson/Labs/Lab7)",
+        help="Full path of directory to hold files (as in ~/220-myusername/Labs/Lab7)",
     )
     parser.add_argument(
         "--verbose", action="store_true", help="Operate in verbose mode"
