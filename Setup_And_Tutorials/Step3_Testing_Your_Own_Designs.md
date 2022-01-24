@@ -1,4 +1,4 @@
-# Testing Your Own Designs
+# 1. Testing Your Own Designs
 As you test your own designs you are going to need to run a program called `collectFiles` which is in your Linux repo (in the directory `~/220-myusername/Setup_And_Tutorials/bin`).  It will be easiest to use this program if you can run it without having to specify the whole path every time you run it.  To add it to your Linux search path (so you can run it without typing its name), edit the file `~/.bashrc` and add this line to the bottom:
 ```
 export PATH=~/220-myusername/Setup_And_Tutorials/bin:$PATH
@@ -13,7 +13,7 @@ collectFiles: error: the following arguments are required: xprFile, destinationD
 
 If you don't get this, check with a Symbiflow TA for help.
 
-## Preparing A Specific Lab
+## 1.1 Preparing A Specific Lab
 When you get ready to process one of your own designs, do the following:
 1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `/home/myusername/EE220/Lab5` (and inside that directory there would be a `Lab5.xpr` file).  Make note of the entire path to that file as in: `/home/myusername/EE220/Lab5/Lab5.xpr`.  
 2. Execute the `collectFiles` program like this: 
@@ -34,10 +34,10 @@ There is a variable called TOP in the Makefile which defines the name of your to
 5. Also note that there is a variable called XDC which defines the name of your .xdc **file** - change that to match your file name.
 6. Finally - as mentioned above, there should be no testbench files in this directory.  All you should have are your design files (.sv and .v files) and your constraint file (.xdc file).  If any testbench .sv files were copied by the `collectFiles` program into this directory, delete them now.
 
-## Running Symbiflow On Your Lab Files
+## 1.2 Running Symbiflow On Your Lab Files
 Now you are ready to actually run Symbiflow on your lab files.
 
-## Activate Your Environment
+### 1.2.1 Activate Your Environment
 Execute the following commands:
 
 ```
@@ -57,12 +57,12 @@ Also, you are going to do this each time you want to work with the Symbiflow too
 
 In the future any time you want to activate your environment you can then type `source sym.sh` and it will activate the environment and otherwise set things up to run Symbiflow.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`.  
 
-### Compile Your Design
+### 1.2.2 Compile Your Design
 Now you can compile your design by typing `make` inside the directory where your design files and your `Makefile` is.
 
 Regardless of whether you have any problems at all, please eventually capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
 
-### What If It Works?
+### 1.2.3 What If It Works?
 If the tool runs successfully, here is what you will see for the last few lines of output:
 ```
 ...
@@ -75,7 +75,7 @@ Writing bitstream ...
 ```
 There should be a .bit file in `build/basys3` which is the result of the run.  You can download this to the board using the download mechanism you used in class.  For example, if you are using Vivado to download you can just start it up, open the hardware manager, and then download the .bit file after navigating to it.  NOTE: you will not have a Vivado project or anything else from 220 when you do this - you are simply using Vivado as the board programming tool
 
-### What About If It Doesn't Work?
+### 1.2.4 What About If It Doesn't Work?
 This whole process (compiling with Symbiflow) is not terribly difficult but there are enough steps that it is easy to get one wrong.  
 
 If you get error messages, they might be a bit cryptic (no surprise).  
@@ -87,19 +87,19 @@ If you still have problems, make an appointment with a Symbiflow TA and talk thr
 
 NOTE: we DO NOT expect you to be making changes to your design to make it work.  If it is legal SystemVerilog and fails in Symbiflow that is sufficient information to provide us.  But, if the error message gives you a hint of what might be wrong and you fix it and it works, that would be great feedback for you to provide.  Just realize that is not the expectation.
 
-### A Micro-Tutorial on `make`
+## 1.3 A Micro-Tutorial on `make`
 The `Makefile` you edited above is part of a build system that knows about the dependencies between your source files and the final .bit file.  Every time you change one of your source files and type `make` it realizes that the "recipe" for your .bit file needs to be re-run because one of the ingredients has changed.  So, what happens if you run `make` and it succeeds in making a .bit file and then you want to run it from scratch again (to capture the output to a log file, for example)?   If you type `make` again it will says that everything is up to date and the recipe doesn't need to be re-run.  
 
 To remove the previous build results so you can force a re-run you can type `make clean` and this will remove the compilation results.  Then, a subsequent `make` will do a full re-run from scratch.
 
-## Documenting the Results of Your Tests
+## 1.4 Documenting the Results of Your Tests
 1. Regardless of whether the compilation gave errors, we want you to capture the output of the compilation using `make >& compile.log`.  You should do a `make clean` first to remove the previous results so when you re-run using `make >& compile.log` it will do the full compile process.  Otherwise, you will simply get a message that everything was up to date - not very useful.
 2. After you have captured a `compile.log` file, next create a file in your project directory called `README.md`.  This is where you will report your design's success or failure.
 3. If the bitstream worked on the board, your README.md file contents can be simple - just say that it compiled without errors and that the bitstream worked.
 4. If the compilation gave an error, say so.  Then, pull the compilation error messages out of the `compile.log` file you just created and include them in the `README.md` file.  By the way, you can put verbatim text (like what you copy from the log) into the `README.md` file by placing three backquote characters on a line (the backquote is the on the same key as the tilde).  Then paste what you copied from log file into the `README.md`.  Then, put three backquote characters on a line to close the block.  That is a "code verbatim" block in markdown. (It is how all the code sample sections have been created in these instructions).  In fact, if you want to learn how to add sectioning or numbered lists or whatever, just open up any `.md` file in your repo and learn by example...
 5. Finally, save the `README.md`. 
 
-## Pushing Your Results Back Up to Github
+## 1.5 Pushing Your Results Back Up to Github
 1. Now, you need to tell git that you have a new directory of files that should be a part of the repository.  So, type: `git add ~/220-myusername/Labs/Lab4`, filling in the real directory name.  This will tell git that you want this directory's contents to be a part of the repository.
 2. Next, formally commit those files to git by typing: `git commit -am "Put a message here telling what you did for this commit"`.  Now, your project files are a part of git.   The message you include can be as simple as "Committing files for my Lab4" or "Re-committing files for my Lab4 because I did it wrong first try".
 3. Finally, push these new files up to Github by typing: `git push`.
@@ -110,7 +110,7 @@ As you look around, if you find that something is not right, you can always repe
 
 That is it!  You have successfully completed one lab.  Hopefully future ones will go more quickly and you will be able to complete all of them in short order.
 
-# An Alternate Way To Program Your Board
+# 2. An Alternate Way To Program Your Board
 Using Vivado's hardware manager works (and is familiar) and you are free to use it to program the board.  However, a program called `openocd` is installed on the lab Linux machines which is MUCH easier to run (and does NOT require you to open the Vivado GUI).  You should seriously consider using it instead.
 
 Let's assume that I have just generated a bitstream file called `mydesign.bit` using Symbiflow and that I have put the `mydesign.bit` file into a directory.  To program the board with it I would do the following:
@@ -175,12 +175,12 @@ You will then see output stating that it programmed the board successfully.
 
 That's it - it is that simple (way easier than firing up Vivado and you can do it all with the command line).
 
-# Updating Your Repos
+# 3. Updating Your Repos
 There may be times when changes are made to either the repo you initialized your own repo's contents with and you are instructed to update your repo to match.  Alternatively, there may be times when you are instructed to update your `symbiflow-examples` repo with new contents.  This section tells how to do this.  Remember - you only need to do this when instructed to do so.
 
-## Updating Your Own Repo
+## 3.1 Updating Your Own Repo
 Remember that when you created your own repo you initialized it with the contents of the `https://github.com/byuccl/symbiflow-class-testing`?  That repo contains all this documentation and a number of other files.  Then, remember up above that we had you do the following: `git remote add starterDirectory https://github.com/byuccl/symbiflow-class-testing`?  That command was to set things up so that you can update your repo in Linux with new contents if these instructions are updated.  To do an update when instructed to do so, it is as simple as:`git pull starterDirectory main`.  When you do this you will get any changes we made to the starting repo documentation or other files in case they get changed later...
 
-## Updating Your Copy of symbiflow-examples
+## 3.2 Updating Your Copy of symbiflow-examples
 There may be times when you are instructed to update your copy of `symbiflow-examples`.  If you recall you installed that into your home directory.  To update that you would `cd ~/symbiflow-examples` and then `git pull`.  
 
