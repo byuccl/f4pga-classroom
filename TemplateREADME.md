@@ -34,8 +34,12 @@ What efforts did you go to to try to figure out what was wrong?
 # 4. Solved Problems
 If you had problems in the process, please describe them.  These problems might be due to:
 - A typo on your part
-- Your running the tools wrong, having the wrong SystemVerilog files being used, 
-or something else.
+- Your running the tools wrong
+- Mistakenly used the wrong SystemVerilog or .xdc files
+- Something else
+- Bad .xdc file syntax
+
+Regardless, please describe (briefly) any such problems you ran into...
 
 
 
