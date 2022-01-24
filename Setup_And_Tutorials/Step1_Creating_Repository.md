@@ -1,3 +1,7 @@
+
+
+# Step 1
+
 # 1. Preparation to Start Setting Up
 Before getting started, please do these 2 things:
 
