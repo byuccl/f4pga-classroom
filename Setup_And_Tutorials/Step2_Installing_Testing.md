@@ -1,4 +1,6 @@
-# 1. Step 2 - Symbiflow Installation/Testing Instructions 
+# Step 2
+
+# 1. Symbiflow Installation/Testing Instructions 
 To use the Symbiflow tools you will need to install the toolchain in your own directory.  
 - It will install into your personal CAEDM space and so will be accessible from any of the 220 Lab computers.
 - The installation will require about 3GB of space in your user space.
