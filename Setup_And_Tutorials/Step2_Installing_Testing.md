@@ -1,11 +1,11 @@
-# Symbiflow Installation/Testing Instructions 
+# 1. Symbiflow Installation/Testing Instructions 
 To use the Symbiflow tools you will need to install the toolchain in your own directory.  
 - It will install into your personal CAEDM space and so will be accessible from any of the 220 Lab computers.
 - The installation will require about 3GB of space in your user space.
 
 
 Again, if you have any problems at all in the steps below, contact one of the Symbiflow TA's for help.
-## Installation script
+## 1.1 Installation script
 Copy and paste the following commands into the terminal on one of the digital lab Linux machines.  Note that you can do all of this while either (a) being in the lab physically on one of the digital lab computers or (b) while being remotely logged in over the network:
 
 ```
@@ -34,7 +34,7 @@ echo "Installation complete..."
 
 This will have created two directories in your home directory.  The first is called `opt` and the second is called `symbiflow-examples`.  You need not necessarily do anything with them but you need to leave them there - they are the Symbiflow tools installation.
 
-## Running a Test Design
+## 1.2 Running a Test Design
 There is a test counter design provided with Symbiflow which you can build to test whether the toolchain is installed correctly.  
 
 You can build it using the following commands:
