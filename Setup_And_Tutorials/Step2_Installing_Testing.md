@@ -69,3 +69,5 @@ In addition, you should have a .bit file in directory: `$HOME/symbiflow-examples
 Congratulations!  You have Symbiflow up and working on your machine.  
 
 If the above did not work, contact a Symbiflow TA for help.  They can get you on the right path immediately.
+
+Once you have this all working you are ready to test your own designs using the instructions in []().
