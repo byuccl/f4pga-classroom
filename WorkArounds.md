@@ -28,4 +28,4 @@ ERROR: set_property IO_LOC_PAIRS: Incorrect number of arguments.
 Double-checking and fixing the .xdc file contents usually fixes this.
 
 ## 3. Spelling
-Linux is not fundamentally a GUI-based O/S.  Everything is typically done through the command line.  As such, it is very easy to mis-type things and then be confused why it didn't work.  If your file is named `arithmetic_top.sv` and you specify `arithemetic_top.sv` as the file name on the command line you won't get what you want.  So, when things don't work as expected carefully examine everything - chances are that you may have mis-spelled something.
+Linux is not fundamentally a GUI-based O/S.  Everything is typically done through the command line.  As such, it is very easy to mis-type things and then be confused why it didn't work.  If your file is named `arithmetic_top.sv` and your top level module is `arithmetic_top` and you specify `arithemetic_top` as the TOP module in the Makefile, you won't get what you want and may not understand the error message.  So, when things don't work as expected carefully examine everything - chances are that you may have mis-spelled something.
