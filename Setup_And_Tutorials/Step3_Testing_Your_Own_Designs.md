@@ -56,16 +56,14 @@ This will set up your environment needed to run the tools.  You need only do thi
 Also, you are going to do this each time you want to work with the Symbiflow tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) open a text editor and paste them into it, (3) save the with a name such as `sym.sh`.  
 
 In the future any time you want to activate your environment you can then type `source sym.sh` and it will activate the environment and otherwise set things up to run Symbiflow.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`.  
+
 ### Compile Your Design
 Now you can compile your design by typing `make` inside the directory where your design files and your `Makefile` is.
 
-Regardless of whether you have any problems at all, please capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
+Regardless of whether you have any problems at all, please eventually capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
 
-This whole process (compiling with Symbiflow) is not terribly difficult but there are enough steps that it is easy to get one wrong.  Also, note that we are maintaining a [work-arounds and answers page](../WorkArounds.md) which may contain things you need to do to get the tools to run.   
-
-Go read the work-arounds page mentioned above right now.  If your design uses a clock, chances are that your `.xdc` file needs to be modified before Symbiflow will like it.
-
-As with the testing above, as the tool runs it should be clear if there were errors in compilation by watching the text output.  If the tool runs successfully, here is what you will see for the last few lines of output:
+### What If It Works?
+If the tool runs successfully, here is what you will see for the last few lines of output:
 ```
 ...
 Writing Implementation FASM: top.fasm
@@ -75,9 +73,19 @@ writing final fasm
 cd /auto/fsa/nelson/220-nelsobe/Labs/Lab5/build/basys3 && symbiflow_write_bitstream -d artix7 -f top.fasm -p xc7a35tcpg236-1 -b top.bit
 Writing bitstream ...
 ```
-If it doesn't end this way then there was an error and you need to look through the output for it.  Otherwise, there should be a .bit file in `build/basys3` which is the result of the run.  You can download this to the board using the download mechanism you used in class.  For example, if you are using Vivado to download you can just start it up, open the hardware manager, and then download the .bit file after navigating to it.  NOTE: you will not have a Vivado project or anything else from 220 when you do this - you are simply using Vivado as the board programming tool.
+There should be a .bit file in `build/basys3` which is the result of the run.  You can download this to the board using the download mechanism you used in class.  For example, if you are using Vivado to download you can just start it up, open the hardware manager, and then download the .bit file after navigating to it.  NOTE: you will not have a Vivado project or anything else from 220 when you do this - you are simply using Vivado as the board programming tool
 
-On the other hand, if the tool did not run successfully we are very interested in learning why.  If you get errors and a new .bit file is not created please get with one of the Symbiflow TA's to review the outcome.  It may be simply that you didn't create your Makefile correct or some other setup problem of yours.  We would like have the TA's help you figure this out so we don't report problems that really aren't the fault of Symbiflow.  If the TA can help you fix things so you get a working .bit file, great.  If not, that is OK but let's be sure.
+### What About If It Doesn't Work?
+This whole process (compiling with Symbiflow) is not terribly difficult but there are enough steps that it is easy to get one wrong.  
+
+If you get error messages, they might be a bit cryptic (no surprise).  
+
+We are maintaining a [work-arounds and answers page](../WorkArounds.md) which may contain things you need to do to get the tools to run on your design.   
+Go read the work-arounds page mentioned above right now.  For example: if your design uses a clock, chances are that your `.xdc` file needs to be modified before Symbiflow will like it.
+
+If you still have problems, make an appointment with a Symbiflow TA and talk through what has happened.  If the TA can help you and you get a good run with a working .bit file then great!  Even so, in the little writeup you do (see below) we would like to know what went wrong, even if it was your mistake.  Maybe we can fix the documentation to make it more clear.  Or, maybe there was a real problem and you had to tinker with your design to get it to work.  Either way we would like to know!
+
+NOTE: we DO NOT expect you to be making changes to your design to make it work.  If it is legal SystemVerilog and fails in Symbiflow that is sufficient information to provide us.  But, if the error message gives you a hint of what might be wrong and you fix it and it works, that would be great feedback for you to provide.  Just realize that is not the expectation.
 
 ### A Micro-Tutorial on `make`
 The `Makefile` you edited above is part of a build system that knows about the dependencies between your source files and the final .bit file.  Every time you change one of your source files and type `make` it realizes that the "recipe" for your .bit file needs to be re-run because one of the ingredients has changed.  So, what happens if you run `make` and it succeeds in making a .bit file and then you want to run it from scratch again (to capture the output to a log file, for example)?   If you type `make` again it will says that everything is up to date and the recipe doesn't need to be re-run.  
@@ -85,23 +93,22 @@ The `Makefile` you edited above is part of a build system that knows about the d
 To remove the previous build results so you can force a re-run you can type `make clean` and this will remove the compilation results.  Then, a subsequent `make` will do a full re-run from scratch.
 
 ## Documenting the Results of Your Tests
-1. Regardless of whether the compilation gave errors, we want you to capture the output of the compilation using `make >& compile.log`.  Do this in the project directory.  You should do a `make clean` first to remove the previous results so when you re-run using `make >& compile.log` it will do the full compile process.
-2. Next, create a file in your project directory called `README.md`.  
+1. Regardless of whether the compilation gave errors, we want you to capture the output of the compilation using `make >& compile.log`.  You should do a `make clean` first to remove the previous results so when you re-run using `make >& compile.log` it will do the full compile process.  Otherwise, you will simply get a message that everything was up to date - not very useful.
+2. After you have captured a `compile.log` file, next create a file in your project directory called `README.md`.  This is where you will report your design's success or failure.
 3. If the bitstream worked on the board, your README.md file contents can be simple - just say that it compiled without errors and that the bitstream worked.
-4. If the compilation gave an error, say so.  Then, pull the compilation error messages out of the compile.log file you just created and included them in the README.md file.  You can put verbatim text (like what you copy from the log) into the README.md file by placing three backquote characters on a line (the backquote is the on the same key as the tilde).  Then paste what you copied from log file into the README.md.  Then, put three backquote characters on a line.  That is a "code verbatim" block in markdown. (It is how all the code sample sections have been created in these instructions).
-5. Finally, save the README.md. 
+4. If the compilation gave an error, say so.  Then, pull the compilation error messages out of the `compile.log` file you just created and included them in the `README.md` file.  By th way, you can put verbatim text (like what you copy from the log) into the `README.md` file by placing three backquote characters on a line (the backquote is the on the same key as the tilde).  Then paste what you copied from log file into the `README.md`.  Then, put three backquote characters on a line to close the block.  That is a "code verbatim" block in markdown. (It is how all the code sample sections have been created in these instructions).
+5. Finally, save the `README.md`. 
 
 ## Pushing Your Results Back Up to Github
-1. Now, you need to tell git that you have a new directory of files that should be a part of the repository.  So, type: `git add .`.  This will tell git that you want this directory's contents to be a part of the repository.
-2. Next, formally commit those files to git by typing: `git commit -am "Put a message here telling what you did for this commit"`.  Now, your project files are a part of git.
-3. Next, add a tag to this version of the files by typing: `git tag Lab3` (or whatever this lab is called).  This will tell the TA that this is your final submission.
-4. Finally, push these new files up to Github by typing: `git push`.
+1. Now, you need to tell git that you have a new directory of files that should be a part of the repository.  So, type: `git add ~/220-myusername/Labs/Lab4`, filling in the real directory name.  This will tell git that you want this directory's contents to be a part of the repository.
+2. Next, formally commit those files to git by typing: `git commit -am "Put a message here telling what you did for this commit"`.  Now, your project files are a part of git.   The message you include can be as simple as "Committing files for my Lab4" or "Re-committing files for my Lab4 because I did it wrong first try".
+3. Finally, push these new files up to Github by typing: `git push`.
 
-At this point this lab and its results are now up on the web at your Github page.  To be sure, go there in a web browser (you need to go clear back to where you created your repo to get the address).  Click around and look at things.  If you click a directory such as `Lab3`, your README.md file contents will be the documentation that shows in the web browser.  Pretty slick.
+At this point your lab and results are now up on the web at your Github page.  To be sure, go there in a web browser (you need to go clear back to where you created your repo to get the address).  Click around and look at things.  If you click a directory such as `Lab3`, your README.md file contents will be the documentation that shows in the web browser.  Pretty slick.
 
-As you look around, if you find that something is not right, you can always repeat the steps above (re-run, edit your README.md file, re-commit, re-tag, re-push).  When you do so and refresh your browser you should see the new contents.
+As you look around, if you find that something is not right, you can always repeat the steps above (re-run, edit your README.md file, re-commit, re-push).  When you do so and refresh your browser you should see the new contents.
 
-That is it!  You have successfully completed one lab.  Hopefully future ones will go more quickly and you will be able to complete all of them.
+That is it!  You have successfully completed one lab.  Hopefully future ones will go more quickly and you will be able to complete all of them in short order.
 
 # An Alternate Way To Program Your Board
 Using Vivado's hardware manager works (and is familiar) and you are free to use it to program the board.  However, a program called `openocd` is installed on the lab Linux machines which is easier to run (and does NOT require you to open the Vivado GUI).  You should seriously consider using it instead.
