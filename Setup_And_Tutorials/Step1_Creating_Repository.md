@@ -41,8 +41,9 @@ If you have any problems with any of these steps, contact a Symbiflow TA for hel
 6. Near the bottom of the screen will be an "Import Code" button.  Click it.  THIS IS AN OFT-MISSED step in the process so carefully follow these instructions for this step.
 7. Now, enter this address: https://github.com/byuccl/symbiflow-class-testing (this is the repository you want as the starting point for your repository).  Hit the tab key and then click "Begin Import".  NOTE: you have just imported the contents of the web page you are currently reading as the initial contents of your repository.  That way, your repository will have these usage instructions and everything else in it that you will need during the semester in terms of instructions and provided files.
 8. When the import is done it will give you a link to your new repository - click it - this is your personal repository.  Ultimately, your results will be placed here.  A typical address would be: https://github.com/BYU-Symbiflow-Classrooms/220-myusername.
+9. In your new repo in github (https://github.com/BYU-Symbiflow-Classrooms/220-myusername) you will see that a documentation page comes up at the bottom of the screen.  This corresponds to the contents of your `README.md` file in the repo.  So, edit that file and add your name, email, and BYU netid to that page so we know who you are.  
 
-The next step is to clone that repository into a Linux machine so go on to the next section.
+At this point your repo is now done at Github.  The next step is to clone that repository into a Linux machine so go on to the next section.
 
 ## Making a Local Copy of Your Repository By Cloning It Onto A Lab Linux Machine
 1. In your web browser connect to your repository (https://github.com/BYU-Symbiflow-Classrooms/220-myusername).  
@@ -63,9 +64,6 @@ The next step is to clone that repository into a Linux machine so go on to the n
 7. The last step is to make a link from your repository back to the original repository where the initial contents of your repository came from.  You do this in Linux by typing: `git remote add starterDirectory https://github.com/byuccl/symbiflow-class-testing`.  The reason for doing this is if, later in the semester, we update instructions for you or provide additional files this will provide a link for you to be able to pull that new information down into your Linux repository.
 
 Note that the repository on the Linux machine that you have created above is in your CAEDM home directory. THis is a good thing - it means this directory will be available to you on any of the department Linux lab machines.  As a result you can work on any machine in the lab for this Symbiflow project work.
-
-# Document Yourself On Your README.md Page
-In your repo in github (https://github.com/BYU-Symbiflow-Classrooms/220-myusername) you will see that a documentation page comes up at the bottom of the screen.  This corresponds to the contents of your `README.md` file in the repo.  So, edit that file and add your name, email, and BYU netid to that page so we know who you are.  
 
 That is it - you are doing setting up your repo.  
 
