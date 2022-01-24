@@ -51,7 +51,7 @@ def collectFiles(srcs, dest):
         print(f"  Copying file '{fil}' to '{dest / fixed}'")
         shutil.copy(fil, dest / fixed)
     
-    makefilesrc = Path(dest).parents[1] / "Setup_And_Tutorials" / "Makefile"
+    makefilesrc = Path(dest).parents[1] / "Setup_And_Tutorials" / "bin / "Makefile"
     print(f"Copying {makefilesrc} to {dest}")
     shutil.copy(makefilesrc, dest)
 
