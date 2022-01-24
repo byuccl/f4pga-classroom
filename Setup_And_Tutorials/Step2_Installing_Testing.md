@@ -70,4 +70,4 @@ Congratulations!  You have Symbiflow up and working on your machine.
 
 If the above did not work, contact a Symbiflow TA for help.  They can get you on the right path immediately.
 
-Once you have this all working you are ready to test your own designs using the instructions in []().
+Once you have this all working you are ready to test your own designs using the instructions in [Step3_Testing_Your_Own_Designs](Step3_Testing_Your_Own_Designs.md).
