@@ -9,7 +9,7 @@ git fetch starterDirectory
 
 Next, merge in the latest information from there:
 ```
-git merge starterDirectory/main
+git merge starterDirectory main
 ```
 
 These commands copy the new information from https://github.com/byuccl/symbiflow-class-testing into your Linux repo.
