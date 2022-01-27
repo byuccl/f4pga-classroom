@@ -16,7 +16,10 @@ collectFiles: error: the following arguments are required: xprFile, destinationD
 If you don't get this, check with a Symbiflow TA for help.
 
 ## 1.1 Preparing A Specific Lab
-When you get ready to process one of your own designs, do the following:
+When you get ready to process one of your own designs, there are two ways to proceed.  In either case you need to collect all the files that were a part of your original design and place them into a directory such as `~/220-myusername/Labs/Lab5`.
+
+### 1.1.1 Using the .xpr File to Help Collect Your Files
+If you still have the .xpr file from your Vivado project (yuou will have it unless you explicitly have deleted it), you can do the following:
 1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `/home/myusername/EE220/Lab5` (and inside that directory there would be a `Lab5.xpr` file).  Make note of the entire path to that file as in: `/home/myusername/EE220/Lab5/Lab5.xpr`.  
 2. Execute the `collectFiles` program like this: 
 ```
@@ -30,11 +33,20 @@ you want the files copied to.   This will be the directory where you eventually 
 The script will then collect your design and XDC files as specified in the `.xpr` file and copy them into the directory it just created.
 It will also create a `Makefile` there for you.  Note: if the destination directory exists it will fail and tell you to delete the destination directory and try again.
 
-3. Now, go to that destination directory (`cd ~/220-myusername/Labs/Lab5`).  Take a minute to check to convince yourself that all the files got copied correctly over.  Also, look to see if any testbench files (the ones provided by the professor to help test your circuit) got copied overl  If they did, delete them now using `rm`.
-4. Now open up the file there called `Makefile` and edit it.
-There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.
-5. Also note that there is a variable called XDC which defines the name of your .xdc **file** - change that to match your file name.
-6. Finally - as mentioned above, there should be no testbench files in this directory.  All you should have are your design files (.sv and .v files) and your constraint file (.xdc file).  If any testbench .sv files were copied by the `collectFiles` program into this directory, delete them now.
+### 1.1.2 Manually Collecting Your Files
+If you don't have your .xpr file, you will need to find the needed project files and copy them into a directory in your repo (`/home/myusername/220-myusername/Labs/Lab5` for example).  The files you will need include anything required to build the project and would be:
+- All the SystemVerilog and Verilog files you used (do NOT include testbench files)
+- Your .xdc file
+- A copy of the Makefile in /home/myusername/220-myusername/Setup_And_Tutorials/bin/Makefile`
+So, (a) create a specific directory for the lab (like `/home/myusername/220-myusername/Labs/Lab5`) and (b) find those and copy all the above files into that directory.  NOTE: they cannot be inside subdirectories - they all need to be together in that directory for Symbiflow to find them.
+
+### 1.1.3 Editing Your Makefile
+Now, go to your lab directory (`cd ~/220-myusername/Labs/Lab5`) and take a minute to check to convince yourself that all the files you need are there.  Also, look to see if any testbench files (the ones provided by the professor to help test your circuit) are there.  If there are testbench files, delete them now using `rm`.
+
+Now open up the file there called `Makefile` and edit it.
+There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.  NOTE: this is NOT a file name, it is the name of the top level module in your design hierarchy.
+
+Also note that there is a variable called XDC which defines the name of your .xdc **file** - change that to match your file name.
 
 ## 1.2 Running Symbiflow On Your Lab Files
 Now you are ready to actually run Symbiflow on your lab files.
@@ -43,7 +55,7 @@ Now you are ready to actually run Symbiflow on your lab files.
 Execute the following commands:
 
 ```
-export SYMBIFLOW_EXAMPLES_ROOT=$HOME
+export SYMBIFLOW_EXAMPLES_ROOT=/opt/symbiflow
 export INSTALL_DIR=$SYMBIFLOW_EXAMPLES_ROOT/opt/symbiflow
 FPGA_FAM="xc7"
 export PATH="$INSTALL_DIR/$FPGA_FAM/install/bin:$PATH";
