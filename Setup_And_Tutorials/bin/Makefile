@@ -17,5 +17,5 @@ XDC := ${current_dir}/basys3.xdc
 SOURCES := $(wildcard ${current_dir}/*.v ${current_dir}/*.sv)
 
 # This actually does the compilation
-include ${HOME}/symbiflow-examples/common/common.mk
+include ${SYMBIFLOW_EXAMPLES_ROOT}/symbiflow-examples/common/common.mk
 
