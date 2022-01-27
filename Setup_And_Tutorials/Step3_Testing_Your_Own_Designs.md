@@ -55,7 +55,7 @@ Now you are ready to actually run Symbiflow on your lab files.
 Execute the following commands:
 
 ```
-export SYMBIFLOW_EXAMPLES_ROOT=/opt/symbiflow
+export SYMBIFLOW_EXAMPLES_ROOT=$HOME
 export INSTALL_DIR=$SYMBIFLOW_EXAMPLES_ROOT/opt/symbiflow
 FPGA_FAM="xc7"
 export PATH="$INSTALL_DIR/$FPGA_FAM/install/bin:$PATH";
