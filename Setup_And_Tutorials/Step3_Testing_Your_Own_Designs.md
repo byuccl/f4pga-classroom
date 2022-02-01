@@ -20,12 +20,12 @@ When you get ready to process one of your own designs, there are two ways to pro
 
 ### 1.1.1 Using the .xpr File to Help Collect Your Files
 If you still have the .xpr file from your Vivado project (yuou will have it unless you explicitly have deleted it), you can do the following:
-1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `/home/myusername/EE220/Lab5` (and inside that directory there would be a `Lab5.xpr` file).  Make note of the entire path to that file as in: `/home/myusername/EE220/Lab5/Lab5.xpr`.  
+1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `~/EE220/Lab5` (and inside that directory there would be a `Lab5.xpr` file).  Make note of the entire path to that file as in: `~/EE220/Lab5/Lab5.xpr`.  
 2. Execute the `collectFiles` program like this: 
 ```
-collectFiles /home/myusername/EE220/Lab5/Lab5.xpr /home/myusername/220-myusername/Labs/Lab5
+collectFiles ~/EE220/Lab5/Lab5.xpr ~/220-myusername/Labs/Lab5
 ```
-Note that you can substitute `~` for `/home/myusername` in any of these commands to save typing.
+Note that `~` is shorthand for your home directory.
 
 The first argument when you run the program is the `.xpr` file you identified above.  The second argument is the directory name in your 220-myusername Labs directory where
 you want the files copied to.   This will be the directory where you eventually compile and test your designs.
@@ -34,19 +34,20 @@ The script will then collect your design and XDC files as specified in the `.xpr
 It will also create a `Makefile` there for you.  Note: if the destination directory exists it will fail and tell you to delete the destination directory and try again.
 
 ### 1.1.2 Manually Collecting Your Files
-If you don't have your .xpr file, you will need to find the needed project files and copy them into a directory in your repo (`/home/myusername/220-myusername/Labs/Lab5` for example).  The files you will need include anything required to build the project and would be:
+If you don't have your .xpr file, you will need to find the needed project files and copy them into a directory in your repo (`~/220-myusername/Labs/Lab5` for example).  The files you will need include anything required to build the project and would be:
 - All the SystemVerilog and Verilog files you used (do NOT include testbench files)
 - Your .xdc file
-- A copy of the Makefile in /home/myusername/220-myusername/Setup_And_Tutorials/bin/Makefile`
-So, (a) create a specific directory for the lab (like `/home/myusername/220-myusername/Labs/Lab5`) and (b) find those and copy all the above files into that directory.  NOTE: they cannot be inside subdirectories - they all need to be together in that directory for Symbiflow to find them.
+- A copy of the Makefile in `~/220-myusername/Setup_And_Tutorials/bin/Makefile`
+
+So, (a) create a specific directory for the lab (like `~/220-myusername/Labs/Lab5`) and (b) find those and copy all the above files into that directory.  NOTE: they cannot be inside subdirectories - they all need to be together in that directory for Symbiflow to find them.
 
 ### 1.1.3 Editing Your Makefile
 Now, go to your lab directory (`cd ~/220-myusername/Labs/Lab5`) and take a minute to check to convince yourself that all the files you need are there.  Also, look to see if any testbench files (the ones provided by the professor to help test your circuit) are there.  If there are testbench files, delete them now using `rm`.
 
 Now open up the file there called `Makefile` and edit it.
-There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.  NOTE: this is NOT a file name, it is the name of the top level module in your design hierarchy.
+There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.  NOTE: this is NOT a file name, it is the name of the top level ***module*** in your design hierarchy.
 
-Also note that there is a variable called XDC which defines the name of your .xdc **file** - change that to match your file name.
+Also note that there is a variable called XDC which defines the name of your .xdc **file** - change that to match your XDC file name.
 
 ## 1.2 Running Symbiflow On Your Lab Files
 Now you are ready to actually run Symbiflow on your lab files.
@@ -55,7 +56,7 @@ Now you are ready to actually run Symbiflow on your lab files.
 Execute the following commands:
 
 ```
-export SYMBIFLOW_EXAMPLES_ROOT=$HOME
+export SYMBIFLOW_EXAMPLES_ROOT=/opt/symbiflow
 export INSTALL_DIR=$SYMBIFLOW_EXAMPLES_ROOT/opt/symbiflow
 FPGA_FAM="xc7"
 export PATH="$INSTALL_DIR/$FPGA_FAM/install/bin:$PATH";
@@ -71,8 +72,10 @@ Also, you are going to do this each time you want to work with the Symbiflow too
 
 In the future any time you want to activate your environment you can then type `source sym.sh` and it will activate the environment and otherwise set things up to run Symbiflow.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`.  
 
+NOTE: Back in [Step2_Installing_Testing](Step2_Installing_Testing.md) you were given the option to install the tools into your own directory rather than use the system-installed version.  If you did that then you will change the first line above to point to the where you installed the tools rather than `/opt/symbiflow`.
+
 ### 1.2.2 Compile Your Design
-Now you can compile your design by typing `make` inside the directory where your design files and your `Makefile` is.
+Now you can compile your design by typing `make clean` followed by `make` inside the directory where your design files and your `Makefile` is.
 
 Regardless of whether you have any problems at all, please eventually capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
 

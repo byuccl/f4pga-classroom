@@ -1,9 +1,13 @@
 # Step 2
 
+The default to use the pre-installed Symbiflow tools in the digital lab on the Linux machines.  Therefore, you can skip all of the rest of this document and move on to [Step3_Testing_Your_Own_Designs](Step3_Testing_Your_Own_Designs.md).
+
+But, if you have spoken with the Professor and there is a reason for you to install the Symbiflow tools in your own account, please continue on with the instructions below...
+
 # 1. Symbiflow Installation/Testing Instructions 
 To use the Symbiflow tools you will need to install the toolchain in your own directory.  
 - It will install into your personal CAEDM space and so will be accessible from any of the 220 Lab computers.
-- The installation will require about 3GB of space in your user space.
+- The installation will require about 6GB of space in your user space.
 
 
 Again, if you have any problems at all in the steps below, contact one of the Symbiflow TA's for help.
@@ -72,4 +76,20 @@ Congratulations!  You have Symbiflow up and working on your machine.
 
 If the above did not work, contact a Symbiflow TA for help.  They can get you on the right path immediately.
 
-Once you have this all working you are ready to test your own designs using the instructions in [Step3_Testing_Your_Own_Designs](Step3_Testing_Your_Own_Designs.md).
+Once you have this all working you are ready to test your own designs using the instructions in [Step3_Testing_Your_Own_Designs](Step3_Testing_Your_Own_Designs.md).   
+
+IMPORTANT NOTE: if you have installed the tools in your own directory then you will need to make 1 change to the instructions in [Step3_Testing_Your_Own_Designs](Step3_Testing_Your_Own_Designs.md) when testing your own designs.  There, you will be instructed to execute the command:
+```
+export SYMBIFLOW_EXAMPLES_ROOT=/opt/symbiflow
+```
+
+However, you should change that line to 
+```
+export SYMBIFLOW_EXAMPLES_ROOT=$HOME
+```
+
+This will point the system at your installation instead of the global installation.
+
+That's it, now you can move on to [Step3_Testing_Your_Own_Designs](Step3_Testing_Your_Own_Designs.md).
+
+
