@@ -56,8 +56,8 @@ Now you are ready to actually run Symbiflow on your lab files.
 Execute the following commands:
 
 ```
-export SYMBIFLOW_EXAMPLES_ROOT=/opt/symbiflow
-export INSTALL_DIR=$SYMBIFLOW_EXAMPLES_ROOT/opt/symbiflow
+export F4PGA_EXAMPLES_ROOT=/opt/symbiflow
+export INSTALL_DIR=$F4PGA_EXAMPLES_ROOT/opt/f4pga
 FPGA_FAM="xc7"
 export PATH="$INSTALL_DIR/$FPGA_FAM/install/bin:$PATH";
 source "$INSTALL_DIR/$FPGA_FAM/conda/etc/profile.d/conda.sh"
