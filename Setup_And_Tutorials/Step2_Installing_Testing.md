@@ -18,7 +18,7 @@ Copy and paste the following commands into the terminal on one of the digital la
 export SYMBIFLOW_EXAMPLES_ROOT=$HOME
 cd $SYMBIFLOW_EXAMPLES_ROOT
 # Note we are cloning BYUCCL's fork
-git clone https://github.com/byuccl/symbiflow-examples.git
+git clone https://github.com/chipsalliance/f4pga-examples
 cd symbiflow-examples
 
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O conda_installer.sh
