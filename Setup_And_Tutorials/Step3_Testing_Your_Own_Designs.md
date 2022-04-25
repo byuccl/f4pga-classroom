@@ -19,7 +19,7 @@ If you don't get this, check with a TA for help.
 When you get ready to process one of your own designs, there are two ways to proceed.  In either case you need to collect all the files that were a part of your original design and place them into a directory such as `~/220-myusername/Labs/Lab5`.
 
 ### 1.1.1 Using the .xpr File to Help Collect Your Files
-If you still have the .xpr file from your Vivado project (yuou will have it unless you explicitly have deleted it), you can do the following:
+If you still have the .xpr file from your Vivado project (you will have it unless you explicitly have deleted it), you can do the following:
 1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `~/EE220/Lab5` (and inside that directory there would be a `Lab5.xpr` file).  Make note of the entire path to that file as in: `~/EE220/Lab5/Lab5.xpr`.  
 2. Execute the `collectFiles` program like this: 
 ```
