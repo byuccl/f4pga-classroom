@@ -1,6 +1,6 @@
 # Step 2
 
-The default to use the pre-installed F4PGA tools in the digital lab on the Linux machines.  Therefore, you can skip all of the rest of this document and move on to [Step3_Testing_Your_Own_Designs](Step3_Testing_Your_Own_Designs.md).
+The default for students in class is to use the pre-installed F4PGA tools in the digital lab on the Linux machines.  Therefore, you can skip all of the rest of this document and move on to [Step3_Testing_Your_Own_Designs](Step3_Testing_Your_Own_Designs.md).
 
 But, if you have spoken with the Professor and there is a reason for you to install the F4PGA tools in your own account, please continue on with the instructions below...
 
@@ -9,7 +9,7 @@ To use the F4PGA tools you will need to install the toolchain in your own direct
 - It will install into your personal CAEDM space and so will be accessible from any of the 220 Lab computers.
 - The installation will require about 6GB of space in your user space.
 
-To install, go to https://github.com/chipsalliance/f4pga-examples, click on the Docs link, and follow the install instructions.
+To install, go to https://github.com/chipsalliance/f4pga-examples, click on the Docs link (partway down the page), and follow the install instructions.
 
 This will have created two directories in your home directory.  The first is called `opt` and the second is called `f4pga-examples`.  You need not necessarily do anything with them but you need to leave them there - they are the F4PGA tools installation.
 
@@ -20,7 +20,7 @@ You can build it using the following commands:
 
 ```
 export F4PGA_EXAMPLES_ROOT=$HOME
-export INSTALL_DIR=$SYMBIFLOW_EXAMPLES_ROOT/opt/f4pga
+export INSTALL_DIR=$F4PGA_EXAMPLES_ROOT/opt/f4pga
 FPGA_FAM="xc7"
 export PATH="$INSTALL_DIR/$FPGA_FAM/install/bin:$PATH";
 source "$INSTALL_DIR/$FPGA_FAM/conda/etc/profile.d/conda.sh"
@@ -47,7 +47,7 @@ In addition, you should have a .bit file in directory: `$HOME/f4pga-examples/xc7
 
 Congratulations!  You have Symbiflow up and working on your machine.  
 
-If the above did not work, contact a Symbiflow TA for help.  They can get you on the right path immediately.
+If the above did not work, contact a TA for help.  They can get you on the right path immediately.
 
 Once you have this all working you are ready to test your own designs using the instructions in [Step3_Testing_Your_Own_Designs](Step3_Testing_Your_Own_Designs.md).   
 
