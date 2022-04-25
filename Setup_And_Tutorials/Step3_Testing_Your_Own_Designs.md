@@ -75,7 +75,9 @@ In the future any time you want to activate your environment you can then type `
 NOTE: Back in [Step2_Installing_Testing](Step2_Installing_Testing.md) you were given the option to install the tools into your own directory rather than use the system-installed version.  If you did that then you will change the first line above to point to the where you installed the tools rather than `/opt/symbiflow`.
 
 ### 1.2.2 Compile Your Design
-Now you can compile your design by typing `make clean` followed by `make` inside the directory where your design files and your `Makefile` is.
+Now you can compile your design by typing `make clean` followed by `make` inside the directory where your design files and your `Makefile` is.  This will run with the Yosys front end.
+
+To run with the alternate Surelog front end type the following: `SURELOG_CMD="-parse -DSYNTHESIS" make` instead.
 
 Regardless of whether you have any problems at all, please eventually capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
 
