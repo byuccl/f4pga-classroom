@@ -1,4 +1,4 @@
-# Symbiflow-class-testing
+# F4PGA-class-testing
 
 If you got here and are reading this, it means you have successfully created your own repo.  Congrats!!  
 
