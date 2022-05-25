@@ -1,3 +1,5 @@
+# Step 0
+
 # Create SSH Key on Linux and Add To Github
 
 1. Create an SSH key on a Linux workstation by typing: `ssh-keygen` at a terminal.  Hit return a bunch of times until it is done.  It will create the file `~/.ssh/id_rsa.pub`.
