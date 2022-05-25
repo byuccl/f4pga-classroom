@@ -40,8 +40,8 @@ Finally, note that you need not complete all the labs to receive compensation. F
 You will do all your work on the digital lab machines, working out of your own CAEDM home directory.  Since the F4PGA tools have no graphics associated with them, you can work remotely using SSH if you desire.
 
 # To Get Started
-- A getting started session will be held Monday February 14 at 5PM in the Digital Lab. Professor Nelson will walk you through the entire setup process and the F4PGA TAs will be roaming the room to help you get everything set up correctly. This will minimize the time you spend getting everything set up.
-- But, if you cannot attend the January 24 session, you can go to [this page](../Setup_And_Tutorials/Step1_Creating_Repository.md) and follow the instructions there.  
+- A getting started session will be held _TBD_ at _TBD_ in the Digital Lab. _TBD_ will walk you through the entire setup process and the F4PGA TAs will be roaming the room to help you get everything set up correctly. This will minimize the time you spend getting everything set up.
+- But, if you cannot attend the _TBD_ session, you can go to [this page](../Setup_And_Tutorials/Step1_Creating_Repository.md) and follow the instructions there.  
 
 Either way, once you have created your Github repository you will show up in our collection of research participants and we will know you are involved.
 
