@@ -1,4 +1,4 @@
-# F4PGA-class-testing
+# F4PGA-classroom
 
 If you got here and are reading this, it means you have successfully created your own repo.  Congrats!!  
 
