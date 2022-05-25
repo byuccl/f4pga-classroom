@@ -38,14 +38,13 @@ If it all worked, the last part of the terminal text should be something like th
 The entire flow of VPR took 16.4372 seconds.
 FASM extra: top_fasm_extra.fasm
 writing final fasm
-cd /home/nelson/symbiflow-examples/xc7/counter_test/build/basys3 && symbiflow_write_bitstream -d artix7 -f top.fasm -p xc7a35tcpg236-1 -b top.bit
+cd /home/nelson/f4pga-examples/xc7/counter_test/build/basys3 && symbiflow_write_bitstream -d artix7 -f top.fasm -p xc7a35tcpg236-1 -b top.bit
 Writing bitstream ...
-make: Leaving directory '/home/nelson/symbiflow-examples/xc7/counter_test'
 ```
 
 In addition, you should have a .bit file in directory: `$HOME/f4pga-examples/xc7/counter_test/build/basys3/top.bit` which you can use to program your board. It is a simple counter which blinks the right 4 LEDS's (LED[3] will blink at about 1Hz, the 3 to the right of it will be correspondingly faster).
 
-Congratulations!  You have Symbiflow up and working on your machine.  
+Congratulations!  You have F4PGA up and working on your machine.  
 
 If the above did not work, contact a TA for help.  They can get you on the right path immediately.
 

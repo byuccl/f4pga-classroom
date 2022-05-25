@@ -72,7 +72,7 @@ Also, you are going to do this each time you want to work with the F4PGA tools. 
 
 In the future any time you want to activate your environment you can then type `source f4pga.sh` and it will activate the environment and otherwise set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`.  
 
-NOTE: Back in [Step2_Installing_Testing](Step2_Installing_Testing.md) you were given the option to install the tools into your own directory rather than use the system-installed version.  If you did that then you will change the first line above to point to the where you installed the tools rather than `/opt/symbiflow`.
+NOTE: Back in [Step2_Installing_Testing](Step2_Installing_Testing.md) you were given the option to install the tools into your own directory rather than use the system-installed version.  If you did that then you will change the first line above to point to the where you installed the tools rather than `/opt/f4pga`.
 
 ### 1.2.2 Compile Your Design
 Now you can compile your design by typing `make clean` followed by `make` inside the directory where your design files and your `Makefile` is.  This will run with the Yosys front end.
@@ -92,7 +92,7 @@ writing final fasm
 cd /auto/fsa/nelson/220-nelsobe/Labs/Lab5/build/basys3 && symbiflow_write_bitstream -d artix7 -f top.fasm -p xc7a35tcpg236-1 -b top.bit
 Writing bitstream ...
 ```
-There should be a .bit file in `build/basys3` which is the result of the run.  You can download this to the board using the download mechanism you used in class.  For example, if you are using Vivado to download you can just start it up, open the hardware manager, and then download the .bit file after navigating to it.  NOTE: you will not have a Vivado project or anything else from 220 when you do this - you are simply using Vivado as the board programming tool
+There should be a .bit file in `build/basys3` which is the result of the run. F4PGA has a built in download function. It uses a tool called OpenOCD to download the bitstream onto your board. Plug in your board and turn it on, then use the command `make download` to upload the bitstream to the board. 
 
 ### 1.2.4 What About If It Doesn't Work?
 This whole process (compiling with Symbiflow) is not terribly difficult but there are enough steps that it is easy to get one wrong.  
@@ -127,69 +127,3 @@ At this point your lab and results are now up on the web at your Github page.  T
 As you look around, if you find that something is not right, you can always repeat the steps above (re-run, edit your README.md file, re-commit, re-push).  When you do so and refresh your browser you should see the new contents.
 
 That is it!  You have successfully completed one lab.  Hopefully future ones will go more quickly and you will be able to complete all of them in short order.
-
-# 2. An Alternate Way To Program Your Board
-Using Vivado's hardware manager works (and is familiar) and you are free to use it to program the board.  However, a program called `openocd` is installed on the lab Linux machines which is  easier to run (and does not require you to open the Vivado GUI).  You should seriously consider using it instead.
-
-Let's assume that I have just generated a bitstream file called `mydesign.bit` using Symbiflow and that I have put the `mydesign.bit` file into a directory.  To program the board with it I would do the following:
-
-1. Copy these contents into a file called `7series.cfg` and save it:
-```
-interface ftdi
-ftdi_device_desc "Digilent USB Device"
-ftdi_vid_pid 0x0403 0x6010
-# channel 1 does not have any functionality
-ftdi_channel 0
-# just TCK TDI TDO TMS, no reset
-ftdi_layout_init 0x0088 0x008b
-reset_config none
-adapter_khz 10000
-
-source [find cpld/xilinx-xc7.cfg]
-source [find cpld/jtagspi.cfg]
-init
-
-puts [irscan xc7.tap 0x09]
-
-set xc7a35t "0362D093"
-set xc7a100t "13631093"
-set code [drscan xc7.tap 32 0]  
-puts $code
-
-if { $code == $xc7a35t} {
-    puts "The board has an xc7a35t"
-}
-
-if { $code == $xc7a100t} {
-    puts "The board has an xc7a100t"
-}
-
-puts "Programming..."
-pld load 0 top.bit
-exit
-```
-
-2. Edit the next-to-last line to reflect the actual name of the .bit file you want to program to the board.
-
-3. Execute the following from the command line in Linux:
-```
-openocd -f 7series.cfg
-```
-
-This will program the board with the .bit file mentioned on the next-to-last line.  If it works, you will see something like this on your terminal screen:
-```
-Open On-Chip Debugger 0.10.0
-Licensed under GNU GPL v2
-For bug reports, read
-	http://openocd.org/doc/doxygen/bugs.html
-none separate
-adapter speed: 10000 kHz
-Info : auto-selecting first available session transport "jtag". To override use 'transport select <transport>'.
-Info : ftdi: if you experience problems at higher adapter clocks, try the command "ftdi_tdo_sample_edge falling"
-Info : clock speed 10000 kHz
-Info : JTAG tap: xc7.tap tap/device found: 0x0362d093 (mfg: 0x049 (Xilinx), part: 0x362d, ver: 0x0)
-```
-You will then see output stating that it programmed the board successfully.
-
-That's it - it is that simple (way easier than firing up Vivado and you can do it all with the command line).
-
