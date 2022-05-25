@@ -39,7 +39,7 @@ If you don't have your .xpr file, you will need to find the needed project files
 - Your .xdc file
 - A copy of the Makefile in `~/220-myusername/Setup_And_Tutorials/bin/Makefile`
 
-So, (a) create a specific directory for the lab (like `~/220-myusername/Labs/Lab5`) and (b) find those and copy all the above files into that directory.  NOTE: they cannot be inside subdirectories - they all need to be together in that directory for Symbiflow to find them.
+So, (a) create a specific directory for the lab (like `~/220-myusername/Labs/Lab5`) and (b) find those and copy all the above files into that directory.  NOTE: they cannot be inside subdirectories - they all need to be together in that directory for F4PGA to find them.
 
 ### 1.1.3 Editing Your Makefile
 Now, go to your lab directory (`cd ~/220-myusername/Labs/Lab5`) and take a minute to check to convince yourself that all the files you need are there.  Also, look to see if any testbench files (the ones provided by the professor to help test your circuit) are there.  If there are testbench files, delete them now using `rm`.
@@ -49,8 +49,8 @@ There is a variable called TOP in the Makefile which defines the name of your to
 
 Also note that there is a variable called XDC which defines the name of your .xdc **file** - change that to match your XDC file name.
 
-## 1.2 Running Symbiflow On Your Lab Files
-Now you are ready to actually run Symbiflow on your lab files.
+## 1.2 Running F4PGA On Your Lab Files
+Now you are ready to actually run F4PGA on your lab files.
 
 ### 1.2.1 Activate Your Environment
 Execute the following commands:
@@ -95,16 +95,16 @@ Writing bitstream ...
 There should be a .bit file in `build/basys3` which is the result of the run. F4PGA has a built in download function. It uses a tool called OpenOCD to download the bitstream onto your board. Plug in your board and turn it on, then use the command `make download` to upload the bitstream to the board. 
 
 ### 1.2.4 What About If It Doesn't Work?
-This whole process (compiling with Symbiflow) is not terribly difficult but there are enough steps that it is easy to get one wrong.  
+This whole process (compiling with F4PGA) is not terribly difficult but there are enough steps that it is easy to get one wrong.  
 
 If you get error messages, they might be a bit cryptic (no surprise).  
 
 We are maintaining a [work-arounds and answers page](../WorkArounds.md) which may contain things you need to do to get the tools to run on your design.   
-Go read the work-arounds page mentioned above right now.  For example: if your design uses a clock, chances are that your `.xdc` file needs to be modified before Symbiflow will like it.
+Go read the work-arounds page mentioned above right now.  For example: if your design uses a clock, chances are that your `.xdc` file needs to be modified before F4PGA will like it.
 
-If you still have problems, make an appointment with a Symbiflow TA and talk through what has happened.  If the TA can help you and you get a good run with a working .bit file then great!  Even so, in the little writeup you do (see below) we would like to know what went wrong, even if it was your mistake.  Maybe we can fix the documentation to make it more clear.  Or, maybe there was a real problem and you had to tinker with your design to get it to work.  Either way we would like to know!
+If you still have problems, make an appointment with a F4PGA TA and talk through what has happened.  If the TA can help you and you get a good run with a working .bit file then great!  Even so, in the little writeup you do (see below) we would like to know what went wrong, even if it was your mistake.  Maybe we can fix the documentation to make it more clear.  Or, maybe there was a real problem and you had to tinker with your design to get it to work.  Either way we would like to know!
 
-NOTE: we DO NOT expect you to be making changes to your design to make it work.  If it is legal SystemVerilog and fails in Symbiflow that is sufficient information to provide us.  But, if the error message gives you a hint of what might be wrong and you fix it and it works, that would be great feedback for you to provide.  Just realize that is not the expectation.
+NOTE: we DO NOT expect you to be making changes to your design to make it work.  If it is legal SystemVerilog and fails in F4PGA that is sufficient information to provide us.  But, if the error message gives you a hint of what might be wrong and you fix it and it works, that would be great feedback for you to provide.  Just realize that is not the expectation.
 
 ## 1.3 A Micro-Tutorial on `make`
 The `Makefile` you edited above is part of a build system that knows about the dependencies between your source files and the final .bit file.  Every time you change one of your source files and type `make` it realizes that the "recipe" for your .bit file needs to be re-run because one of the ingredients has changed.  So, what happens if you run `make` and it succeeds in making a .bit file and then you want to run it from scratch again (to capture the output to a log file, for example)?   If you type `make` again it will says that everything is up to date and the recipe doesn't need to be re-run.  
