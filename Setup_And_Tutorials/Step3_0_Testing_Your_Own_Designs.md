@@ -1,5 +1,7 @@
 # Step 3
 
+NOTE: There are two possible ways to test your own designs. The first is to manually use the F4PGA tools. To do so, continue following along with this document. Alternatively, you can automate several of the steps below by running the `f4pga_student.py` script. To do so, go [here](https://github.com/byuccl/f4pga-classroom/blob/dev/Setup_And_Tutorials/Step3_1_Testing_With_Script.md).
+
 # 1. Testing Your Own Designs
 As you test your own designs you are going to need to run a program called `collectFiles` which is in your Linux repo (in the directory `~/220-myusername/Setup_And_Tutorials/bin`).  It will be easiest to use this program if you can run it without having to specify the whole path every time you run it.  To add it to your Linux search path (so you can run it without typing its name), edit the file `~/.bashrc` and add this line to the bottom:
 ```
@@ -43,6 +45,8 @@ So, (a) create a specific directory for the lab (like `~/220-myusername/Labs/Lab
 
 ### 1.1.3 Editing Your Makefile
 Now, go to your lab directory (`cd ~/220-myusername/Labs/Lab5`) and take a minute to check to convince yourself that all the files you need are there.  Also, look to see if any testbench files (the ones provided by the professor to help test your circuit) are there.  If there are testbench files, delete them now using `rm`.
+
+  ex: `rm ~/220-myusername/Labs/Lab7/tb_sevensegment.v`
 
 Now open up the file there called `Makefile` and edit it.
 There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.  NOTE: this is NOT a file name, it is the name of the top level ***module*** in your design hierarchy. There should be no .sv or .v extensions on the top module name.
