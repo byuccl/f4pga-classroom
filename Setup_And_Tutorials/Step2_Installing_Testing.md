@@ -4,7 +4,7 @@ The default for students in class is to use the pre-installed F4PGA tools in the
 
 But, if you have spoken with the Professor and there is a reason for you to install the F4PGA tools in your own account, please continue on with the instructions below...
 
-# 1. F4PGA Installation/Testing Instructions 
+# 1. F4PGA Installation/Testing Instructions for Personal Machines
 To use the F4PGA tools you will need to install the toolchain in your own directory.  
 - It will install into your personal CAEDM space and so will be accessible from any of the 220 Lab computers.
 - The installation will require about 6GB of space in your user space.
