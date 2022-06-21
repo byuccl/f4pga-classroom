@@ -93,7 +93,7 @@ NOTE: If your board isn't plugged in and on when you run this, it won't download
 This script accepts different command line arguments allowing you to do things piecemeal. 
 
 `--git`/`-g` : If you run this command it will only do a `git add`, `git commit` and a `git push`  
-`--download`/`-d` : If you run this command it will only download it to the board, it will recompile if any element has been changed since the last   compilation  
+`--download`/`-d` : If you run this command it will only download the bitstream to the board and will recompile any element that has been changed since the last compilation  
 `--ignore`/`-i` : Warnings about the Conda environment and about missing files will be ignored.   
 `--readme`/`-r` : This will only ask you the questions to create a `Readme.md`  
 
