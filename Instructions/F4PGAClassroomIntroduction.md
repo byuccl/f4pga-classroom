@@ -12,7 +12,7 @@ To help you do this we have hired students to serve as *F4PGA TAs* this semester
 In short, if you choose to participate your tasks will be the following:
 1. For each lab you complete and pass off in 220, you will re-compile your designs using the open source F4PGA tools.
 2. If the compilation is successful, you will test the resulting .bit file on your FPGA board and report the results of the testing.
-3. If the compilation is not successful, you will confer with a F4PGA TA to confirm that the compilation failure was not the result of your own error in installing or running the F4PGA tools.  Once that is confirmed and if your design still cannot be processed by F4PGA, you will then document the failure reported by the tools.
+3. If the compilation is not successful, you will confer with a F4PGA TA to confirm that the compilation failure was not the result of your own error  running the F4PGA tools.  Once that is confirmed and if your design still cannot be processed by F4PGA, you will then document the failure reported by the tools.
 
 In all of this you must consent to have the F4PGA TAs collect your design files, compilation log files, and your short description of success/failure for use in our identifying issues with the F4PGA tools.
 
@@ -26,14 +26,14 @@ As compensation for your participation in this research study you will be provid
 
 The compensation plan is the following:
 - You will receive $25 for each lab assignment you run through the tools (the specific labs you will be asked to run through the tools will be specified and do not include every single lab in your class).
-- If you complete at least 3 labs, you will receive an extra $25 to compensate you for your time installing the tools at the outset.
+- If you complete at least 3 labs, you will receive an extra $25 to compensate you for your time setting up the tools at the outset.
 - If you complete 6 labs, you will receive an extra $25 bonus.
 - If you have been doing the math, the total compensation you can receive for your participation is $200.
 
 # Due Dates
 To receive credit there will be a due date attached to each lab. These due dates will be communicated to you but will typically be a week after the due date that you were supposed to pass it off for your normal class activities (but the first few will be delayed to give you time to get set up).  Having such a schedule will allow the F4PGA TAs to gather the results lab-by-lab rather than having all of the results dumped on them at the end of the semester.
 
-Finally, note that you need not complete all the labs to receive compensation. For example, if you complete the installation and 4 of the labs you would receive $125.
+Finally, note that you need not complete all the labs to receive compensation. For example, 4 of the labs you would receive $125.
 
 # Work Environment
 You will do all your work on the digital lab machines, working out of your own CAEDM home directory.  Since the F4PGA tools have no graphics associated with them, you can work remotely using SSH if you desire.
