@@ -45,9 +45,9 @@ So, (a) create a specific directory for the lab (like `~/220-myusername/Labs/Lab
 Now, go to your lab directory (`cd ~/220-myusername/Labs/Lab5`) and take a minute to check to convince yourself that all the files you need are there.  Also, look to see if any testbench files (the ones provided by the professor to help test your circuit) are there.  If there are testbench files, delete them now using `rm`.
 
 Now open up the file there called `Makefile` and edit it.
-There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.  NOTE: this is NOT a file name, it is the name of the top level ***module*** in your design hierarchy.
+There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.  NOTE: this is NOT a file name, it is the name of the top level ***module*** in your design hierarchy. There should be no .sv or .v extensions on the top module name.
 
-Also note that there is a variable called XDC which defines the name of your .xdc **file** - change that to match your XDC file name.
+Also note that there is a variable called XDC which defines the name of your .xdc **file** - we have this set up to accept any name for the .xdc file. If for some reason it is not working, ask a TA for help.
 
 ## 1.2 Running F4PGA On Your Lab Files
 Now you are ready to actually run F4PGA on your lab files.
@@ -70,7 +70,7 @@ This will set up your environment needed to run the tools.  You need only do thi
 
 Also, you are going to do this each time you want to work with the F4PGA tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) open a text editor and paste them into it, (3) save the with a name such as `f4pga.sh`.  
 
-In the future any time you want to activate your environment you can then type `source f4pga.sh` and it will activate the environment and otherwise set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`.  
+In the future any time you want to activate your environment you can then type `source f4pga.sh` and it will activate the environment and otherwise set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`. If this confused you ask a TA for help setting up your `f4pga.sh` environment. 
 
 NOTE: Back in [Step2_Installing_Testing](Step2_Installing_Testing.md) you were given the option to install the tools into your own directory rather than use the system-installed version.  If you did that then you will change the first line above to point to the where you installed the tools rather than `/opt/f4pga`.
 
@@ -104,7 +104,7 @@ Go read the work-arounds page mentioned above right now.  For example: if your d
 
 If you still have problems, make an appointment with a F4PGA TA and talk through what has happened.  If the TA can help you and you get a good run with a working .bit file then great!  Even so, in the little writeup you do (see below) we would like to know what went wrong, even if it was your mistake.  Maybe we can fix the documentation to make it more clear.  Or, maybe there was a real problem and you had to tinker with your design to get it to work.  Either way we would like to know!
 
-NOTE: we DO NOT expect you to be making changes to your design to make it work.  If it is legal SystemVerilog and fails in F4PGA that is sufficient information to provide us.  But, if the error message gives you a hint of what might be wrong and you fix it and it works, that would be great feedback for you to provide.  Just realize that is not the expectation.
+NOTE: We DO NOT expect you to be making changes to your design to make it work.  If it is legal SystemVerilog and fails in F4PGA that is sufficient information to provide us.  But, if the error message gives you a hint of what might be wrong and you fix it and it works, that would be great feedback for you to provide.  Just realize that is not the expectation.
 
 ## 1.3 A Micro-Tutorial on `make`
 The `Makefile` you edited above is part of a build system that knows about the dependencies between your source files and the final .bit file.  Every time you change one of your source files and type `make` it realizes that the "recipe" for your .bit file needs to be re-run because one of the ingredients has changed.  So, what happens if you run `make` and it succeeds in making a .bit file and then you want to run it from scratch again (to capture the output to a log file, for example)?   If you type `make` again it will says that everything is up to date and the recipe doesn't need to be re-run.  
@@ -115,7 +115,7 @@ To remove the previous build results so you can force a re-run you can type `mak
 1. Regardless of whether the compilation gave errors, we want you to capture the output of the compilation using `make >& compile.log`.  You should do a `make clean` first to remove the previous results so when you re-run using `make >& compile.log` it will do the full compile process.  Otherwise, you will simply get a message that everything was up to date - not very useful.
 2. After you have captured a `compile.log` file, next create a file in your project directory called `README.md`.  This is where you will report your design's success or failure.  To do so, copy the contents of the file `TemplateREADME.md` file in your own repo and use them as the starting point for this `README.md` file.  
 3. Fill out this file as your 'report'.
-4. Finally, save the `README.md`. 
+4. Finally, save the `README.md`.
 
 ## 1.5 Pushing Your Results Back Up to Github
 1. Now, you need to tell git that you have a new directory of files that should be a part of the repository.  So, type: `git add ~/220-myusername/Labs/Lab4`, filling in the real directory name.  This will tell git that you want this directory's contents to be a part of the repository.
