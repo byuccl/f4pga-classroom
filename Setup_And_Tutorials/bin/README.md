@@ -28,7 +28,7 @@ As you test your own designs you are going to need to run a program called `coll
 
 You may also need to go into that directory and make sure the file is executable by doing this: `chmod u+x collectFiles.`
 
-Now, kill your command line and restart a new one. You can tell if this worked when, if you type: `collectFiles` you get a usage message in return, telling you want command line arguments to provide:
+Now, kill your command line and restart a new one. You can tell if this worked when, if you type: `collectFiles` you get a usage message in return, telling you what command line arguments to provide:
 
 `usage: collectFiles [-h] [--verbose] xprFile destinationDirectory`  
 `collectFiles: error: the following arguments are required: xprFile, destinationDirectory`
@@ -47,8 +47,7 @@ If you still have the .xpr file from your Vivado project (you will have it unles
 
 Note that `~` is shorthand for your home directory.
 
-The first argument when you run the program is the `.xpr` file you identified above.  The second argument is the directory name in your 220-myusername Labs directory where
-you want the files copied to.   This will be the directory where you eventually compile and test your designs.
+The first argument when you run the program is the `.xpr` file you identified above.  The second argument is the directory name in your 220-myusername Labs directory where you want the files copied to. This will be the directory where you eventually compile and test your designs.
 
 The script will then collect your design and XDC files as specified in the `.xpr` file and copy them into the directory it just created.
 It will also create a `Makefile` there for you.  Note: if the destination directory exists it will fail and tell you to delete the destination directory and try again.
