@@ -1,6 +1,6 @@
 # Step 3
 
-NOTE: There are two possible ways to test your own designs. The first is to manually use the F4PGA tools. To do so, continue following along with this document. Alternatively, you can automate several of the steps below by running the `f4pga_student.py` script. To do so, go [here](https://github.com/byuccl/f4pga-classroom/blob/dev/Setup_And_Tutorials/Step3_1_Testing_With_Script.md).
+NOTE: There are two possible ways to test your own designs. The first is to manually use the F4PGA tools. To do so, continue following along with this document. Alternatively, you can automate several of the steps below by running the `f4pga_student.py` script. To do so, go [here](https://github.com/byuccl/f4pga-classroom/blob/dev/Setup_And_Tutorials/Step3_1_Testing_With_Script.md). You should complete the manual method at least once so that you understand what is happening while the `f4pga_student.py` script is running.
 
 # 1. Testing Your Own Designs
 As you test your own designs you are going to need to run a program called `collectFiles` which is in your Linux repo (in the directory `~/220-myusername/Setup_And_Tutorials/bin`).  It will be easiest to use this program if you can run it without having to specify the whole path every time you run it.  To add it to your Linux search path (so you can run it without typing its name), edit the file `~/.bashrc` and add this line to the bottom:
