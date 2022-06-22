@@ -1,2 +1,4 @@
 *.json
 *.ilang
+**/build
+**/.vscode
