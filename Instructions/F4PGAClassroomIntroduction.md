@@ -5,9 +5,9 @@ At this point, a complete FPGA design flow that goes from Verilog/SystemVerilog 
 
 As a part of our work we have obtained student funding for us to solicit student designs to be run through the design tool flow to test it on a variety of outside designs.  
 
-We are thus soliciting students in our ECEn 220 course this semester to consider joining the project as research participants.  We want to make it clear that (a) this it NOT an official part of your enrollment in either of these classes, (b) that your participation is strictly voluntary, and (c) that your participation (or lack thereof) will not affect your grade or standing in the class in any way.  However, we are paying students who decide to participate in the project (see compensation below).
+We are thus soliciting students in our ECEN 220 course this semester to consider joining the project as research participants.  We want to make it clear that (a) this it NOT an official part of your enrollment in either of these classes, (b) that your participation is strictly voluntary, and (c) that your participation (or lack thereof) will not affect your grade or standing in the class in any way.  However, we are paying students who decide to participate in the project (see compensation below).
 
-To help you do this we have hired students to serve as *F4PGA TAs* this semester.  They will be available essentially any time to help you as you run your class designs through the F4PGA tools.
+To help you do this we have hired students to serve as F4PGA TAs this semester.  They will be available essentially any time to help you as you run your class designs through the F4PGA tools.
 
 In short, if you choose to participate your tasks will be the following:
 1. For each lab you complete and pass off in 220, you will re-compile your designs using the open source F4PGA tools.
@@ -40,7 +40,7 @@ You will do all your work on the digital lab machines, working out of your own C
 
 # To Get Started
 - A getting started session will be held on September 26 at 5pm in the Digital Lab. Professor Wirthlin will walk you through the entire setup process and the F4PGA TAs will be roaming the room to help you get everything set up correctly. This will minimize the time you spend getting everything set up.
-- But, if you cannot attend the _TBD_ session, you can go to [this page](../Setup_And_Tutorials/Step1_Creating_Repository.md) and follow the instructions there.  
+- But, if you cannot attend the September 26 session, you can go to [this page](../Setup_And_Tutorials/Step1_Creating_Repository.md) and follow the instructions there.  
 
 Either way, once you have created your Github repository you will show up in our collection of research participants and we will know you are involved.
 
