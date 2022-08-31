@@ -3,10 +3,9 @@
 # Step 1
 
 # 1. Preparation to Start Setting Up
-Before getting started, please do these 2 things:
+Before getting started, please do the following:
 
-1. You should print this page of instructions or bookmark it so you have a reference to it as you work through the setup process.
-2. You should go join Slack as directed near the bottom of the [Program Introduction page](https://github.com/byuccl/f4pga-classroom/blob/dev/Instructions/F4PGAClassroomIntroduction.md).
+ - You should print this page of instructions or bookmark it so you have a reference to it as you work through the setup process.
 
 # 2. Overview
 This semester as you test your designs using the F4PGA tools you are going to be doing that in a `git` repository on your Linux machine.  Thus, you will be learning about git during the semester.  However, that local repository will be tied to one at https://github.com.   This is shown in this figure:
