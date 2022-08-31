@@ -44,10 +44,3 @@ You will do all your work on the digital lab machines, working out of your own C
 
 Either way, once you have created your Github repository you will show up in our collection of research participants and we will know you are involved.
 
-# Getting Help and Staying in Touch - Please Join Slack Workspace NOW!
-The F4PGA TAs will be available in person and via zoom to answer questions and/or meet with you in the lab to help. But, the best way to get help from them is to use the Slack Workspace we have set up for this. To join the slack workspace click this link: https://join.slack.com/t/symbiflow-classroom/shared_invite/zt-11tul5h0m-eMf62qHBJyqZLkyjursWPQ. Once you are in, join the 220 channel.
-
-We anticipate some amount of communicaton with you as the semester progresses. Therefore, you MUST closely follow the Slack channel during the semester so we can feed you needed information as the semester progresses. Otherwise, you may waste a lot of time making the same mistakes we have documented on the Slack channel.
-
-We strongly suggest downloading the Slack app to recieve notification and updates about the project, though it is possible to just use Slack through a web browser.
-
