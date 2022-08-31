@@ -71,4 +71,4 @@ That is it - you are doing setting up your repo.
 
 # 4. Continuing On
 
-The next step is to install the F4PGA tools.  To do so, go to the main page of your new repository at Github (https://github.com/BYU-Symbiflow-Classrooms/220-myusername) and read the instructions there under the link: *Step2_Installing_Testing*
+The next step is to install the F4PGA tools.  To do so, go to the main page of your new repository at Github (https://github.com/BYU-Symbiflow-Classrooms/220-myusername) and read the instructions there under the link: *Step3_Testing_Your_Own_Designs*
