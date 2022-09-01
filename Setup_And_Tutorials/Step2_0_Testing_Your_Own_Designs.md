@@ -118,16 +118,16 @@ To remove the previous build results so you can force a re-run you can type `mak
 
 ## 1.4 Documenting the Results of Your Tests
 1. Regardless of whether the compilation gave errors, we want you to capture the output of the compilation using `make >& compile.log`.  You should do a `make clean` first to remove the previous results so when you re-run using `make >& compile.log` it will do the full compile process.  Otherwise, you will simply get a message that everything was up to date - not very useful.
-2. After you have captured a `compile.log` file, next create a file in your project directory called `README.md`.  This is where you will report your design's success or failure.  To do so, copy the contents of the file `TemplateREADME.md` file in your own repo and use them as the starting point for this `README.md` file.  
-3. Fill out this file as your 'report'.
-4. Finally, save the `README.md`.
+2. After you have captured a `compile.log` file, next create a file in your project directory called `README.md`.  This is where you will report your design's success or failure. We have created a script to ensure that your `Readme.md` is correct.
+3. Use the command `python3 ../../bin/readme.py` to run the script and fill out the prompts. Make sure you are in the correct Lab folder. (e.g `Lab5`)
+4. Open the `Readme.md` the script generated and make any corrections as needed.
 
 ## 1.5 Pushing Your Results Back Up to Github
 1. Now, you need to tell git that you have a new directory of files that should be a part of the repository.  So, type: `git add ~/220-myusername/Labs/Lab4`, filling in the real directory name.  This will tell git that you want this directory's contents to be a part of the repository.
 2. Next, formally commit those files to git by typing: `git commit -am "Put a message here telling what you did for this commit"`.  Now, your project files are a part of git.   The message you include can be as simple as "Committing files for my Lab4" or "Re-committing files for my Lab4 because I did it wrong first try".
 3. Finally, push these new files up to Github by typing: `git push`.
 
-At this point your lab and results are now up on the web at your Github page.  To be sure, go there in a web browser (you need to go clear back to where you created your repo to get the address).  Click around and look at things.  If you click a directory such as `Lab3`, your README.md file contents will be the documentation that shows in the web browser.  Pretty slick.
+At this point your lab and results are now up on the web at your Github page.  To be sure, go there in a web browser (you need to go clear back to where you created your repo to get the address).  Click around and look at things.  If you click a directory such as `Lab3`, your `README.md` file contents will be the documentation that shows in the web browser.  Pretty slick.
 
 As you look around, if you find that something is not right, you can always repeat the steps above (re-run, edit your README.md file, re-commit, re-push).  When you do so and refresh your browser you should see the new contents.
 
