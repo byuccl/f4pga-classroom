@@ -72,7 +72,7 @@ NOTE: Back in [Step2_Installing_Testing](Step2_Installing_Testing.md) you were g
 
 ## 2 Using f4pga_student.py
 
-To make your life easier, we have written a python script to allow you think less.
+To make your life easier, we have written a python script to allow you to think less.
 This script is contained in the `bin` folder.
 
 After you have collected all your files and activated your environmen, in the commmand line go to the Lab you have prepared. Make sure it is named`Lab#` for example, `Lab8`. 
