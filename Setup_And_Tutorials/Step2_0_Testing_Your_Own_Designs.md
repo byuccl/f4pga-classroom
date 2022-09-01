@@ -1,4 +1,4 @@
-# Step 3
+# Step 2
 
 NOTE: There are two possible ways to test your own designs. The first is to manually use the F4PGA tools. To do so, continue following along with this document. Alternatively, you can automate several of the steps below by running the `f4pga_student.py` script. To do so, go [here](https://github.com/byuccl/f4pga-classroom/blob/dev/Setup_And_Tutorials/Step3_1_Testing_With_Script.md). You are expected to follow the manual method for the first lab so that you understand what is happening while the `f4pga_student.py` script is running.
 
