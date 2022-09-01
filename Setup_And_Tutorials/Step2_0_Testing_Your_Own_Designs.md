@@ -48,7 +48,7 @@ Now, go to your lab directory (`cd ~/220-myusername/Labs/Lab5`) and take a minut
 
   ex: `rm ~/220-myusername/Labs/Lab7/tb_sevensegment.v`
 
-Now open up the file there called `Makefile` and edit it.
+Now open up the file there called `Makefile` and edit it. You can use `code Makefile` to open up VS Code Editor.
 There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.  NOTE: this is NOT a file name, it is the name of the top level ***module*** in your design hierarchy. There should be no .sv or .v extensions on the top module name.
 
 Also note that there is a variable called XDC which defines the name of your .xdc **file** - we have this set up to accept any name for the .xdc file. If for some reason it is not working, ask a TA for help.
@@ -81,8 +81,13 @@ Now you can compile your design by typing `make clean` followed by `SURELOG_CMD=
 
 Regardless of whether you have any problems at all, please eventually capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
 
+The most common error is `make: *** No targets specified and no makefile found.  Stop.`
+This simply means that your cwd (current working directory) does not contain a `Makefile`. 
+Either us `cd` to navigate to the correct folder or create a `Makefile`.
+
+
 ### 1.2.3 What If It Works?
-If the tool runs successfully, here is what you will see for the last few lines of output:
+If the tool runs successfully, after a few minutes and lots of text, here is what you will see for the last few lines of output:
 ```
 ...
 Writing Implementation FASM: top.fasm
@@ -92,12 +97,12 @@ writing final fasm
 cd /auto/fsa/nelson/220-nelsobe/Labs/Lab5/build/basys3 && symbiflow_write_bitstream -d artix7 -f top.fasm -p xc7a35tcpg236-1 -b top.bit
 Writing bitstream ...
 ```
-There should be a .bit file in `build/basys3` which is the result of the run. F4PGA has a built in download function. It uses a tool called OpenOCD to download the bitstream onto your board. Plug in your board and turn it on, then use the command `make download` to upload the bitstream to the board. 
+There should be a .bit file in `build/basys3` which is the result of the run. F4PGA has a built in download function. It uses a tool called OpenOCD to download the bitstream onto your board. Plug in your board and turn it on, then use the command `openFPGALoader -b basys3 /build/basys3/*.bit` to upload the bitstream to the board. 
 
 ### 1.2.4 What About If It Doesn't Work?
 This whole process (compiling with F4PGA) is not terribly difficult but there are enough steps that it is easy to get one wrong.  
 
-If you get error messages, they might be a bit cryptic (no surprise).  
+If you get error messages, they might be a bit cryptic (no surprise). They are often surrouned by lots of fluff so it can be hard to find the real error message. 
 
 We are maintaining a [work-arounds and answers page](../WorkArounds.md) which may contain things you need to do to get the tools to run on your design.   
 Go read the work-arounds page mentioned above right now.  For example: if your design uses a clock, chances are that your `.xdc` file needs to be modified before F4PGA will like it.
