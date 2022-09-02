@@ -8,8 +8,7 @@ Before continuing on, tell us who you are by adding your information to the 3 li
 - My email address is: 
 - My BYU netid is: 
 
-Then, move on to the [second step](Setup_And_Tutorials/Step2_Installing_Testing.md) below to install the tools and do an initial test.
-
+After editing, make sure to hit the green box `Commit Changes` to save your edits.
 Once that is done you can move on to the third step and start testing your class designs.
 
 1. Your first step is to create an SSH Key for Github.
