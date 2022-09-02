@@ -8,8 +8,10 @@ Before continuing on, tell us who you are by adding your information to the 3 li
 - My email address is: 
 - My BYU netid is: 
 
-After editing, make sure to hit the green box `Commit Changes` to save your edits.
-Once that is done you can move on to the third step and start testing your class designs.
+After editing, make sure to hit the green box `Commit Changes` to save your edits.  
+
+Once that is done you can move on to the next step and start testing your class designs.  
+Make sure that you have followed each of the steps below.
 
 1. Your first step is to create an SSH Key for Github.
 
