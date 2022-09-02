@@ -8,7 +8,7 @@ Before continuing on, tell us who you are by adding your information to the 3 li
 - My email address is: 
 - My BYU netid is: 
 
-Then, move on to the second step (*Step2_Installing_Testing*) below to install the tools and do an initial test.
+Then, move on to the [second step](Setup_And_Tutorials/Step2_Installing_Testing.md) below to install the tools and do an initial test.
 
 Once that is done you can move on to the third step and start testing your class designs.
 
