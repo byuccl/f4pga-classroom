@@ -1,5 +1,5 @@
 # Updating Your Repos
-When you created your repository in the first place you copied content from https://github.com/byuccl/f4pga-class-testing.  From time to time the content may get changed to provide you new information, or to update the workarounds page.  This page tells you how to do this.   NOTE: you only need to do this when instructed to do so.
+When you created your repository in the first place you cloned content from https://github.com/byuccl/f4pga-class-testing.  From time to time the content may get changed to provide you new information, or to update the workarounds page.  This page tells you how to do this.   NOTE: you only need to do this when instructed to do so.
 
 ## Updating Your Own Repository
 
