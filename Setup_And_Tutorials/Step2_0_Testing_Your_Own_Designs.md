@@ -1,4 +1,6 @@
-# Step 3
+# Step 2
+
+NOTE: There are two possible ways to test your own designs. The first is to manually use the F4PGA tools. To do so, continue following along with this document. Alternatively, you can automate several of the steps below by running the `f4pga_student.py` script. To do so, go [here](https://github.com/byuccl/f4pga-classroom/blob/dev/Setup_And_Tutorials/Step3_1_Testing_With_Script.md). You are expected to follow the manual method for the first lab so that you understand what is happening while the `f4pga_student.py` script is running.
 
 # 1. Testing Your Own Designs
 As you test your own designs you are going to need to run a program called `collectFiles` which is in your Linux repo (in the directory `~/220-myusername/Setup_And_Tutorials/bin`).  It will be easiest to use this program if you can run it without having to specify the whole path every time you run it.  To add it to your Linux search path (so you can run it without typing its name), edit the file `~/.bashrc` and add this line to the bottom:
@@ -39,18 +41,20 @@ If you don't have your .xpr file, you will need to find the needed project files
 - Your .xdc file
 - A copy of the Makefile in `~/220-myusername/Setup_And_Tutorials/bin/Makefile`
 
-So, (a) create a specific directory for the lab (like `~/220-myusername/Labs/Lab5`) and (b) find those and copy all the above files into that directory.  NOTE: they cannot be inside subdirectories - they all need to be together in that directory for Symbiflow to find them.
+So, (a) create a specific directory for the lab (like `~/220-myusername/Labs/Lab5`) and (b) find those and copy all the above files into that directory.  NOTE: they cannot be inside subdirectories - they all need to be together in that directory for F4PGA to find them.
 
 ### 1.1.3 Editing Your Makefile
 Now, go to your lab directory (`cd ~/220-myusername/Labs/Lab5`) and take a minute to check to convince yourself that all the files you need are there.  Also, look to see if any testbench files (the ones provided by the professor to help test your circuit) are there.  If there are testbench files, delete them now using `rm`.
 
-Now open up the file there called `Makefile` and edit it.
-There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.  NOTE: this is NOT a file name, it is the name of the top level ***module*** in your design hierarchy.
+  ex: `rm ~/220-myusername/Labs/Lab7/tb_sevensegment.v`
 
-Also note that there is a variable called XDC which defines the name of your .xdc **file** - change that to match your XDC file name.
+Now open up the file there called `Makefile` and edit it. You can use `code Makefile` to open up VS Code Editor.
+There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.  NOTE: this is NOT a file name, it is the name of the top level ***module*** in your design hierarchy. There should be no .sv or .v extensions on the top module name.
 
-## 1.2 Running Symbiflow On Your Lab Files
-Now you are ready to actually run Symbiflow on your lab files.
+Also note that there is a variable called XDC which defines the name of your .xdc **file** - we have this set up to accept any name for the .xdc file. If for some reason it is not working, ask a TA for help.
+
+## 1.2 Running F4PGA On Your Lab Files
+Now you are ready to actually run F4PGA on your lab files.
 
 ### 1.2.1 Activate Your Environment
 Execute the following commands:
@@ -70,19 +74,20 @@ This will set up your environment needed to run the tools.  You need only do thi
 
 Also, you are going to do this each time you want to work with the F4PGA tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) open a text editor and paste them into it, (3) save the with a name such as `f4pga.sh`.  
 
-In the future any time you want to activate your environment you can then type `source f4pga.sh` and it will activate the environment and otherwise set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`.  
-
-NOTE: Back in [Step2_Installing_Testing](Step2_Installing_Testing.md) you were given the option to install the tools into your own directory rather than use the system-installed version.  If you did that then you will change the first line above to point to the where you installed the tools rather than `/opt/f4pga`.
+In the future any time you want to activate your environment you can then type `source f4pga.sh` and it will activate the environment and otherwise set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`. If this confused you ask a TA for help setting up your `f4pga.sh` environment. 
 
 ### 1.2.2 Compile Your Design
-Now you can compile your design by typing `make clean` followed by `make` inside the directory where your design files and your `Makefile` is.  This will run with the Yosys front end.
-
-To run with the alternate Surelog front end, type the following: `SURELOG_CMD="-parse -DSYNTHESIS" make` instead.
+Now you can compile your design by typing `make clean` followed by `SURELOG_CMD="-parse -DSYNTHESIS" make` inside the directory where your design files and your `Makefile` is.  This will run with the Yosys front end.
 
 Regardless of whether you have any problems at all, please eventually capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
 
+The most common error is `make: *** No targets specified and no makefile found.  Stop.`
+This simply means that your cwd (current working directory) does not contain a `Makefile`. 
+Either us `cd` to navigate to the correct folder or create a `Makefile`.
+
+
 ### 1.2.3 What If It Works?
-If the tool runs successfully, here is what you will see for the last few lines of output:
+If the tool runs successfully, after a few minutes and lots of text, here is what you will see for the last few lines of output:
 ```
 ...
 Writing Implementation FASM: top.fasm
@@ -92,19 +97,19 @@ writing final fasm
 cd /auto/fsa/nelson/220-nelsobe/Labs/Lab5/build/basys3 && symbiflow_write_bitstream -d artix7 -f top.fasm -p xc7a35tcpg236-1 -b top.bit
 Writing bitstream ...
 ```
-There should be a .bit file in `build/basys3` which is the result of the run. F4PGA has a built in download function. It uses a tool called OpenOCD to download the bitstream onto your board. Plug in your board and turn it on, then use the command `make download` to upload the bitstream to the board. 
+There should be a .bit file in `build/basys3` which is the result of the run. F4PGA has a built in download function. It uses a tool called OpenOCD to download the bitstream onto your board. Plug in your board and turn it on, then use the command `openFPGALoader -b basys3 /build/basys3/*.bit` to upload the bitstream to the board. 
 
 ### 1.2.4 What About If It Doesn't Work?
-This whole process (compiling with Symbiflow) is not terribly difficult but there are enough steps that it is easy to get one wrong.  
+This whole process (compiling with F4PGA) is not terribly difficult but there are enough steps that it is easy to get one wrong.  
 
-If you get error messages, they might be a bit cryptic (no surprise).  
+If you get error messages, they might be a bit cryptic (no surprise). They are often surrouned by lots of fluff so it can be hard to find the real error message. 
 
 We are maintaining a [work-arounds and answers page](../WorkArounds.md) which may contain things you need to do to get the tools to run on your design.   
-Go read the work-arounds page mentioned above right now.  For example: if your design uses a clock, chances are that your `.xdc` file needs to be modified before Symbiflow will like it.
+Go read the work-arounds page mentioned above right now.  For example: if your design uses a clock, chances are that your `.xdc` file needs to be modified before F4PGA will like it.
 
-If you still have problems, make an appointment with a Symbiflow TA and talk through what has happened.  If the TA can help you and you get a good run with a working .bit file then great!  Even so, in the little writeup you do (see below) we would like to know what went wrong, even if it was your mistake.  Maybe we can fix the documentation to make it more clear.  Or, maybe there was a real problem and you had to tinker with your design to get it to work.  Either way we would like to know!
+If you still have problems, make an appointment with a F4PGA TA and talk through what has happened.  If the TA can help you and you get a good run with a working .bit file then great!  Even so, in the little writeup you do (see below) we would like to know what went wrong, even if it was your mistake.  Maybe we can fix the documentation to make it more clear.  Or, maybe there was a real problem and you had to tinker with your design to get it to work.  Either way we would like to know!
 
-NOTE: we DO NOT expect you to be making changes to your design to make it work.  If it is legal SystemVerilog and fails in Symbiflow that is sufficient information to provide us.  But, if the error message gives you a hint of what might be wrong and you fix it and it works, that would be great feedback for you to provide.  Just realize that is not the expectation.
+NOTE: We DO NOT expect you to be making changes to your design to make it work.  If it is legal SystemVerilog and fails in F4PGA that is sufficient information to provide us.  But, if the error message gives you a hint of what might be wrong and you fix it and it works, that would be great feedback for you to provide.  Just realize that is not the expectation.
 
 ## 1.3 A Micro-Tutorial on `make`
 The `Makefile` you edited above is part of a build system that knows about the dependencies between your source files and the final .bit file.  Every time you change one of your source files and type `make` it realizes that the "recipe" for your .bit file needs to be re-run because one of the ingredients has changed.  So, what happens if you run `make` and it succeeds in making a .bit file and then you want to run it from scratch again (to capture the output to a log file, for example)?   If you type `make` again it will says that everything is up to date and the recipe doesn't need to be re-run.  
@@ -113,16 +118,16 @@ To remove the previous build results so you can force a re-run you can type `mak
 
 ## 1.4 Documenting the Results of Your Tests
 1. Regardless of whether the compilation gave errors, we want you to capture the output of the compilation using `make >& compile.log`.  You should do a `make clean` first to remove the previous results so when you re-run using `make >& compile.log` it will do the full compile process.  Otherwise, you will simply get a message that everything was up to date - not very useful.
-2. After you have captured a `compile.log` file, next create a file in your project directory called `README.md`.  This is where you will report your design's success or failure.  To do so, copy the contents of the file `TemplateREADME.md` file in your own repo and use them as the starting point for this `README.md` file.  
-3. Fill out this file as your 'report'.
-4. Finally, save the `README.md`. 
+2. After you have captured a `compile.log` file, next create a file in your project directory called `README.md`.  This is where you will report your design's success or failure. We have created a script to ensure that your `Readme.md` is correct.
+3. Use the command `python3 ../../bin/readme.py` to run the script and fill out the prompts. Make sure you are in the correct Lab folder. (e.g `Lab5`)
+4. Open the `Readme.md` the script generated and make any corrections as needed.
 
 ## 1.5 Pushing Your Results Back Up to Github
 1. Now, you need to tell git that you have a new directory of files that should be a part of the repository.  So, type: `git add ~/220-myusername/Labs/Lab4`, filling in the real directory name.  This will tell git that you want this directory's contents to be a part of the repository.
 2. Next, formally commit those files to git by typing: `git commit -am "Put a message here telling what you did for this commit"`.  Now, your project files are a part of git.   The message you include can be as simple as "Committing files for my Lab4" or "Re-committing files for my Lab4 because I did it wrong first try".
 3. Finally, push these new files up to Github by typing: `git push`.
 
-At this point your lab and results are now up on the web at your Github page.  To be sure, go there in a web browser (you need to go clear back to where you created your repo to get the address).  Click around and look at things.  If you click a directory such as `Lab3`, your README.md file contents will be the documentation that shows in the web browser.  Pretty slick.
+At this point your lab and results are now up on the web at your Github page.  To be sure, go there in a web browser (you need to go clear back to where you created your repo to get the address).  Click around and look at things.  If you click a directory such as `Lab3`, your `README.md` file contents will be the documentation that shows in the web browser.  Pretty slick.
 
 As you look around, if you find that something is not right, you can always repeat the steps above (re-run, edit your README.md file, re-commit, re-push).  When you do so and refresh your browser you should see the new contents.
 

@@ -9,9 +9,9 @@ TARGET := basys3
 # then you would specify `TOP := myTopLevel` on the next line.
 TOP := top
 
-# IMPORTANT: edit this next line to specify the name of your .xdc file if different
-# This IS a file name
-XDC := ${current_dir}/basys3.xdc
+# This next line will include all .xdc in the current directory for compilation. There should only be one.
+# If there is a problem, replace the * with the name of the xdc file
+XDC := ${current_dir}/*.xdc
 
 # This next line will include all .v and .sv files in the current directory for compilation.
 SOURCES := $(wildcard ${current_dir}/*.v ${current_dir}/*.sv)
