@@ -1,8 +1,9 @@
 # F4PGA-classroom
 
-If you got here and are reading this, it means you have successfully created your own repo.  Congrats!!  
+Welcome, you have made it to the public repository of F4PGA-Classroom. Please follow the instructions to set up your own private repo.  
+If the URL now reads `https://github.com/BYU-Symbiflow-Classrooms/220-{username}`, you have created and are on your own private repo! 
 
-Before continuing on, tell us who you are by adding your information to the 3 lines below. Edit this page by clicking on the pencil icon in the upper right of this text box.
+If you are on your own private repo, before continuing on, tell us who you are by adding your information to the 3 lines below. Edit this page by clicking on the pencil icon in the upper right of this text box.
 
 - My full name is: 
 - My email address is: 
@@ -13,8 +14,8 @@ After editing, make sure to hit the green box `Commit Changes` to save your edit
 Once that is done you can move on to the next step and start testing your class designs.  
 Make sure that you have followed each of the steps below.
 
-1. Your first step is to create an SSH Key for Github.
+1. Your first step to get set up is to create a Github account and repository.  You can find instructions for doing so here: [Step1_Creating_Repository](Setup_And_Tutorials/Step1_Creating_Repository.md).
 
-2. Your second step to get set up is to create a Github account and repository.  You can find instructions for doing so here: [Step1_Creating_Repository](Setup_And_Tutorials/Step1_Creating_Repository.md).
+2. Next, you can move on to testing your own designs as you complete them.  Instructions for this can be found here: [Step2_Testing_Your_Own_Designs](Setup_And_Tutorials/Step2_0_Testing_Your_Own_Designs.md).
 
-3. Finally, you can now move on to testing your own designs as you complete them.  Instructions for this can be found here: [Step2_Testing_Your_Own_Designs](Setup_And_Tutorials/Step2_0_Testing_Your_Own_Designs.md).
+
