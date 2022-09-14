@@ -35,7 +35,7 @@ If you have any problems with any of these steps, contact a F4PGA TA for help.
 
 ## 3.2 Setting Up Your Github Repository
 1. To join the classroom for our F4PGA testing, right-click the following link and select "Open Link in New Window" so that these instructions are still visible after you click it.   
-<!--2. 220 students should click: [https://classroom.github.com/a/r942_jUm](https://classroom.github.com/a/r942_jUm)-->
+<!--2. 220 students should click: [[https://classroom.github.com/a/r942_jUm](https://classroom.github.com/a/r942_jUm](https://classroom.github.com/a/W9Khkonc))-->
 2. 220 students should click: [https://classroom.github.com/a/W9Khkonc](https://classroom.github.com/a/W9Khkonc)
 3. On the page that opens click "Accept this assignment".
 4. On the page that takes you to, refresh a time or two and eventually it will tell you "You're Ready to Go!".  The link it gives below that is the link for your Github repository you will use for all of your testing activities.  An example is: https://github.com/BYU-Symbiflow-Classrooms/220-myusername. So, save this name somewhere.
