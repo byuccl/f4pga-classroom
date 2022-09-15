@@ -97,9 +97,13 @@ writing final fasm
 cd /auto/fsa/nelson/220-nelsobe/Labs/Lab5/build/basys3 && symbiflow_write_bitstream -d artix7 -f top.fasm -p xc7a35tcpg236-1 -b top.bit
 Writing bitstream ...
 ```
-There should be a .bit file in `build/basys3` which is the result of the run. F4PGA has a built in download function. It uses a tool called OpenOCD to download the bitstream onto your board. Plug in your board and turn it on, then use the command `openFPGALoader -b basys3 /build/basys3/*.bit` to upload the bitstream to the board. 
+There should be a .bit file in `build/basys3` which is the result of the run. 
 
-### 1.2.4 What About If It Doesn't Work?
+### 1.2.4 Testing it on the Board  
+
+Just because the bitstream was generated, doesn't mean that it works. You will need to test and report on how well the design works on the board. Downloading the bitsrtream is quite easy, just plug in the FPGA, turn it on, and type `make download` in your project folder to download the bitstream. You must then test out the design. Make sure that everything works as expected. If there are any odd bugs with the design, write them down and you will add them to your `readme.md` for that lab. 
+
+### 1.2.5 What About If It Doesn't Work?
 This whole process (compiling with F4PGA) is not terribly difficult but there are enough steps that it is easy to get one wrong.  
 
 If you get error messages, they might be a bit cryptic (no surprise). They are often surrouned by lots of fluff so it can be hard to find the real error message. 
