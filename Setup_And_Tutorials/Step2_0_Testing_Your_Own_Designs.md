@@ -61,7 +61,7 @@ Execute the following commands:
 
 ```
 export F4PGA_EXAMPLES_ROOT=/opt/f4pga
-export INSTALL_DIR=$F4PGA_EXAMPLES_ROOT/opt/f4pga
+export F4PGA_INSTALL_DIR=/opt/f4pga
 FPGA_FAM="xc7"
 export PATH="$INSTALL_DIR/$FPGA_FAM/install/bin:$PATH";
 source "$INSTALL_DIR/$FPGA_FAM/conda/etc/profile.d/conda.sh"
@@ -70,11 +70,11 @@ echo "Environment activated"
 
 ```
 
-This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment) has been run.
+This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment) has been run.  
 
 Also, you are going to do this each time you want to work with the F4PGA tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) open a text editor and paste them into it, (3) save the with a name such as `f4pga.sh`.  
 
-In the future any time you want to activate your environment you can then type `source f4pga.sh` and it will activate the environment and otherwise set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`. If this confused you ask a TA for help setting up your `f4pga.sh` environment. 
+In the future any time you want to activate your environment you can then type `source ~/f4pga.sh` and it will activate the environment and set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`. If this confused you ask a TA for help setting up your `f4pga.sh` environment. 
 
 ### 1.2.2 Compile Your Design
 Now you can compile your design by typing `make clean` followed by `SURELOG_CMD="-parse -DSYNTHESIS" make` inside the directory where your design files and your `Makefile` is.  This will run with the Yosys front end.
