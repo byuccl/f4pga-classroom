@@ -13,7 +13,7 @@ Before you start, please open a file on your computer somewhere and, in it, reco
 ## 1.1 Getting A Github Account
 You will first need to get a Github account at https://github.com.  Go there now and do so using the "SignUp" button.  Use your BYU email as your email.  When it asks how many people are in your group choose "Just Me".  Select "Student" when asked.  Choose the free version of the account unless you want to jump right to "Pro".  You will use these Github credentials for the rest of your studies so remember your username and password.
 
-Before moving on, go and create an SSH key in Github using the instructions found [here](ssh.md).  When done, return to this page and continue.
+Before moving on, go and create an SSH key in Github using the instructions found [here](https://github.com/byuccl/f4pga-classroom/blob/e9ad8fa8eca336e8267103d77d8f97ceb75f63c8/Setup_And_Tutorials/Step0_Create_SSH_Key.md).  When done, return to this page and continue.
 
 If you have any problems with any of these steps, contact a F4PGA TA for help.
 
