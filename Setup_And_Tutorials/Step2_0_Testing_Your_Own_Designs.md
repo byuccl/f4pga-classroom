@@ -1,6 +1,6 @@
 # Step 2
 
-NOTE: There are two possible ways to test your own designs. The first is to manually use the F4PGA tools. To do so, continue following along with this document. Alternatively, you can automate several of the steps below by running the `f4pga_student.py` script. To do so, go [here](https://github.com/byuccl/f4pga-classroom/blob/dev/Setup_And_Tutorials/Step3_1_Testing_With_Script.md). You are expected to follow the manual method for the first lab so that you understand what is happening while the `f4pga_student.py` script is running.
+NOTE: There are two possible ways to test your own designs. The first is to manually use the F4PGA tools. To do so, continue following along with this document. Alternatively, you can automate several of the steps below by running the `f4pga_student.py` script. To do so, go [here](https://github.com/byuccl/f4pga-classroom/blob/dev/Setup_And_Tutorials/Step2_1_Testing_With_Script.md). You are expected to follow the manual method for the first lab so that you understand what is happening while the `f4pga_student.py` script is running.
 
 # 1. Testing Your Own Designs
 As you test your own designs you are going to need to run a program called `collectFiles` which is in your Linux repo (in the directory `~/220-myusername/Setup_And_Tutorials/bin`).  It will be easiest to use this program if you can run it without having to specify the whole path every time you run it.  To add it to your Linux search path (so you can run it without typing its name), edit the file `~/.bashrc` and add this line to the bottom:
@@ -9,7 +9,7 @@ export PATH=~/220-myusername/Setup_And_Tutorials/bin:$PATH
 ```
 You may also need to go into that directory and make sure the file is executable by doing this: `chmod u+x collectFiles`.  
 
-Now, kill your command line and restart a new one.  You can tell if this worked when, if you type: `collectFiles` you get a usage message in return, telling you want command line arguments to provide:
+Now, close your command line and open a new one.  You can tell if this worked when, if you type: `collectFiles` you get a usage message in return, telling you want command line arguments to provide:
 ```
 usage: collectFiles [-h] [--verbose] xprFile destinationDirectory
 collectFiles: error: the following arguments are required: xprFile, destinationDirectory
@@ -21,16 +21,15 @@ If you don't get this, check with a TA for help.
 When you get ready to process one of your own designs, there are two ways to proceed.  In either case you need to collect all the files that were a part of your original design and place them into a directory such as `~/220-myusername/Labs/Lab4`.
 
 ### 1.1.1 Using the .xpr File to Help Collect Your Files
-If you still have the .xpr file from your Vivado project (you will have it unless you explicitly have deleted it), you can do the following:
+If you still have the `.xpr` file from your Vivado project (you will have it unless you explicitly have deleted it), you can do the following:
 1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `~/EE220/Lab4` (and inside that directory there would be a `Lab4.xpr` file).  Make note of the entire path to that file as in: `~/EE220/Lab4/Lab4.xpr`.  
-2. Execute the `collectFiles` program like this: 
+2. Execute the `collectFiles` program like this:  
 ```
 collectFiles ~/EE220/Lab4/Lab4.xpr ~/220-myusername/Labs/Lab4
 ```
 Note that `~` is shorthand for your home directory.
 
-The first argument when you run the program is the `.xpr` file you identified above.  The second argument is the directory name in your 220-myusername Labs directory where
-you want the files copied to.   This will be the directory where you eventually compile and test your designs.
+The first argument when you run the program is the `.xpr` file you identified above.  The second argument is the directory name in your 220-myusername Labs directory where you want the files copied to.   This will be the directory where you eventually compile and test your designs.
 
 The script will then collect your design and XDC files as specified in the `.xpr` file and copy them into the directory it just created.
 It will also create a `Makefile` there for you.  Note: if the destination directory exists it will fail and tell you to delete the destination directory and try again.
@@ -38,20 +37,24 @@ It will also create a `Makefile` there for you.  Note: if the destination direct
 ### 1.1.2 Manually Collecting Your Files
 If you don't have your .xpr file, you will need to find the needed project files and copy them into a directory in your repo (`~/220-myusername/Labs/Lab4` for example).  The files you will need include anything required to build the project and would be:
 - All the SystemVerilog and Verilog files you used (do NOT include testbench files)
-- Your .xdc file
+- Your `.xdc` file
 - A copy of the Makefile in `~/220-myusername/Setup_And_Tutorials/bin/Makefile`
 
 So, (a) create a specific directory for the lab (like `~/220-myusername/Labs/Lab5`) and (b) find those and copy all the above files into that directory.  NOTE: they cannot be inside subdirectories - they all need to be together in that directory for F4PGA to find them.
 
 ### 1.1.3 Editing Your Makefile
 Now, go to your lab directory (`cd ~/220-myusername/Labs/Lab4`) and take a minute to check to convince yourself that all the files you need are there.  Also, look to see if any testbench files (the ones provided by the professor to help test your circuit) are there.  If there are testbench files, delete them now using `rm`.
-
+  
   ex: `rm ~/220-myusername/Labs/Lab7/tb_sevensegment.v`
 
 Now open up the file there called `Makefile` and edit it. You can use `code Makefile` to open up VS Code Editor.
-There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.  NOTE: this is NOT a file name, it is the name of the top level ***module*** in your design hierarchy. There should be no .sv or .v extensions on the top module name.
+There is a variable called TOP in the Makefile which defines the name of your top-level **module** in your design.  Change that line to match your design's top level module before saving.  NOTE: this is NOT a file name, it is the name of the top level ***module*** in your design hierarchy. There should be no .sv or .v extensions on the top module name.  
+
+  ex: `TOP := FourFunctions`
 
 Also note that there is a variable called XDC which defines the name of your .xdc **file** - we have this set up to accept any name for the .xdc file. If for some reason it is not working, ask a TA for help.
+
+
 
 ## 1.2 Running F4PGA On Your Lab Files
 Now you are ready to actually run F4PGA on your lab files.
@@ -71,7 +74,8 @@ conda activate $FPGA_FAM
 
 This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment) has been run.  
 
-Also, you are going to do this each time you want to work with the F4PGA tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) open a text editor and paste them into it, (3) save the with a name such as `f4pga.sh`.  
+Also, you are going to do this each time you want to work with the F4PGA tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) open a text editor and paste them into it, (3) save the with a name such as `f4pga.sh`.   
+Instead you can move the file from your directory to the root. Execute: `mv ~/220-myusername/Setup_and_Tutorials/bin/env_f4pga.sh ~/f4pga.sh` This will move the file, so you can activate it with `source ~/f4pga.sh`.
 
 In the future any time you want to activate your environment you can then type `source ~/f4pga.sh` and it will activate the environment and set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`. If this confused you ask a TA for help setting up your `f4pga.sh` environment. 
 
