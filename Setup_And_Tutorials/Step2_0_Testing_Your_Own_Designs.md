@@ -61,19 +61,19 @@ Execute the following commands:
 
 ```
 export F4PGA_EXAMPLES_ROOT=/opt/f4pga
-export INSTALL_DIR=/opt/f4pga
+export F4PGA_INSTALL_DIR=/opt/f4pga
 FPGA_FAM="xc7"
-export PATH="$INSTALL_DIR/$FPGA_FAM/install/bin:$PATH";
-source "$INSTALL_DIR/$FPGA_FAM/conda/etc/profile.d/conda.sh"
+export PATH="$F4PGA_INSTALL_DIR/$FPGA_FAM/install/bin:$PATH";
+source "$F4PGA_INSTALL_DIR/$FPGA_FAM/conda/etc/profile.d/conda.sh"
 conda activate $FPGA_FAM
 
 ```
 
-This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment) has been run.
+This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment) has been run.  
 
 Also, you are going to do this each time you want to work with the F4PGA tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) open a text editor and paste them into it, (3) save the with a name such as `f4pga.sh`.  
 
-In the future any time you want to activate your environment you can then type `source f4pga.sh` and it will activate the environment and otherwise set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`. If this confused you ask a TA for help setting up your `f4pga.sh` environment. 
+In the future any time you want to activate your environment you can then type `source ~/f4pga.sh` and it will activate the environment and set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`. If this confused you ask a TA for help setting up your `f4pga.sh` environment. 
 
 ### 1.2.2 Compile Your Design
 Now you can compile your design by typing `make clean` followed by `SURELOG_CMD="-parse -DSYNTHESIS" make` inside the directory where your design files and your `Makefile` is.  This will run with the Yosys front end.
@@ -96,9 +96,13 @@ writing final fasm
 cd /auto/fsa/nelson/220-nelsobe/Labs/Lab4/build/basys3 && symbiflow_write_bitstream -d artix7 -f top.fasm -p xc7a35tcpg236-1 -b top.bit
 Writing bitstream ...
 ```
-There should be a .bit file in `build/basys3` which is the result of the run. F4PGA has a built in download function. It uses a tool called OpenOCD to download the bitstream onto your board. Plug in your board and turn it on, then use the command `openFPGALoader -b basys3 /build/basys3/*.bit` to upload the bitstream to the board. 
+There should be a .bit file in `build/basys3` which is the result of the run. 
 
-### 1.2.4 What About If It Doesn't Work?
+### 1.2.4 Testing it on the Board  
+
+Just because the bitstream was generated, doesn't mean that it works. You will need to test and report on how well the design works on the board. Downloading the bitsrtream is quite easy, just plug in the FPGA, turn it on, and type `make download` in your project folder to download the bitstream. You must then test out the design. Make sure that everything works as expected. If there are any odd bugs with the design, write them down and you will add them to your `readme.md` for that lab. 
+
+### 1.2.5 What About If It Doesn't Work?
 This whole process (compiling with F4PGA) is not terribly difficult but there are enough steps that it is easy to get one wrong.  
 
 If you get error messages, they might be a bit cryptic (no surprise). They are often surrouned by lots of fluff so it can be hard to find the real error message. 
