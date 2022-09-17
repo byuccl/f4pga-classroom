@@ -18,14 +18,14 @@ collectFiles: error: the following arguments are required: xprFile, destinationD
 If you don't get this, check with a TA for help.
 
 ## 1.1 Preparing A Specific Lab
-When you get ready to process one of your own designs, there are two ways to proceed.  In either case you need to collect all the files that were a part of your original design and place them into a directory such as `~/220-myusername/Labs/Lab5`.
+When you get ready to process one of your own designs, there are two ways to proceed.  In either case you need to collect all the files that were a part of your original design and place them into a directory such as `~/220-myusername/Labs/Lab4`.
 
 ### 1.1.1 Using the .xpr File to Help Collect Your Files
 If you still have the .xpr file from your Vivado project (you will have it unless you explicitly have deleted it), you can do the following:
-1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `~/EE220/Lab5` (and inside that directory there would be a `Lab5.xpr` file).  Make note of the entire path to that file as in: `~/EE220/Lab5/Lab5.xpr`.  
+1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `~/EE220/Lab4` (and inside that directory there would be a `Lab4.xpr` file).  Make note of the entire path to that file as in: `~/EE220/Lab4/Lab4.xpr`.  
 2. Execute the `collectFiles` program like this: 
 ```
-collectFiles ~/EE220/Lab5/Lab5.xpr ~/220-myusername/Labs/Lab5
+collectFiles ~/EE220/Lab4/Lab4.xpr ~/220-myusername/Labs/Lab4
 ```
 Note that `~` is shorthand for your home directory.
 
@@ -36,7 +36,7 @@ The script will then collect your design and XDC files as specified in the `.xpr
 It will also create a `Makefile` there for you.  Note: if the destination directory exists it will fail and tell you to delete the destination directory and try again.
 
 ### 1.1.2 Manually Collecting Your Files
-If you don't have your .xpr file, you will need to find the needed project files and copy them into a directory in your repo (`~/220-myusername/Labs/Lab5` for example).  The files you will need include anything required to build the project and would be:
+If you don't have your .xpr file, you will need to find the needed project files and copy them into a directory in your repo (`~/220-myusername/Labs/Lab4` for example).  The files you will need include anything required to build the project and would be:
 - All the SystemVerilog and Verilog files you used (do NOT include testbench files)
 - Your .xdc file
 - A copy of the Makefile in `~/220-myusername/Setup_And_Tutorials/bin/Makefile`
@@ -44,7 +44,7 @@ If you don't have your .xpr file, you will need to find the needed project files
 So, (a) create a specific directory for the lab (like `~/220-myusername/Labs/Lab5`) and (b) find those and copy all the above files into that directory.  NOTE: they cannot be inside subdirectories - they all need to be together in that directory for F4PGA to find them.
 
 ### 1.1.3 Editing Your Makefile
-Now, go to your lab directory (`cd ~/220-myusername/Labs/Lab5`) and take a minute to check to convince yourself that all the files you need are there.  Also, look to see if any testbench files (the ones provided by the professor to help test your circuit) are there.  If there are testbench files, delete them now using `rm`.
+Now, go to your lab directory (`cd ~/220-myusername/Labs/Lab4`) and take a minute to check to convince yourself that all the files you need are there.  Also, look to see if any testbench files (the ones provided by the professor to help test your circuit) are there.  If there are testbench files, delete them now using `rm`.
 
   ex: `rm ~/220-myusername/Labs/Lab7/tb_sevensegment.v`
 
@@ -93,7 +93,7 @@ Writing Implementation FASM: top.fasm
 The entire flow of VPR took 14.593 seconds.
 FASM extra: top_fasm_extra.fasm
 writing final fasm
-cd /auto/fsa/nelson/220-nelsobe/Labs/Lab5/build/basys3 && symbiflow_write_bitstream -d artix7 -f top.fasm -p xc7a35tcpg236-1 -b top.bit
+cd /auto/fsa/nelson/220-nelsobe/Labs/Lab4/build/basys3 && symbiflow_write_bitstream -d artix7 -f top.fasm -p xc7a35tcpg236-1 -b top.bit
 Writing bitstream ...
 ```
 There should be a .bit file in `build/basys3` which is the result of the run. F4PGA has a built in download function. It uses a tool called OpenOCD to download the bitstream onto your board. Plug in your board and turn it on, then use the command `openFPGALoader -b basys3 /build/basys3/*.bit` to upload the bitstream to the board. 
