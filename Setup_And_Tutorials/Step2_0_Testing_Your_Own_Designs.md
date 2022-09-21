@@ -82,6 +82,9 @@ In the future any time you want to activate your environment you can then type `
 ### 1.2.2 Compile Your Design
 Now you can compile your design by typing `make clean` followed by `SURELOG_CMD="-parse -DSYNTHESIS" make` inside the directory where your design files and your `Makefile` is.  This will run with the Yosys front end.
 
+So to compile:  
+`SURELOG_CMD="-parse -DSYNTHESIS" make`
+
 Regardless of whether you have any problems at all, please eventually capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
 
 The most common error is `make: *** No targets specified and no makefile found.  Stop.`
