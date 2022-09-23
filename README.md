@@ -19,3 +19,5 @@ Make sure that you have followed each of the steps below.
 2. Next, you can move on to testing your own designs as you complete them.  Instructions for this can be found here: [Step2_Testing_Your_Own_Designs](Setup_And_Tutorials/Step2_0_Testing_Your_Own_Designs.md).
 
 [Project Overview and Due Dates](https://github.com/byuccl/f4pga-classroom/blob/78f0a8eef26c830db2fb103fc0feb91554498202/Instructions/F4PGAClassroomIntroduction.md)
+
+If you have any questions, reach out to the TAs at  F4PGA.TA@gmail.com
