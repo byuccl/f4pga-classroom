@@ -22,7 +22,7 @@ When you get ready to process one of your own designs, there are two ways to pro
 
 ### 1.1.1 Using the .xpr File to Help Collect Your Files
 If you still have the `.xpr` file from your Vivado project (you will have it unless you explicitly have deleted it), you can do the following:
-1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `~/EE220/Lab4` (and inside that directory there would be a `Lab4.xpr` file).  Make note of the entire path to that file as in: `~/EE220/Lab4/Lab4.xpr`.  
+1. Find the directory where your original project was.  Specifically look for the directory containing a file with a `.xpr` extension.  It might be something like `~/EE220/Lab4` (and inside that directory there would be a `Lab4.xpr` file).  Make note of the entire path to that file as in: `~/EE220/Lab4/Lab4.xpr`. If you do not include the full path for both files then collectFiles will work completely. Double check to make sure your paths are correct.
 2. Execute the `collectFiles` program like this:  
 ```
 collectFiles ~/EE220/Lab4/Lab4.xpr ~/220-myusername/Labs/Lab4
@@ -55,7 +55,6 @@ There is a variable called TOP in the Makefile which defines the name of your to
 Also note that there is a variable called XDC which defines the name of your .xdc **file** - we have this set up to accept any name for the .xdc file. If for some reason it is not working, ask a TA for help.
 
 
-
 ## 1.2 Running F4PGA On Your Lab Files
 Now you are ready to actually run F4PGA on your lab files.
 
@@ -74,8 +73,7 @@ conda activate $FPGA_FAM
 
 This will set up your environment needed to run the tools.  You need only do this one time each time you log in.  You can tell it has been done if you see an `(xc7)` to the left of the command prompt in your Linux command line shell.  This is a sign that the last step (running conda to activate the environment) has been run.  
 
-Also, you are going to do this each time you want to work with the F4PGA tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) open a text editor and paste them into it, (3) save the with a name such as `f4pga.sh`.   
-Instead you can move the file from your directory to the root. Execute: `mv ~/220-myusername/Setup_and_Tutorials/bin/env_f4pga.sh ~/f4pga.sh` This will move the file, so you can activate it with `source ~/f4pga.sh`.
+Also, you are going to do this each time you want to work with the F4PGA tools.  A great way to make this easy to do is to do the following in your Linux home directory: (1) select and copy the above commands, (2) open a text editor and paste them into it, (3) save the with a name such as `f4pga.sh`. We also have this script inculded in your classroom repository in `mv ~/220-myusername/Setup_and_Tutorials/bin/env_f4pga.sh`. You can execute it from here, or move it to your home directory with `mv ~/220-myusername/Setup_and_Tutorials/bin/env_f4pga.sh ~/f4pga.sh` This will move the file, so you can activate it with `source ~/f4pga.sh`.
 
 In the future any time you want to activate your environment you can then type `source ~/f4pga.sh` and it will activate the environment and set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`. If this confused you ask a TA for help setting up your `f4pga.sh` environment. 
 
