@@ -78,10 +78,22 @@ Also, you are going to do this each time you want to work with the F4PGA tools. 
 In the future any time you want to activate your environment you can then type `source ~/f4pga.sh` and it will activate the environment and set things up to run F4PGA.  And, if for some reason you want to de-activate the environment later you can do so by typing: `conda deactivate`. If this confused you ask a TA for help setting up your `f4pga.sh` environment. 
 
 ### 1.2.2 Compile Your Design
-Now you can compile your design by typing `make clean` followed by `SURELOG_CMD="-parse -DSYNTHESIS" make` inside the directory where your design files and your `Makefile` is.  This will run with the Yosys front end.
+Now you can compile your design. Go to the directory where your `Makefile` design files and are, and execute the following commands:
 
-So to compile:  
-`SURELOG_CMD="-parse -DSYNTHESIS" make`
+```
+cp -r ../Lab4 /tmp/Lab4
+(cd /tmp/Lab4 && SURELOG_CMD="-parse -DSYNTHESIS" make)
+```
+
+This will excecute the tool chain, and you will see lots of text being printed to your terminal. When it is done (it should take a couple minutes), execute the this command: `cp -r /tmp/Lab4/build ./build`.
+
+
+If you have already compilied the design, and you want to recompile use these two commands:
+```
+(cd /tmp/Lab4 && SURELOG_CMD="-parse -DSYNTHESIS" make clean)
+(cd /tmp/Lab4 && SURELOG_CMD="-parse -DSYNTHESIS" make)
+```
+And then execute `cp -r /tmp/Lab4/build ./build` again.
 
 Regardless of whether you have any problems at all, please eventually capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
 
