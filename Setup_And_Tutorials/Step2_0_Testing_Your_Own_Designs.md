@@ -122,7 +122,7 @@ To remove the previous build results so you can force a re-run you can type `mak
 ## 1.4 Documenting the Results of Your Tests
 1. Regardless of whether the compilation gave errors, we want you to capture the output of the compilation using `make >& compile.log`.  You should do a `make clean` first to remove the previous results so when you re-run using `make >& compile.log` it will do the full compile process.  Otherwise, you will simply get a message that everything was up to date - not very useful.
 2. After you have captured a `compile.log` file, next create a file in your project directory called `README.md`.  This is where you will report your design's success or failure. We have created a script to ensure that your `Readme.md` is correct.
-3. Use the command `python3 ../../bin/readme.py` to run the script and fill out the prompts. Make sure you are in the correct Lab folder. (e.g `Lab5`)
+3. Use the command `python3 ../../Setup_And_Tutorials/bin/readme.py` to run the script and fill out the prompts. Make sure you are in the correct Lab folder. (e.g `Lab5`)
 4. Open the `Readme.md` the script generated and make any corrections as needed.
 
 ## 1.5 Pushing Your Results Back Up to Github
