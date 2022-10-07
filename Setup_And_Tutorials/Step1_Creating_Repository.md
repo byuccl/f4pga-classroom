@@ -51,7 +51,7 @@ At this point your repo is now done at Github.  The next step is to clone that r
 
 Note that the repository on the Linux machine that you have created above is in your CAEDM home directory. This is a good thing - it means this directory will be available to you on any of the department Linux lab machines.  As a result you can work on any machine in the lab for this F4PGA project work.
 
-That is it - you are done setting up your repo. You can go to the next set of instructions for testing your designs at [Step2_Testing_Your_Own_Designs](https://github.com/BYU-Symbiflow-Classrooms/220-Zach227/blob/main/Setup_And_Tutorials/Step2_0_Testing_Your_Own_Designs.md).
+That is it - you are done setting up your repo. You can go to the next set of instructions for testing your designs at [Step2_Testing_Your_Own_Designs](https://github.com/byuccl/f4pga-classroom/blob/main/Setup_And_Tutorials/Step2_0_Testing_Your_Own_Designs.md).
 
 # 2. Additional Information
 This semester as you test your designs using the F4PGA tools you are going to be doing that in a `git` repository on your Linux machine.  Thus, you will be learning about git during the semester.  However, that local repository will be tied to one at https://github.com.   This is shown in this figure:
