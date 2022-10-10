@@ -5,7 +5,7 @@ At this point, a complete FPGA design flow that goes from Verilog/SystemVerilog 
 
 As a part of our work we have obtained student funding for us to solicit student designs to be run through the design tool flow to test it on a variety of outside designs.  
 
-We are thus soliciting students in our ECEN 220 course this semester to consider joining the project as research participants.  We want to make it clear that (a) this it NOT an official part of your enrollment in either of these classes, (b) that your participation is strictly voluntary, and (c) that your participation (or lack thereof) will not affect your grade or standing in the class in any way.  However, we are paying students who decide to participate in the project (see compensation below).
+We are thus soliciting students in our ECEN 220 course this semester to consider joining the project as research participants.  We want to make it clear that (a) this it NOT an official part of your enrollment in 220, (b) that your participation is strictly voluntary, and (c) that your participation (or lack thereof) will not affect your grade or standing in the class in any way.  However, we are paying students who decide to participate in the project (see compensation below).
 
 To help you do this we have hired students to serve as F4PGA TAs this semester.  They will be available essentially any time to help you as you run your class designs through the F4PGA tools.
 
@@ -25,15 +25,27 @@ It is anticipated that the time required for your participation will include app
 As compensation for your participation in this research study you will be provided Cougar Cash, credited to your BYU account, at the end of the semester.  Note that you are NOT being hired as BYU employees to participate in this. Rather, you are being compensated for your time as *research participants* in this research study.  Thus, you will not have to go through the hiring process or record your time.
 
 The compensation plan is the following:
-- You will receive $25 for each lab assignment you run through the tools (the specific labs you will be asked to run through the tools will be specified and do not include every single lab in your class).
-- If you complete at least 3 labs, you will receive an extra $25 to compensate you for your time setting up the tools at the outset.
-- If you complete 6 labs, you will receive an extra $25 bonus.
+- You will receive $25 for each lab assignment you run through the tools on time (the specific labs you will be asked to run through the tools will be specified and do not include every single lab in your class).
+- You will receive $15 instead of $25 if the lab is submitted late. If you have any problems or questions, ask a TA.
 - If you have been doing the math, the total compensation you can receive for your participation is $200.
 
 # Due Dates
-To receive credit there will be a due date attached to each lab. These due dates will be communicated to you but will typically be a week after the due date that you were supposed to pass it off for your normal class activities (but the first few will be delayed to give you time to get set up).  Having such a schedule will allow the F4PGA TAs to gather the results lab-by-lab rather than having all of the results dumped on them at the end of the semester.
+To receive credit there will be a due date attached to each lab. These due dates will be communicated to you but will typically be a week after the due date that you were supposed to pass it off for your normal class activities.  Having such a schedule will allow the F4PGA TAs to gather the results lab-by-lab rather than having all of the results dumped on them at the end of the semester.
 
-Finally, note that you need not complete all the labs to receive compensation. For example, 4 of the labs you would receive $125.
+
+| Lab       | Due Date |
+| ----------- | ----------- |
+| Structural SV      |   Oct 3rd     |
+| Arthithmetic   | Oct 18th        |
+| Seven Segment   | Oct 25th        |
+| Fun with Registers  | Nov 1st        |
+| Stopwatch | Nov 8th|
+| UART Transmitter   |  Nov 22nd        |
+| Codebreaker   | Dec 6th   |
+| UART Reciever   | Dec 15th        |
+
+
+Finally, note that you need not complete all the labs to receive compensation. For example, 4 of the labs you would receive $100.
 
 # Work Environment
 You will do all your work on the digital lab machines, working out of your own CAEDM home directory.  Since the F4PGA tools have no graphics associated with them, you can work remotely using SSH if you desire.

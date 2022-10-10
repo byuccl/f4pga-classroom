@@ -13,7 +13,7 @@ Before you start, please open a file on your computer somewhere and, in it, reco
 ## 1.1 Getting A Github Account
 You will first need to get a Github account at https://github.com.  Go there now and do so using the "SignUp" button.  Use your BYU email as your email.  When it asks how many people are in your group choose "Just Me".  Select "Student" when asked.  Choose the free version of the account unless you want to jump right to "Pro".  You will use these Github credentials for the rest of your studies so remember your username and password.
 
-Before moving on, go and create an SSH key in Github using the instructions found [here](ssh.md).  When done, return to this page and continue.
+Before moving on, go and create an SSH key in Github using the instructions found [here](https://github.com/byuccl/f4pga-classroom/blob/e9ad8fa8eca336e8267103d77d8f97ceb75f63c8/Setup_And_Tutorials/Step0_Create_SSH_Key.md).  When done, return to this page and continue.
 
 If you have any problems with any of these steps, contact a F4PGA TA for help.
 
@@ -22,7 +22,7 @@ If you have any problems with any of these steps, contact a F4PGA TA for help.
 <!--2. 220 students should click: [[https://classroom.github.com/a/r942_jUm](https://classroom.github.com/a/r942_jUm](https://classroom.github.com/a/W9Khkonc))-->
 2. 220 students should click: [https://classroom.github.com/a/W9Khkonc](https://classroom.github.com/a/W9Khkonc)
 3. On the page that opens click "Accept this assignment".
-4. On the page that takes you to, refresh a time or two and eventually it will tell you "You're Ready to Go!".  The link it gives below that is the link for your Github repository you will use for all of your testing activities.  An example is: https://github.com/BYU-Symbiflow-Classrooms/220-myusername. So, save this name somewhere.
+4. On the page that takes you to, refresh a time or two and eventually it will tell you "You're Ready to Go!".  The link it gives below that is the link for your Github repository you will use for all of your testing activities.  An example is: `https://github.com/BYU-Symbiflow-Classrooms/220-myusername`. So, save this name somewhere.
 5. Now, go to that page (click on that name on the screen currently showing or type it into your browser address bar).
 6. Near the bottom of the screen will be an "Import Code" button.  Click it.  THIS IS AN OFT-MISSED step in the process so carefully follow these instructions for this step.
 7. Now, enter this address: https://github.com/byuccl/f4pga-classroom (this is the repository you want as the starting point for your repository).  Hit the tab key and then click "Begin Import".  NOTE: you have just imported the contents of the web page you are currently reading as the initial contents of your repository.  That way, your repository will have these usage instructions and everything else in it that you will need during the semester in terms of instructions and provided files.
