@@ -95,11 +95,23 @@ If you have already compilied the design, and you want to recompile use these tw
 ```
 And then execute `cp -r /tmp/Lab4/build ./build` again.
 
-Regardless of whether you have any problems at all, please eventually capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
+If you have problems, please eventually capture all of the compilation output so we can debug it (you will be told how to capture the compilation output below).  
 
 The most common error is `make: *** No targets specified and no makefile found.  Stop.`
 This simply means that your cwd (current working directory) does not contain a `Makefile`. 
 Either us `cd` to navigate to the correct folder or create a `Makefile`.
+
+### NOTE: Temporary F4PGA Fix
+F4PGA is currently running slowly on the Lab Machines because of how files are stored on the J-Drive. To get around this, F4PGA needs to be run in the `/tmp` folder on the computer. 
+
+To make this simpler, we are giving you a script to accomplish this that is located in the `/Setups_And_Tutorials/bin`. It is called `fast_compile.sh`, you will need to run `chmod +x fast_compile.sh` to make it executable. 
+
+To use it, run the program while in the lab folder you want to compile. 
+Example: `../../Setup_And_Tutorials/bin/fast_compile.sh`
+
+This script copies the files into the `/tmp` directory, runs F4PGA, then copies it back. using the `-l` flag you can have it create the `compile.log`.
+
+
 
 
 ### 1.2.3 What If It Works?
@@ -137,9 +149,9 @@ The `Makefile` you edited above is part of a build system that knows about the d
 To remove the previous build results so you can force a re-run you can type `make clean` and this will remove the compilation results.  Then, a subsequent `make` will do a full re-run from scratch.
 
 ## 1.4 Documenting the Results of Your Tests
-1. Regardless of whether the compilation gave errors, we want you to capture the output of the compilation using `make >& compile.log`.  You should do a `make clean` first to remove the previous results so when you re-run using `make >& compile.log` it will do the full compile process.  Otherwise, you will simply get a message that everything was up to date - not very useful.
+1.If you have compilation errors, we want you to capture the output of the compilation using `make >& compile.log`.  Re-run using `make >& compile.log` to capture the errors. If there are no problems with compilation, you do not need to do this. 
 2. After you have captured a `compile.log` file, next create a file in your project directory called `README.md`.  This is where you will report your design's success or failure. We have created a script to ensure that your `Readme.md` is correct.
-3. Use the command `python3 ../../bin/readme.py` to run the script and fill out the prompts. Make sure you are in the correct Lab folder. (e.g `Lab4`)
+3. Use the command `python3 ../../Setup_And_Tutorials/bin/readme.py` to run the script and fill out the prompts. Make sure you are in the correct Lab folder. (e.g `Lab5`)
 4. Open the `Readme.md` the script generated and make any corrections as needed.
 
 ## 1.5 Pushing Your Results Back Up to Github
